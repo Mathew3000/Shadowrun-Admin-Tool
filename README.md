@@ -2,10 +2,10 @@
 A small tool to help the GameMaster in Shadowrun. 
 Adaptable for every Pen &amp; Paper game. 
 
-Currently WIP
+<br>Currently WIP</br>
 
-Change List:
+<br>Change List:</br>
 
-First Commit:
--Map Working
--Player Manager Working
+<p>First Commit:</p>
+<p>-Map Working</p>
+<p>-Player Manager Working</p>
