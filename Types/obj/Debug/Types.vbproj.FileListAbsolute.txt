@@ -1,0 +1,8 @@
+C:\Users\Matthias\Documents\Shadowrun\Shadowrun-Software\VB\AdminTool\AdminTool\Types\bin\Debug\Types.dll
+C:\Users\Matthias\Documents\Shadowrun\Shadowrun-Software\VB\AdminTool\AdminTool\Types\bin\Debug\Types.pdb
+C:\Users\Matthias\Documents\Shadowrun\Shadowrun-Software\VB\AdminTool\AdminTool\Types\bin\Debug\Types.xml
+C:\Users\Matthias\Documents\Shadowrun\Shadowrun-Software\VB\AdminTool\AdminTool\Types\obj\Debug\Types.Resources.resources
+C:\Users\Matthias\Documents\Shadowrun\Shadowrun-Software\VB\AdminTool\AdminTool\Types\obj\Debug\Types.vbproj.GenerateResource.Cache
+C:\Users\Matthias\Documents\Shadowrun\Shadowrun-Software\VB\AdminTool\AdminTool\Types\obj\Debug\Types.dll
+C:\Users\Matthias\Documents\Shadowrun\Shadowrun-Software\VB\AdminTool\AdminTool\Types\obj\Debug\Types.xml
+C:\Users\Matthias\Documents\Shadowrun\Shadowrun-Software\VB\AdminTool\AdminTool\Types\obj\Debug\Types.pdb
