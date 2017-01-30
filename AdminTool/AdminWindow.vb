@@ -21,6 +21,10 @@
             PlayerMap.ex_player_to_update = mouse_down_sender.name
             PlayerMap.ex_player_pos = cursor_pos - New Point(7, 7)
         End If
+        If Me.Width > 200 Then
+            Panel1.Width = Me.Width - 36
+        End If
+
     End Sub
 
     Public Sub drag_handler(ByVal sender As Object, ByVal e As MouseEventArgs)
@@ -65,7 +69,7 @@
         End If
     End Sub
 
-    Private Sub pb_map_xx_down(sender As Object, e As EventArgs) Handles pb_map_01.MouseDown
+    Private Sub pb_map_xx_down(sender As Object, e As EventArgs) Handles pb_map_01.MouseDown, pb_map_02.MouseDown, pb_map_03.MouseDown, pb_map_04.MouseDown, pb_map_05.MouseDown, pb_map_06.MouseDown, pb_map_07.MouseDown, pb_map_08.MouseDown, pb_map_09.MouseDown
         img_sender = sender
     End Sub
 
@@ -80,7 +84,7 @@
         End If
     End Sub
 
-    Private Sub pb_map_xx_Click(sender As Object, e As EventArgs) Handles pb_map_01.Click
+    Private Sub pb_map_xx_Click(sender As Object, e As EventArgs) Handles pb_map_01.Click, pb_map_02.Click, pb_map_03.Click, pb_map_04.Click, pb_map_05.Click, pb_map_06.Click, pb_map_07.Click, pb_map_08.Click, pb_map_09.Click
         Dim selection As MsgBoxResult
         selection = MsgBox("Set map?", MsgBoxStyle.YesNo, "Are you sure?")
         If selection = MsgBoxResult.Yes Then
@@ -94,4 +98,5 @@
             End If
         End If
     End Sub
+
 End Class

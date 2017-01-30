@@ -30,17 +30,33 @@ Partial Class AdminWindow
         Me.VisibleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.pb_map_01 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_09 = New System.Windows.Forms.PictureBox()
         Me.menu_map = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.LoadImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SetMapToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.pb_map_08 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_07 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_06 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_05 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_04 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_03 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_02 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_01 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dial_open_img = New System.Windows.Forms.OpenFileDialog()
         CType(Me.pic_map, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menu_players.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        CType(Me.pb_map_01, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_map_09, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menu_map.SuspendLayout()
+        CType(Me.pb_map_08, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_map_07, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_map_06, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_map_05, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_map_04, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_map_03, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_map_02, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_map_01, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pic_map
@@ -82,25 +98,33 @@ Partial Class AdminWindow
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel1.AutoScroll = True
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.pb_map_09)
+        Me.Panel1.Controls.Add(Me.pb_map_08)
+        Me.Panel1.Controls.Add(Me.pb_map_07)
+        Me.Panel1.Controls.Add(Me.pb_map_06)
+        Me.Panel1.Controls.Add(Me.pb_map_05)
+        Me.Panel1.Controls.Add(Me.pb_map_04)
+        Me.Panel1.Controls.Add(Me.pb_map_03)
+        Me.Panel1.Controls.Add(Me.pb_map_02)
         Me.Panel1.Controls.Add(Me.pb_map_01)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(12, 281)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(366, 124)
+        Me.Panel1.Size = New System.Drawing.Size(691, 143)
         Me.Panel1.TabIndex = 2
         '
-        'pb_map_01
+        'pb_map_09
         '
-        Me.pb_map_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.pb_map_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pb_map_01.ContextMenuStrip = Me.menu_map
-        Me.pb_map_01.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_01.Location = New System.Drawing.Point(5, 19)
-        Me.pb_map_01.Name = "pb_map_01"
-        Me.pb_map_01.Size = New System.Drawing.Size(70, 100)
-        Me.pb_map_01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pb_map_01.TabIndex = 1
-        Me.pb_map_01.TabStop = False
+        Me.pb_map_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.pb_map_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_09.ContextMenuStrip = Me.menu_map
+        Me.pb_map_09.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_09.Location = New System.Drawing.Point(613, 19)
+        Me.pb_map_09.Name = "pb_map_09"
+        Me.pb_map_09.Size = New System.Drawing.Size(70, 100)
+        Me.pb_map_09.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_09.TabIndex = 9
+        Me.pb_map_09.TabStop = False
         '
         'menu_map
         '
@@ -120,6 +144,110 @@ Partial Class AdminWindow
         Me.SetMapToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
         Me.SetMapToolStripMenuItem.Text = "Set Map"
         '
+        'pb_map_08
+        '
+        Me.pb_map_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.pb_map_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_08.ContextMenuStrip = Me.menu_map
+        Me.pb_map_08.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_08.Location = New System.Drawing.Point(537, 19)
+        Me.pb_map_08.Name = "pb_map_08"
+        Me.pb_map_08.Size = New System.Drawing.Size(70, 100)
+        Me.pb_map_08.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_08.TabIndex = 8
+        Me.pb_map_08.TabStop = False
+        '
+        'pb_map_07
+        '
+        Me.pb_map_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.pb_map_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_07.ContextMenuStrip = Me.menu_map
+        Me.pb_map_07.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_07.Location = New System.Drawing.Point(461, 19)
+        Me.pb_map_07.Name = "pb_map_07"
+        Me.pb_map_07.Size = New System.Drawing.Size(70, 100)
+        Me.pb_map_07.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_07.TabIndex = 7
+        Me.pb_map_07.TabStop = False
+        '
+        'pb_map_06
+        '
+        Me.pb_map_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.pb_map_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_06.ContextMenuStrip = Me.menu_map
+        Me.pb_map_06.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_06.Location = New System.Drawing.Point(385, 19)
+        Me.pb_map_06.Name = "pb_map_06"
+        Me.pb_map_06.Size = New System.Drawing.Size(70, 100)
+        Me.pb_map_06.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_06.TabIndex = 6
+        Me.pb_map_06.TabStop = False
+        '
+        'pb_map_05
+        '
+        Me.pb_map_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.pb_map_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_05.ContextMenuStrip = Me.menu_map
+        Me.pb_map_05.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_05.Location = New System.Drawing.Point(309, 19)
+        Me.pb_map_05.Name = "pb_map_05"
+        Me.pb_map_05.Size = New System.Drawing.Size(70, 100)
+        Me.pb_map_05.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_05.TabIndex = 5
+        Me.pb_map_05.TabStop = False
+        '
+        'pb_map_04
+        '
+        Me.pb_map_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.pb_map_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_04.ContextMenuStrip = Me.menu_map
+        Me.pb_map_04.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_04.Location = New System.Drawing.Point(233, 19)
+        Me.pb_map_04.Name = "pb_map_04"
+        Me.pb_map_04.Size = New System.Drawing.Size(70, 100)
+        Me.pb_map_04.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_04.TabIndex = 4
+        Me.pb_map_04.TabStop = False
+        '
+        'pb_map_03
+        '
+        Me.pb_map_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.pb_map_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_03.ContextMenuStrip = Me.menu_map
+        Me.pb_map_03.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_03.Location = New System.Drawing.Point(157, 19)
+        Me.pb_map_03.Name = "pb_map_03"
+        Me.pb_map_03.Size = New System.Drawing.Size(70, 100)
+        Me.pb_map_03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_03.TabIndex = 3
+        Me.pb_map_03.TabStop = False
+        '
+        'pb_map_02
+        '
+        Me.pb_map_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.pb_map_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_02.ContextMenuStrip = Me.menu_map
+        Me.pb_map_02.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_02.Location = New System.Drawing.Point(81, 19)
+        Me.pb_map_02.Name = "pb_map_02"
+        Me.pb_map_02.Size = New System.Drawing.Size(70, 100)
+        Me.pb_map_02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_02.TabIndex = 2
+        Me.pb_map_02.TabStop = False
+        '
+        'pb_map_01
+        '
+        Me.pb_map_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.pb_map_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_01.ContextMenuStrip = Me.menu_map
+        Me.pb_map_01.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_01.Location = New System.Drawing.Point(5, 19)
+        Me.pb_map_01.Name = "pb_map_01"
+        Me.pb_map_01.Size = New System.Drawing.Size(70, 100)
+        Me.pb_map_01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_01.TabIndex = 1
+        Me.pb_map_01.TabStop = False
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -137,7 +265,7 @@ Partial Class AdminWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(735, 417)
+        Me.ClientSize = New System.Drawing.Size(735, 436)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pic_map)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -147,8 +275,16 @@ Partial Class AdminWindow
         Me.menu_players.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.pb_map_01, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_map_09, System.ComponentModel.ISupportInitialize).EndInit()
         Me.menu_map.ResumeLayout(False)
+        CType(Me.pb_map_08, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_map_07, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_map_06, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_map_05, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_map_04, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_map_03, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_map_02, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_map_01, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -165,4 +301,12 @@ Partial Class AdminWindow
     Friend WithEvents LoadImageToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SetMapToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents dial_open_img As OpenFileDialog
+    Friend WithEvents pb_map_08 As PictureBox
+    Friend WithEvents pb_map_07 As PictureBox
+    Friend WithEvents pb_map_06 As PictureBox
+    Friend WithEvents pb_map_05 As PictureBox
+    Friend WithEvents pb_map_04 As PictureBox
+    Friend WithEvents pb_map_03 As PictureBox
+    Friend WithEvents pb_map_02 As PictureBox
+    Friend WithEvents pb_map_09 As PictureBox
 End Class
