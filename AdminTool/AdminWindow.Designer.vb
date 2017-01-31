@@ -44,6 +44,14 @@ Partial Class AdminWindow
         Me.pb_map_01 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dial_open_img = New System.Windows.Forms.OpenFileDialog()
+        Me.Rotate90ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menu_preview = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ClearMapToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ScaleModeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.pic_map, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menu_players.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -57,12 +65,14 @@ Partial Class AdminWindow
         CType(Me.pb_map_03, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_map_02, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_map_01, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.menu_preview.SuspendLayout()
         Me.SuspendLayout()
         '
         'pic_map
         '
         Me.pic_map.BackColor = System.Drawing.Color.White
         Me.pic_map.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pic_map.ContextMenuStrip = Me.menu_preview
         Me.pic_map.Location = New System.Drawing.Point(0, 0)
         Me.pic_map.Name = "pic_map"
         Me.pic_map.Size = New System.Drawing.Size(624, 275)
@@ -128,9 +138,9 @@ Partial Class AdminWindow
         '
         'menu_map
         '
-        Me.menu_map.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadImageToolStripMenuItem, Me.SetMapToolStripMenuItem})
+        Me.menu_map.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadImageToolStripMenuItem, Me.SetMapToolStripMenuItem, Me.Rotate90ToolStripMenuItem})
         Me.menu_map.Name = "menu_map"
-        Me.menu_map.Size = New System.Drawing.Size(137, 48)
+        Me.menu_map.Size = New System.Drawing.Size(137, 70)
         '
         'LoadImageToolStripMenuItem
         '
@@ -261,6 +271,55 @@ Partial Class AdminWindow
         '
         Me.dial_open_img.Filter = "Bilder |*.png; *.bmp; *.jpg; *.jpeg; *.gif"
         '
+        'Rotate90ToolStripMenuItem
+        '
+        Me.Rotate90ToolStripMenuItem.Name = "Rotate90ToolStripMenuItem"
+        Me.Rotate90ToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
+        Me.Rotate90ToolStripMenuItem.Text = "Rotate 90°"
+        '
+        'menu_preview
+        '
+        Me.menu_preview.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClearMapToolStripMenuItem, Me.ScaleModeToolStripMenuItem})
+        Me.menu_preview.Name = "menu_preview"
+        Me.menu_preview.Size = New System.Drawing.Size(153, 70)
+        '
+        'ClearMapToolStripMenuItem
+        '
+        Me.ClearMapToolStripMenuItem.Name = "ClearMapToolStripMenuItem"
+        Me.ClearMapToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ClearMapToolStripMenuItem.Text = "Clear Map"
+        '
+        'ScaleModeToolStripMenuItem
+        '
+        Me.ScaleModeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.ToolStripMenuItem4, Me.ToolStripMenuItem5})
+        Me.ScaleModeToolStripMenuItem.Name = "ScaleModeToolStripMenuItem"
+        Me.ScaleModeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ScaleModeToolStripMenuItem.Text = "Scale Mode"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem2.Text = "1 : 1"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem3.Text = "1 : 2"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem4.Text = "1 : 4"
+        '
+        'ToolStripMenuItem5
+        '
+        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem5.Text = "1 : 8"
+        '
         'AdminWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -285,6 +344,7 @@ Partial Class AdminWindow
         CType(Me.pb_map_03, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_map_02, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_map_01, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.menu_preview.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -309,4 +369,12 @@ Partial Class AdminWindow
     Friend WithEvents pb_map_03 As PictureBox
     Friend WithEvents pb_map_02 As PictureBox
     Friend WithEvents pb_map_09 As PictureBox
+    Friend WithEvents Rotate90ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents menu_preview As ContextMenuStrip
+    Friend WithEvents ClearMapToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ScaleModeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
 End Class

@@ -181,7 +181,7 @@ Public Class Main
 
 
         player_item.BackColor = Color.White
-        player_item.Visible = True
+        player_item.Visible = False
         player_item.Location = New Point(50, 50)
         player_item.Size = New Size(25, 25)
         player_item.Name = new_player.charID
@@ -198,8 +198,9 @@ Public Class Main
         admin_item.Name = new_player.charID
         admin_item.BorderStyle = BorderStyle.FixedSingle
         admin_item.BackColor = Color.White
+        admin_item.Cursor = Cursors.Cross
         Try
-            AdminWindow.Controls.Add(admin_item)
+        AdminWindow.Controls.Add(admin_item)
         Catch
             admin_item.Name = "failed"
         End Try

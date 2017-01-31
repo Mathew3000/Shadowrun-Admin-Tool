@@ -4,22 +4,27 @@
     Dim mouse_button As String = ""
     Dim mouse_down_sender As New Object
     Dim img_sender As New Object
+    Dim scale_factor As Integer = 2
 
     Private Sub ui_updater_Tick(sender As Object, e As EventArgs) Handles ui_updater.Tick
-        Me.pic_map.Width = (PlayerMap.ex_width - 16) / 2
-        Me.pic_map.Height = (PlayerMap.ex_height - 38) / 2
-        If (Me.Width < PlayerMap.ex_width / 2) Then
-            Me.Width = PlayerMap.ex_width / 2
+        Me.pic_map.Width = (PlayerMap.ex_width - 16) / scale_factor
+        Me.pic_map.Height = (PlayerMap.ex_height - 38) / scale_factor
+        If (Me.Width < PlayerMap.ex_width / scale_factor) Then
+            Me.Width = PlayerMap.ex_width / scale_factor
         End If
-        If (Me.Height < (PlayerMap.ex_height / 2) + 200) Then
-            Me.Height = (PlayerMap.ex_height / 2) + 200
+        If (Me.Height < (PlayerMap.ex_height / scale_factor) + 200) Then
+            Me.Height = (PlayerMap.ex_height / scale_factor) + 200
         End If
         If mouse_down Then
             Dim cursor_pos As Point = Me.PointToClient(Cursor.Position) + (Me.Location - Me.Bounds.Location)
+            Dim tmp_pos As Point = New Point(0, 0)
             mouse_down_sender.Location = cursor_pos - New Point(7, 7)
             PlayerMap.ex_player_command = "move"
             PlayerMap.ex_player_to_update = mouse_down_sender.name
-            PlayerMap.ex_player_pos = cursor_pos - New Point(7, 7)
+            'Scale Movement
+            tmp_pos = cursor_pos - New Point(7, 7)
+            PlayerMap.ex_player_pos.X = tmp_pos.X * scale_factor
+            PlayerMap.ex_player_pos.Y = tmp_pos.Y * scale_factor
         End If
         If Me.Width > 200 Then
             Panel1.Width = Me.Width - 36
@@ -99,4 +104,31 @@
         End If
     End Sub
 
+    Private Sub Rotate90ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Rotate90ToolStripMenuItem.Click
+        Dim tmp_image As Image
+        tmp_image = img_sender.Image
+        tmp_image.RotateFlip(RotateFlipType.Rotate90FlipNone)
+        img_sender.Image = tmp_image
+    End Sub
+
+    Private Sub ClearMapToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearMapToolStripMenuItem.Click
+        pic_map.Image = Nothing
+        PlayerMap.ex_back_img_filename = "CLEAR"
+    End Sub
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        scale_factor = 1
+    End Sub
+
+    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
+        scale_factor = 2
+    End Sub
+
+    Private Sub ToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem4.Click
+        scale_factor = 4
+    End Sub
+
+    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem5.Click
+        scale_factor = 8
+    End Sub
 End Class

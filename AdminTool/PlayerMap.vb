@@ -30,7 +30,7 @@
                     player_object(0).Visible = ex_player_status_update
                     player_object(0).BringToFront()
                 ElseIf ex_player_command = "move" Then
-                    player_object(0).Location = ex_player_pos + ex_player_pos
+                    player_object(0).Location = ex_player_pos
                     player_object(0).BringToFront()
                 End If
                 ex_player_to_update = ""
@@ -41,7 +41,12 @@
         End If
         'Update Background Image
         If (ex_back_img_filename <> "") Then
-            pic_background.Image = Image.FromFile(ex_back_img_filename)
+            If ex_back_img_filename = "CLEAR" Then
+                pic_background.Image = Nothing
+            Else
+                pic_background.Image = Image.FromFile(ex_back_img_filename)
+            End If
+            ex_back_img_filename = ""
         End If
     End Sub
 End Class
