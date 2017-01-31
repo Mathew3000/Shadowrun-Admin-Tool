@@ -13,6 +13,8 @@ Public Class Types
         Public willpower As Integer = 10
         Public intuition As Integer = 10
         Public selfcontrol As Integer = 10
+        Public constitution As Integer = 10
+        Public charisma As Integer = 10
         Public armor As Integer = 10
         Public initiative As Integer = 10
         Public wpn_type As String = "melee"

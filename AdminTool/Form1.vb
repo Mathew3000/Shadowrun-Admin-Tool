@@ -101,6 +101,7 @@ Public Class Main
     End Sub
 
     Private Sub selected_changed(sender As Object, e As EventArgs) Handles rd_en_1.CheckedChanged, rd_en_2.CheckedChanged, rd_en_3.CheckedChanged, rd_en_4.CheckedChanged, rd_en_5.CheckedChanged, rd_en_6.CheckedChanged, rd_en_7.CheckedChanged, rd_en_8.CheckedChanged, rd_en_9.CheckedChanged, rd_en_10.CheckedChanged, rd_en_11.CheckedChanged, rd_en_12.CheckedChanged, rd_en_13.CheckedChanged, rd_en_14.CheckedChanged, rd_en_15.CheckedChanged
+        Dim enemy As character = New character
         If rd_en_1.Checked = True Then
             selected_enemy = 1
         ElseIf rd_en_2.Checked = True Then
@@ -132,13 +133,20 @@ Public Class Main
         ElseIf rd_en_15.Checked = True Then
             selected_enemy = 15
         End If
+        enemy = enemys(selected_enemy)
 
-        lb_en_init.Text = enemys(selected_enemy).initiative
-        lb_en_name.Text = enemys(selected_enemy).name
-        lb_en_self.Text = enemys(selected_enemy).selfcontrol
-        lb_en_skill.Text = enemys(selected_enemy).skill
-        lb_en_str.Text = enemys(selected_enemy).strength
-        lb_en_will.Text = enemys(selected_enemy).willpower
+        txt_en_init.Text = enemy.initiative
+        txt_en_name.Text = enemy.name
+        txt_en_self.Text = enemy.selfcontrol
+        txt_en_skill.Text = enemy.skill
+        txt_en_str.Text = enemy.strength
+        txt_en_will.Text = enemy.willpower
+        cb_en_status.Text = enemy.status
+        txt_en_hp.Text = enemy.hp
+        txt_en_hp_max.Text = enemy.max_hp
+        txt_en_const.Text = enemy.constitution
+        txt_en_rea.Text = enemy.reaction
+        txt_en_intu.Text = enemy.intuition
 
     End Sub
 
