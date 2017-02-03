@@ -4,6 +4,7 @@
     Public Shared ex_height As Integer = 100
 
     Public Shared ex_back_img_filename As String = ""
+    Public Shared ex_back_img As Image
 
     Public Shared ex_player_to_update As String = ""
     Public Shared ex_player_command As String = ""
@@ -44,7 +45,10 @@
             If ex_back_img_filename = "CLEAR" Then
                 pic_background.Image = Nothing
             Else
-                pic_background.Image = Image.FromFile(ex_back_img_filename)
+                'pic_background.Image = Image.FromFile(ex_back_img_filename)
+                If Not ex_back_img.Equals(Nothing) Then
+                    pic_background.Image = ex_back_img
+                End If
             End If
             ex_back_img_filename = ""
         End If

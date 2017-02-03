@@ -71,10 +71,20 @@ Public Class Main
             enemys(i).intuition = intuition_set(difficulty) + randomval(0, rnd)
             'Set SelfControl according to Difficulty
             enemys(i).selfcontrol = selfcontrol_set(difficulty) + randomval(0, rnd)
+            'Set Charisma according to Difficulty
+            enemys(i).charisma = charisma_set(difficulty) + randomval(0, rnd)
+            'Set Constitution according to Difficulty
+            enemys(i).constitution = constitution_set(difficulty) + randomval(0, rnd)
+            'Calculate HP
+            enemys(i).max_hp = 8 + Math.Ceiling(enemys(i).constitution / 2)
+            enemys(i).hp = enemys(i).max_hp
+            'Calculate Psychic Strength
+            enemys(i).psychic_max = 8 + Math.Ceiling(enemys(i).willpower / 2)
+            enemys(i).psychic = enemys(i).psychic_max
             'Calculate Initiative
             enemys(i).initiative = enemys(i).intuition + enemys(i).intuition + randomval(0, rnd)
 
-
+            matches(0).Text = enemys(i).name & " ( " & enemys(i).hp & " | " & enemys(i).max_hp & " ) "
         Next
         For i As Integer = Int(input) To 14
             If input < 15 Then
@@ -147,6 +157,9 @@ Public Class Main
         txt_en_const.Text = enemy.constitution
         txt_en_rea.Text = enemy.reaction
         txt_en_intu.Text = enemy.intuition
+        txt_en_char.Text = enemy.charisma
+        txt_en_psychic.Text = enemy.psychic
+        txt_en_psychic_max.Text = enemy.psychic_max
 
     End Sub
 
@@ -349,5 +362,65 @@ Public Class Main
         Else
             AdminWindow.Close()
         End If
+    End Sub
+
+    'Changed the enemys name
+    Private Sub enemy_info_changed(sender As Object, e As EventArgs) Handles txt_en_name.TextChanged, cb_en_status.TextChanged, txt_en_hp.TextChanged, txt_en_hp_max.TextChanged, txt_en_psychic.TextChanged, txt_en_psychic_max.TextChanged, txt_en_init.TextChanged, txt_en_skill.TextChanged, txt_en_str.TextChanged, txt_en_will.TextChanged, txt_en_self.TextChanged, txt_en_const.TextChanged, txt_en_char.TextChanged, txt_en_rea.TextChanged, txt_en_intu.TextChanged
+        Dim sender_name As String
+        Dim enemy As character = New character
+        Try
+            sender_name = sender.Name
+            enemy = enemys(selected_enemy)
+        Catch
+            Return
+        End Try
+        Try
+            Select Case sender_name
+                Case "txt_en_name"
+                    enemy.name = sender.Text
+                Case "cb_en_status"
+                    enemy.status = sender.Text
+                Case "txt_en_hp"
+                    enemy.hp = sender.Text
+                Case "txt_en_hp_max"
+                    enemy.max_hp = sender.Text
+                Case "txt_en_psychic"
+                    enemy.psychic = sender.Text
+                Case "txt_en_psychic_max"
+                    enemy.psychic_max = sender.Text
+                Case "txt_en_init"
+                    enemy.initiative = sender.Text
+                Case "txt_en_skill"
+                    enemy.skill = sender.Text
+                Case "txt_en_str"
+                    enemy.strength = sender.Text
+                Case "txt_en_will"
+                    enemy.willpower = sender.Text
+                Case "txt_en_self"
+                    enemy.selfcontrol = sender.Text
+                Case "txt_en_const"
+                    enemy.constitution = sender.Text
+                Case "txt_en_char"
+                    enemy.charisma = sender.Text
+                Case "txt_en_rea"
+                    enemy.reaction = sender.Text
+                Case "txt_en_intu"
+                    enemy.intuition = sender.Text
+                Case Else
+                    MsgBox("How did you do that?", MessageBoxButtons.OK, "WTF?!")
+            End Select
+            update_en_list()
+        Catch
+            Return
+        End Try
+    End Sub
+
+    'Update enemy List
+    Public Sub update_en_list()
+        Dim nmy As character = New character
+        Dim matches() As Control
+        nmy = enemys(selected_enemy)
+        matches = Me.Controls.Find("rd_en_" & selected_enemy, True)
+        matches(0).Text = nmy.name & " ( " & nmy.hp & " | " & nmy.max_hp & " ) "
     End Sub
 End Class

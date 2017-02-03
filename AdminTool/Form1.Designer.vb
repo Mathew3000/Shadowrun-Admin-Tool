@@ -43,6 +43,28 @@ Partial Class Main
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tab_enemy = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txt_en_psychic_max = New System.Windows.Forms.TextBox()
+        Me.txt_en_psychic = New System.Windows.Forms.TextBox()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.txt_en_intu = New System.Windows.Forms.TextBox()
+        Me.txt_en_rea = New System.Windows.Forms.TextBox()
+        Me.cb_en_status = New System.Windows.Forms.ComboBox()
+        Me.txt_en_hp_max = New System.Windows.Forms.TextBox()
+        Me.txt_en_hp = New System.Windows.Forms.TextBox()
+        Me.txt_en_char = New System.Windows.Forms.TextBox()
+        Me.txt_en_const = New System.Windows.Forms.TextBox()
+        Me.txt_en_self = New System.Windows.Forms.TextBox()
+        Me.txt_en_will = New System.Windows.Forms.TextBox()
+        Me.txt_en_str = New System.Windows.Forms.TextBox()
+        Me.txt_en_init = New System.Windows.Forms.TextBox()
+        Me.txt_en_skill = New System.Windows.Forms.TextBox()
+        Me.txt_en_name = New System.Windows.Forms.TextBox()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -60,17 +82,19 @@ Partial Class Main
         Me.cb_weapon_type = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.tab_player = New System.Windows.Forms.TabPage()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.pan_colour = New System.Windows.Forms.Panel()
+        Me.txt_initiative = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.txt_charname = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txt_playername = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.list_player = New System.Windows.Forms.ListBox()
         Me.bt_del_char = New System.Windows.Forms.Button()
         Me.bt_add_char = New System.Windows.Forms.Button()
-        Me.txt_initiative = New System.Windows.Forms.TextBox()
-        Me.txt_charname = New System.Windows.Forms.TextBox()
-        Me.txt_playername = New System.Windows.Forms.TextBox()
-        Me.pan_colour = New System.Windows.Forms.Panel()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.list_player = New System.Windows.Forms.ListBox()
         Me.tab_dice = New System.Windows.Forms.TabPage()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.list_count_w_20 = New System.Windows.Forms.ListBox()
@@ -91,39 +115,18 @@ Partial Class Main
         Me.FensterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SpielerKarteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdminKarteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.txt_en_name = New System.Windows.Forms.TextBox()
-        Me.txt_en_skill = New System.Windows.Forms.TextBox()
-        Me.txt_en_init = New System.Windows.Forms.TextBox()
-        Me.txt_en_str = New System.Windows.Forms.TextBox()
-        Me.txt_en_will = New System.Windows.Forms.TextBox()
-        Me.txt_en_self = New System.Windows.Forms.TextBox()
-        Me.txt_en_const = New System.Windows.Forms.TextBox()
-        Me.txt_en_char = New System.Windows.Forms.TextBox()
-        Me.txt_en_hp = New System.Windows.Forms.TextBox()
-        Me.txt_en_hp_max = New System.Windows.Forms.TextBox()
-        Me.cb_en_status = New System.Windows.Forms.ComboBox()
-        Me.txt_en_rea = New System.Windows.Forms.TextBox()
-        Me.txt_en_intu = New System.Windows.Forms.TextBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.tab_enemy.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.tab_player.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.tab_dice.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.menu_main.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'rd_en_1
@@ -158,7 +161,7 @@ Partial Class Main
         Me.Panel1.Controls.Add(Me.rd_en_1)
         Me.Panel1.Location = New System.Drawing.Point(6, 6)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(200, 349)
+        Me.Panel1.Size = New System.Drawing.Size(200, 384)
         Me.Panel1.TabIndex = 1
         '
         'rd_en_15
@@ -332,7 +335,7 @@ Partial Class Main
         Me.TabControl1.Location = New System.Drawing.Point(12, 27)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(615, 387)
+        Me.TabControl1.Size = New System.Drawing.Size(615, 422)
         Me.TabControl1.TabIndex = 4
         '
         'tab_enemy
@@ -345,13 +348,16 @@ Partial Class Main
         Me.tab_enemy.Location = New System.Drawing.Point(4, 22)
         Me.tab_enemy.Name = "tab_enemy"
         Me.tab_enemy.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_enemy.Size = New System.Drawing.Size(607, 361)
+        Me.tab_enemy.Size = New System.Drawing.Size(607, 396)
         Me.tab_enemy.TabIndex = 0
         Me.tab_enemy.Text = "Gegner"
         Me.tab_enemy.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.txt_en_psychic_max)
+        Me.GroupBox2.Controls.Add(Me.txt_en_psychic)
+        Me.GroupBox2.Controls.Add(Me.Label25)
         Me.GroupBox2.Controls.Add(Me.txt_en_intu)
         Me.GroupBox2.Controls.Add(Me.txt_en_rea)
         Me.GroupBox2.Controls.Add(Me.cb_en_status)
@@ -379,15 +385,200 @@ Partial Class Main
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Location = New System.Drawing.Point(356, 6)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(245, 349)
+        Me.GroupBox2.Size = New System.Drawing.Size(245, 384)
         Me.GroupBox2.TabIndex = 11
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Gewählter Gegner"
         '
+        'txt_en_psychic_max
+        '
+        Me.txt_en_psychic_max.Location = New System.Drawing.Point(187, 92)
+        Me.txt_en_psychic_max.Name = "txt_en_psychic_max"
+        Me.txt_en_psychic_max.Size = New System.Drawing.Size(52, 20)
+        Me.txt_en_psychic_max.TabIndex = 33
+        Me.txt_en_psychic_max.Text = "<max>"
+        '
+        'txt_en_psychic
+        '
+        Me.txt_en_psychic.Location = New System.Drawing.Point(133, 92)
+        Me.txt_en_psychic.Name = "txt_en_psychic"
+        Me.txt_en_psychic.Size = New System.Drawing.Size(48, 20)
+        Me.txt_en_psychic.TabIndex = 32
+        Me.txt_en_psychic.Text = "<Geistig>"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(7, 95)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(72, 13)
+        Me.Label25.TabIndex = 31
+        Me.Label25.Text = "Geistig / max:"
+        '
+        'txt_en_intu
+        '
+        Me.txt_en_intu.Location = New System.Drawing.Point(133, 326)
+        Me.txt_en_intu.Name = "txt_en_intu"
+        Me.txt_en_intu.Size = New System.Drawing.Size(106, 20)
+        Me.txt_en_intu.TabIndex = 30
+        Me.txt_en_intu.Text = "<Intuition>"
+        '
+        'txt_en_rea
+        '
+        Me.txt_en_rea.Location = New System.Drawing.Point(133, 300)
+        Me.txt_en_rea.Name = "txt_en_rea"
+        Me.txt_en_rea.Size = New System.Drawing.Size(106, 20)
+        Me.txt_en_rea.TabIndex = 29
+        Me.txt_en_rea.Text = "<Reaktion>"
+        '
+        'cb_en_status
+        '
+        Me.cb_en_status.FormattingEnabled = True
+        Me.cb_en_status.Items.AddRange(New Object() {"Lebendig", "Tod", "HalbTod", "Verwundet", "Sterbend", "Stabilisiert"})
+        Me.cb_en_status.Location = New System.Drawing.Point(133, 39)
+        Me.cb_en_status.Name = "cb_en_status"
+        Me.cb_en_status.Size = New System.Drawing.Size(106, 21)
+        Me.cb_en_status.TabIndex = 28
+        Me.cb_en_status.Text = "Lebendig"
+        '
+        'txt_en_hp_max
+        '
+        Me.txt_en_hp_max.Location = New System.Drawing.Point(187, 66)
+        Me.txt_en_hp_max.Name = "txt_en_hp_max"
+        Me.txt_en_hp_max.Size = New System.Drawing.Size(52, 20)
+        Me.txt_en_hp_max.TabIndex = 27
+        Me.txt_en_hp_max.Text = "<max>"
+        '
+        'txt_en_hp
+        '
+        Me.txt_en_hp.Location = New System.Drawing.Point(133, 66)
+        Me.txt_en_hp.Name = "txt_en_hp"
+        Me.txt_en_hp.Size = New System.Drawing.Size(48, 20)
+        Me.txt_en_hp.TabIndex = 26
+        Me.txt_en_hp.Text = "<HP>"
+        '
+        'txt_en_char
+        '
+        Me.txt_en_char.Location = New System.Drawing.Point(133, 274)
+        Me.txt_en_char.Name = "txt_en_char"
+        Me.txt_en_char.Size = New System.Drawing.Size(106, 20)
+        Me.txt_en_char.TabIndex = 25
+        Me.txt_en_char.Text = "<Charisma>"
+        '
+        'txt_en_const
+        '
+        Me.txt_en_const.Location = New System.Drawing.Point(133, 248)
+        Me.txt_en_const.Name = "txt_en_const"
+        Me.txt_en_const.Size = New System.Drawing.Size(106, 20)
+        Me.txt_en_const.TabIndex = 24
+        Me.txt_en_const.Text = "<Konstitution>"
+        '
+        'txt_en_self
+        '
+        Me.txt_en_self.Location = New System.Drawing.Point(133, 222)
+        Me.txt_en_self.Name = "txt_en_self"
+        Me.txt_en_self.Size = New System.Drawing.Size(106, 20)
+        Me.txt_en_self.TabIndex = 23
+        Me.txt_en_self.Text = "<Selbstbeherrschung>"
+        '
+        'txt_en_will
+        '
+        Me.txt_en_will.Location = New System.Drawing.Point(133, 196)
+        Me.txt_en_will.Name = "txt_en_will"
+        Me.txt_en_will.Size = New System.Drawing.Size(106, 20)
+        Me.txt_en_will.TabIndex = 22
+        Me.txt_en_will.Text = "<Willenskraft>"
+        '
+        'txt_en_str
+        '
+        Me.txt_en_str.Location = New System.Drawing.Point(133, 170)
+        Me.txt_en_str.Name = "txt_en_str"
+        Me.txt_en_str.Size = New System.Drawing.Size(106, 20)
+        Me.txt_en_str.TabIndex = 21
+        Me.txt_en_str.Text = "<Stärke>"
+        '
+        'txt_en_init
+        '
+        Me.txt_en_init.Location = New System.Drawing.Point(133, 118)
+        Me.txt_en_init.Name = "txt_en_init"
+        Me.txt_en_init.Size = New System.Drawing.Size(106, 20)
+        Me.txt_en_init.TabIndex = 20
+        Me.txt_en_init.Text = "<Initiative>"
+        '
+        'txt_en_skill
+        '
+        Me.txt_en_skill.Location = New System.Drawing.Point(133, 144)
+        Me.txt_en_skill.Name = "txt_en_skill"
+        Me.txt_en_skill.Size = New System.Drawing.Size(106, 20)
+        Me.txt_en_skill.TabIndex = 19
+        Me.txt_en_skill.Text = "<Geschicklichkeit>"
+        '
+        'txt_en_name
+        '
+        Me.txt_en_name.Location = New System.Drawing.Point(133, 13)
+        Me.txt_en_name.Name = "txt_en_name"
+        Me.txt_en_name.Size = New System.Drawing.Size(106, 20)
+        Me.txt_en_name.TabIndex = 18
+        Me.txt_en_name.Text = "<Name>"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(7, 329)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(47, 13)
+        Me.Label24.TabIndex = 17
+        Me.Label24.Text = "Intuition:"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(7, 303)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(53, 13)
+        Me.Label23.TabIndex = 16
+        Me.Label23.Text = "Reaktion:"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(7, 69)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(55, 13)
+        Me.Label22.TabIndex = 15
+        Me.Label22.Text = "HP / max:"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(7, 42)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(40, 13)
+        Me.Label21.TabIndex = 14
+        Me.Label21.Text = "Status:"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(7, 277)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(53, 13)
+        Me.Label20.TabIndex = 13
+        Me.Label20.Text = "Charisma:"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(7, 251)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(65, 13)
+        Me.Label19.TabIndex = 12
+        Me.Label19.Text = "Konstitution:"
+        '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(7, 199)
+        Me.Label15.Location = New System.Drawing.Point(7, 225)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(104, 13)
         Me.Label15.TabIndex = 10
@@ -396,7 +587,7 @@ Partial Class Main
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(7, 173)
+        Me.Label13.Location = New System.Drawing.Point(7, 199)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(65, 13)
         Me.Label13.TabIndex = 8
@@ -405,7 +596,7 @@ Partial Class Main
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(7, 147)
+        Me.Label11.Location = New System.Drawing.Point(7, 173)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(41, 13)
         Me.Label11.TabIndex = 6
@@ -414,7 +605,7 @@ Partial Class Main
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(7, 95)
+        Me.Label9.Location = New System.Drawing.Point(7, 121)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(49, 13)
         Me.Label9.TabIndex = 4
@@ -423,7 +614,7 @@ Partial Class Main
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(7, 121)
+        Me.Label7.Location = New System.Drawing.Point(7, 147)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(88, 13)
         Me.Label7.TabIndex = 2
@@ -547,10 +738,112 @@ Partial Class Main
         Me.tab_player.Location = New System.Drawing.Point(4, 22)
         Me.tab_player.Name = "tab_player"
         Me.tab_player.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_player.Size = New System.Drawing.Size(607, 361)
+        Me.tab_player.Size = New System.Drawing.Size(607, 396)
         Me.tab_player.TabIndex = 1
         Me.tab_player.Text = "Spieler"
         Me.tab_player.UseVisualStyleBackColor = True
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.pan_colour)
+        Me.GroupBox4.Controls.Add(Me.txt_initiative)
+        Me.GroupBox4.Controls.Add(Me.Label10)
+        Me.GroupBox4.Controls.Add(Me.Label12)
+        Me.GroupBox4.Controls.Add(Me.txt_charname)
+        Me.GroupBox4.Controls.Add(Me.Label8)
+        Me.GroupBox4.Controls.Add(Me.txt_playername)
+        Me.GroupBox4.Controls.Add(Me.Label6)
+        Me.GroupBox4.Location = New System.Drawing.Point(185, 6)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(200, 193)
+        Me.GroupBox4.TabIndex = 11
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Gewählter Spieler"
+        '
+        'pan_colour
+        '
+        Me.pan_colour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pan_colour.Location = New System.Drawing.Point(94, 68)
+        Me.pan_colour.Name = "pan_colour"
+        Me.pan_colour.Size = New System.Drawing.Size(100, 20)
+        Me.pan_colour.TabIndex = 7
+        '
+        'txt_initiative
+        '
+        Me.txt_initiative.Location = New System.Drawing.Point(94, 144)
+        Me.txt_initiative.Name = "txt_initiative"
+        Me.txt_initiative.Size = New System.Drawing.Size(100, 20)
+        Me.txt_initiative.TabIndex = 10
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(6, 147)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(49, 13)
+        Me.Label10.TabIndex = 2
+        Me.Label10.Text = "Initiative:"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(6, 71)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(37, 13)
+        Me.Label12.TabIndex = 3
+        Me.Label12.Text = "Farbe:"
+        '
+        'txt_charname
+        '
+        Me.txt_charname.Location = New System.Drawing.Point(94, 42)
+        Me.txt_charname.Name = "txt_charname"
+        Me.txt_charname.Size = New System.Drawing.Size(100, 20)
+        Me.txt_charname.TabIndex = 9
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(6, 45)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(56, 13)
+        Me.Label8.TabIndex = 1
+        Me.Label8.Text = "Character:"
+        '
+        'txt_playername
+        '
+        Me.txt_playername.Location = New System.Drawing.Point(94, 16)
+        Me.txt_playername.Name = "txt_playername"
+        Me.txt_playername.Size = New System.Drawing.Size(100, 20)
+        Me.txt_playername.TabIndex = 8
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 19)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(68, 13)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Spielername:"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.list_player)
+        Me.GroupBox3.Controls.Add(Me.bt_del_char)
+        Me.GroupBox3.Controls.Add(Me.bt_add_char)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 6)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(173, 193)
+        Me.GroupBox3.TabIndex = 4
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Spieler"
+        '
+        'list_player
+        '
+        Me.list_player.FormattingEnabled = True
+        Me.list_player.Location = New System.Drawing.Point(6, 19)
+        Me.list_player.Name = "list_player"
+        Me.list_player.Size = New System.Drawing.Size(159, 134)
+        Me.list_player.TabIndex = 0
         '
         'bt_del_char
         '
@@ -570,86 +863,13 @@ Partial Class Main
         Me.bt_add_char.Text = "Add Player"
         Me.bt_add_char.UseVisualStyleBackColor = True
         '
-        'txt_initiative
-        '
-        Me.txt_initiative.Location = New System.Drawing.Point(94, 144)
-        Me.txt_initiative.Name = "txt_initiative"
-        Me.txt_initiative.Size = New System.Drawing.Size(100, 20)
-        Me.txt_initiative.TabIndex = 10
-        '
-        'txt_charname
-        '
-        Me.txt_charname.Location = New System.Drawing.Point(94, 42)
-        Me.txt_charname.Name = "txt_charname"
-        Me.txt_charname.Size = New System.Drawing.Size(100, 20)
-        Me.txt_charname.TabIndex = 9
-        '
-        'txt_playername
-        '
-        Me.txt_playername.Location = New System.Drawing.Point(94, 16)
-        Me.txt_playername.Name = "txt_playername"
-        Me.txt_playername.Size = New System.Drawing.Size(100, 20)
-        Me.txt_playername.TabIndex = 8
-        '
-        'pan_colour
-        '
-        Me.pan_colour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pan_colour.Location = New System.Drawing.Point(94, 68)
-        Me.pan_colour.Name = "pan_colour"
-        Me.pan_colour.Size = New System.Drawing.Size(100, 20)
-        Me.pan_colour.TabIndex = 7
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(6, 71)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(37, 13)
-        Me.Label12.TabIndex = 3
-        Me.Label12.Text = "Farbe:"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(6, 147)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(49, 13)
-        Me.Label10.TabIndex = 2
-        Me.Label10.Text = "Initiative:"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(6, 45)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(56, 13)
-        Me.Label8.TabIndex = 1
-        Me.Label8.Text = "Character:"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 19)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(68, 13)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Spielername:"
-        '
-        'list_player
-        '
-        Me.list_player.FormattingEnabled = True
-        Me.list_player.Location = New System.Drawing.Point(6, 19)
-        Me.list_player.Name = "list_player"
-        Me.list_player.Size = New System.Drawing.Size(159, 134)
-        Me.list_player.TabIndex = 0
-        '
         'tab_dice
         '
         Me.tab_dice.Controls.Add(Me.Panel3)
         Me.tab_dice.Controls.Add(Me.Panel2)
         Me.tab_dice.Location = New System.Drawing.Point(4, 22)
         Me.tab_dice.Name = "tab_dice"
-        Me.tab_dice.Size = New System.Drawing.Size(607, 361)
+        Me.tab_dice.Size = New System.Drawing.Size(607, 396)
         Me.tab_dice.TabIndex = 2
         Me.tab_dice.Text = "Würfel"
         Me.tab_dice.UseVisualStyleBackColor = True
@@ -812,200 +1032,11 @@ Partial Class Main
         Me.AdminKarteToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
         Me.AdminKarteToolStripMenuItem.Text = "Admin Karte"
         '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(7, 225)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(65, 13)
-        Me.Label19.TabIndex = 12
-        Me.Label19.Text = "Konstitution:"
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(7, 251)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(53, 13)
-        Me.Label20.TabIndex = 13
-        Me.Label20.Text = "Charisma:"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(7, 42)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(40, 13)
-        Me.Label21.TabIndex = 14
-        Me.Label21.Text = "Status:"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(7, 69)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(55, 13)
-        Me.Label22.TabIndex = 15
-        Me.Label22.Text = "HP / max:"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(7, 277)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(53, 13)
-        Me.Label23.TabIndex = 16
-        Me.Label23.Text = "Reaktion:"
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(7, 303)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(47, 13)
-        Me.Label24.TabIndex = 17
-        Me.Label24.Text = "Intuition:"
-        '
-        'txt_en_name
-        '
-        Me.txt_en_name.Location = New System.Drawing.Point(133, 13)
-        Me.txt_en_name.Name = "txt_en_name"
-        Me.txt_en_name.Size = New System.Drawing.Size(106, 20)
-        Me.txt_en_name.TabIndex = 18
-        Me.txt_en_name.Text = "<Name>"
-        '
-        'txt_en_skill
-        '
-        Me.txt_en_skill.Location = New System.Drawing.Point(133, 118)
-        Me.txt_en_skill.Name = "txt_en_skill"
-        Me.txt_en_skill.Size = New System.Drawing.Size(106, 20)
-        Me.txt_en_skill.TabIndex = 19
-        Me.txt_en_skill.Text = "<Geschicklichkeit>"
-        '
-        'txt_en_init
-        '
-        Me.txt_en_init.Location = New System.Drawing.Point(133, 92)
-        Me.txt_en_init.Name = "txt_en_init"
-        Me.txt_en_init.Size = New System.Drawing.Size(106, 20)
-        Me.txt_en_init.TabIndex = 20
-        Me.txt_en_init.Text = "<Initiative>"
-        '
-        'txt_en_str
-        '
-        Me.txt_en_str.Location = New System.Drawing.Point(133, 144)
-        Me.txt_en_str.Name = "txt_en_str"
-        Me.txt_en_str.Size = New System.Drawing.Size(106, 20)
-        Me.txt_en_str.TabIndex = 21
-        Me.txt_en_str.Text = "<Stärke>"
-        '
-        'txt_en_will
-        '
-        Me.txt_en_will.Location = New System.Drawing.Point(133, 170)
-        Me.txt_en_will.Name = "txt_en_will"
-        Me.txt_en_will.Size = New System.Drawing.Size(106, 20)
-        Me.txt_en_will.TabIndex = 22
-        Me.txt_en_will.Text = "<Willenskraft>"
-        '
-        'txt_en_self
-        '
-        Me.txt_en_self.Location = New System.Drawing.Point(133, 196)
-        Me.txt_en_self.Name = "txt_en_self"
-        Me.txt_en_self.Size = New System.Drawing.Size(106, 20)
-        Me.txt_en_self.TabIndex = 23
-        Me.txt_en_self.Text = "<Selbstbeherrschung>"
-        '
-        'txt_en_const
-        '
-        Me.txt_en_const.Location = New System.Drawing.Point(133, 222)
-        Me.txt_en_const.Name = "txt_en_const"
-        Me.txt_en_const.Size = New System.Drawing.Size(106, 20)
-        Me.txt_en_const.TabIndex = 24
-        Me.txt_en_const.Text = "<Konstitution>"
-        '
-        'txt_en_char
-        '
-        Me.txt_en_char.Location = New System.Drawing.Point(133, 248)
-        Me.txt_en_char.Name = "txt_en_char"
-        Me.txt_en_char.Size = New System.Drawing.Size(106, 20)
-        Me.txt_en_char.TabIndex = 25
-        Me.txt_en_char.Text = "<Charisma>"
-        '
-        'txt_en_hp
-        '
-        Me.txt_en_hp.Location = New System.Drawing.Point(133, 66)
-        Me.txt_en_hp.Name = "txt_en_hp"
-        Me.txt_en_hp.Size = New System.Drawing.Size(48, 20)
-        Me.txt_en_hp.TabIndex = 26
-        Me.txt_en_hp.Text = "<HP>"
-        '
-        'txt_en_hp_max
-        '
-        Me.txt_en_hp_max.Location = New System.Drawing.Point(187, 66)
-        Me.txt_en_hp_max.Name = "txt_en_hp_max"
-        Me.txt_en_hp_max.Size = New System.Drawing.Size(52, 20)
-        Me.txt_en_hp_max.TabIndex = 27
-        Me.txt_en_hp_max.Text = "<max>"
-        '
-        'cb_en_status
-        '
-        Me.cb_en_status.FormattingEnabled = True
-        Me.cb_en_status.Items.AddRange(New Object() {"Lebendig", "Tod", "HalbTod", "Verwundet", "Sterbend", "Stabilisiert"})
-        Me.cb_en_status.Location = New System.Drawing.Point(133, 39)
-        Me.cb_en_status.Name = "cb_en_status"
-        Me.cb_en_status.Size = New System.Drawing.Size(106, 21)
-        Me.cb_en_status.TabIndex = 28
-        Me.cb_en_status.Text = "Lebendig"
-        '
-        'txt_en_rea
-        '
-        Me.txt_en_rea.Location = New System.Drawing.Point(133, 274)
-        Me.txt_en_rea.Name = "txt_en_rea"
-        Me.txt_en_rea.Size = New System.Drawing.Size(106, 20)
-        Me.txt_en_rea.TabIndex = 29
-        Me.txt_en_rea.Text = "<Reaktion>"
-        '
-        'txt_en_intu
-        '
-        Me.txt_en_intu.Location = New System.Drawing.Point(133, 300)
-        Me.txt_en_intu.Name = "txt_en_intu"
-        Me.txt_en_intu.Size = New System.Drawing.Size(106, 20)
-        Me.txt_en_intu.TabIndex = 30
-        Me.txt_en_intu.Text = "<Intuition>"
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.list_player)
-        Me.GroupBox3.Controls.Add(Me.bt_del_char)
-        Me.GroupBox3.Controls.Add(Me.bt_add_char)
-        Me.GroupBox3.Location = New System.Drawing.Point(6, 6)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(173, 193)
-        Me.GroupBox3.TabIndex = 4
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Spieler"
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.pan_colour)
-        Me.GroupBox4.Controls.Add(Me.txt_initiative)
-        Me.GroupBox4.Controls.Add(Me.Label10)
-        Me.GroupBox4.Controls.Add(Me.Label12)
-        Me.GroupBox4.Controls.Add(Me.txt_charname)
-        Me.GroupBox4.Controls.Add(Me.Label8)
-        Me.GroupBox4.Controls.Add(Me.txt_playername)
-        Me.GroupBox4.Controls.Add(Me.Label6)
-        Me.GroupBox4.Location = New System.Drawing.Point(185, 6)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(200, 193)
-        Me.GroupBox4.TabIndex = 11
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Gewählter Spieler"
-        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(639, 426)
+        Me.ClientSize = New System.Drawing.Size(639, 461)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.menu_main)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -1021,6 +1052,9 @@ Partial Class Main
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.tab_player.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
         Me.tab_dice.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
@@ -1028,9 +1062,6 @@ Partial Class Main
         Me.Panel2.PerformLayout()
         Me.menu_main.ResumeLayout(False)
         Me.menu_main.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1124,4 +1155,7 @@ Partial Class Main
     Friend WithEvents txt_en_skill As TextBox
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents txt_en_psychic_max As TextBox
+    Friend WithEvents txt_en_psychic As TextBox
+    Friend WithEvents Label25 As Label
 End Class

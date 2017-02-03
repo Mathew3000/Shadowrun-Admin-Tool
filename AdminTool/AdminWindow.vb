@@ -97,6 +97,7 @@
                 Try
                     pic_map.Image = img_sender.Image
                     PlayerMap.ex_back_img_filename = img_sender.ImageLocation
+                    PlayerMap.ex_back_img = img_sender.image
                 Catch
                     MsgBox("Could not set image!", MessageBoxButtons.OK, "Error!")
                 End Try

@@ -16,9 +16,11 @@ Public Class Datasets
     Public Shared skill_set() As Integer = {0, 0, 1, 2, 3, 5, 4, 6, 16}
     Public Shared reaction_set() As Integer = {0, 1, 1, 2, 3, 5, 4, 6, 16}
     Public Shared strength_set() As Integer = {0, 1, 1, 2, 3, 6, 4, 6, 20}
-    Public Shared willpower_set() As Integer = {0, 0, 1, 2, 3, 6, 4, 6, 16}
+    Public Shared willpower_set() As Integer = {99, 99, 1, 2, 3, 6, 4, 6, 16}
     Public Shared intuition_set() As Integer = {0, 0, 1, 2, 3, 5, 4, 6, 16}
+    Public Shared constitution_set() As Integer = {4, 8, 1, 2, 3, 4, 5, 6, 20}
     Public Shared selfcontrol_set() As Integer = {99, 99, 3, 4, 5, 7, 5, 8, 16}
+    Public Shared charisma_set() As Integer = {0, 0, 1, 2, 3, 4, 5, 6, 4}
     Public Shared random_modifier_set() As Integer = {1, 1, 2, 2, 3, 3, 4, 4, 5}
 
     'Weapons

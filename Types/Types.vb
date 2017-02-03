@@ -6,6 +6,8 @@ Public Class Types
         Public name As String = "<default>"
         Public status As String = "alive"
         Public hp As Integer = 100
+        Public psychic As Integer = 100
+        Public psychic_max As Integer = 100
         Public max_hp As Integer = 100
         Public skill As Integer = 10
         Public reaction As Integer = 10
