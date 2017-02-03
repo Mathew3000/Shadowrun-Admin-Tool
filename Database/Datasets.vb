@@ -6,8 +6,8 @@ Public Class Datasets
     Public Shared italy_f() As String = {"Sofia", "Giulia", "Aurora", "Giorgia", "Martina", "Emma", "Greta", "Chiara", "Sara", "Alice", "Gaia", "Anna", "Francesca", "Ginevra", "Noemi", "Alessia", "Matilde", "Vittoria", "Beatrice", "Nicole", "Giada", "Elisa", "Rebecca", "Arianna", "Mia", "Camilla", "Ludovica", "Maria"}
     Public Shared germany_m() As String = {"Klaus", "Hermann", "Daniel", "Tim", "Lukas", "Lasse", "Nils", "Paul", "Oliver", "Alexander", "Gunnar", "Jan", "Thomas", "Elias", "Sven", "Aaron", "Karl", "Uwe", "Martin", "Jens", "Hannes", "Max", "Sebastian", "Simon", "Peter", "Frank", "Sebastian", "Malte", "Jasper", "Lennard"}
     Public Shared germany_f() As String = {"Michaela", "Carolin", "Emma", "Christina", "Linda", "Dana", "Mia", "Eva", "Ida", "Julia", "Katharina", "Lana", "Daniela", "Anne", "Stella", "Inge", "Saskia", "Marion", "Helga", "Heidi", "Sophie"}
-    Public Shared english_m() As String
-    Public Shared english_f() As String
+    Public Shared english_m() As String = {"engl_male"}
+    Public Shared english_f() As String = {"engl_female"}
 
     Public Shared selected_nameset As String = "italy_m"
     Public Shared nameset() As String

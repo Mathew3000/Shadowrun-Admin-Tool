@@ -25,6 +25,13 @@ Partial Class AdminWindow
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdminWindow))
         Me.pic_map = New System.Windows.Forms.PictureBox()
+        Me.menu_preview = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ClearMapToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ScaleModeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ui_updater = New System.Windows.Forms.Timer(Me.components)
         Me.menu_players = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.VisibleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -34,6 +41,7 @@ Partial Class AdminWindow
         Me.menu_map = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.LoadImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SetMapToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Rotate90ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pb_map_08 = New System.Windows.Forms.PictureBox()
         Me.pb_map_07 = New System.Windows.Forms.PictureBox()
         Me.pb_map_06 = New System.Windows.Forms.PictureBox()
@@ -44,15 +52,9 @@ Partial Class AdminWindow
         Me.pb_map_01 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dial_open_img = New System.Windows.Forms.OpenFileDialog()
-        Me.Rotate90ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menu_preview = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ClearMapToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ScaleModeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tt_playername = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.pic_map, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.menu_preview.SuspendLayout()
         Me.menu_players.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.pb_map_09, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,7 +67,6 @@ Partial Class AdminWindow
         CType(Me.pb_map_03, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_map_02, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_map_01, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.menu_preview.SuspendLayout()
         Me.SuspendLayout()
         '
         'pic_map
@@ -79,6 +80,49 @@ Partial Class AdminWindow
         Me.pic_map.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pic_map.TabIndex = 0
         Me.pic_map.TabStop = False
+        '
+        'menu_preview
+        '
+        Me.menu_preview.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClearMapToolStripMenuItem, Me.ScaleModeToolStripMenuItem})
+        Me.menu_preview.Name = "menu_preview"
+        Me.menu_preview.Size = New System.Drawing.Size(136, 48)
+        '
+        'ClearMapToolStripMenuItem
+        '
+        Me.ClearMapToolStripMenuItem.Name = "ClearMapToolStripMenuItem"
+        Me.ClearMapToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.ClearMapToolStripMenuItem.Text = "Clear Map"
+        '
+        'ScaleModeToolStripMenuItem
+        '
+        Me.ScaleModeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.ToolStripMenuItem4, Me.ToolStripMenuItem5})
+        Me.ScaleModeToolStripMenuItem.Name = "ScaleModeToolStripMenuItem"
+        Me.ScaleModeToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.ScaleModeToolStripMenuItem.Text = "Scale Mode"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(95, 22)
+        Me.ToolStripMenuItem2.Text = "1 : 1"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(95, 22)
+        Me.ToolStripMenuItem3.Text = "1 : 2"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(95, 22)
+        Me.ToolStripMenuItem4.Text = "1 : 4"
+        '
+        'ToolStripMenuItem5
+        '
+        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(95, 22)
+        Me.ToolStripMenuItem5.Text = "1 : 8"
         '
         'ui_updater
         '
@@ -153,6 +197,12 @@ Partial Class AdminWindow
         Me.SetMapToolStripMenuItem.Name = "SetMapToolStripMenuItem"
         Me.SetMapToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
         Me.SetMapToolStripMenuItem.Text = "Set Map"
+        '
+        'Rotate90ToolStripMenuItem
+        '
+        Me.Rotate90ToolStripMenuItem.Name = "Rotate90ToolStripMenuItem"
+        Me.Rotate90ToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
+        Me.Rotate90ToolStripMenuItem.Text = "Rotate 90°"
         '
         'pb_map_08
         '
@@ -271,54 +321,10 @@ Partial Class AdminWindow
         '
         Me.dial_open_img.Filter = "Bilder |*.png; *.bmp; *.jpg; *.jpeg; *.gif"
         '
-        'Rotate90ToolStripMenuItem
+        'tt_playername
         '
-        Me.Rotate90ToolStripMenuItem.Name = "Rotate90ToolStripMenuItem"
-        Me.Rotate90ToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
-        Me.Rotate90ToolStripMenuItem.Text = "Rotate 90°"
-        '
-        'menu_preview
-        '
-        Me.menu_preview.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClearMapToolStripMenuItem, Me.ScaleModeToolStripMenuItem})
-        Me.menu_preview.Name = "menu_preview"
-        Me.menu_preview.Size = New System.Drawing.Size(153, 70)
-        '
-        'ClearMapToolStripMenuItem
-        '
-        Me.ClearMapToolStripMenuItem.Name = "ClearMapToolStripMenuItem"
-        Me.ClearMapToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ClearMapToolStripMenuItem.Text = "Clear Map"
-        '
-        'ScaleModeToolStripMenuItem
-        '
-        Me.ScaleModeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.ToolStripMenuItem4, Me.ToolStripMenuItem5})
-        Me.ScaleModeToolStripMenuItem.Name = "ScaleModeToolStripMenuItem"
-        Me.ScaleModeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ScaleModeToolStripMenuItem.Text = "Scale Mode"
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
-        Me.ToolStripMenuItem2.Text = "1 : 1"
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
-        Me.ToolStripMenuItem3.Text = "1 : 2"
-        '
-        'ToolStripMenuItem4
-        '
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(152, 22)
-        Me.ToolStripMenuItem4.Text = "1 : 4"
-        '
-        'ToolStripMenuItem5
-        '
-        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(152, 22)
-        Me.ToolStripMenuItem5.Text = "1 : 8"
+        Me.tt_playername.IsBalloon = True
+        Me.tt_playername.ToolTipTitle = "<Playername>"
         '
         'AdminWindow
         '
@@ -331,6 +337,7 @@ Partial Class AdminWindow
         Me.Name = "AdminWindow"
         Me.Text = "AdminTool - AdminMap"
         CType(Me.pic_map, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.menu_preview.ResumeLayout(False)
         Me.menu_players.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -344,7 +351,6 @@ Partial Class AdminWindow
         CType(Me.pb_map_03, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_map_02, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_map_01, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.menu_preview.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -377,4 +383,5 @@ Partial Class AdminWindow
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
+    Friend WithEvents tt_playername As ToolTip
 End Class
