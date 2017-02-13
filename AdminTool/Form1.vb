@@ -91,7 +91,8 @@ Public Class Main
             enemys(i).playername = "NPC"
 
             'Generate enemy ID
-            enemys(i).charID = TimeString
+            enemys(i).charID = (DateTime.Now - New DateTime(1970, 1, 1)).TotalMilliseconds
+            System.Threading.Thread.Sleep(1)
             'Add Enemy to List
             list_enemys.Items.Add(enemys(i).name & " ( " & enemys(i).hp & " | " & enemys(i).max_hp & " ) ")
 
@@ -99,7 +100,7 @@ Public Class Main
             player_item = New Panel
             player_item.BackColor = Color.Fuchsia
             player_item.Visible = False
-            player_item.Location = New Point(50, 50)
+            player_item.Location = New Point(50 + (2 * i), 50 + (2 * i))
             player_item.Size = New Size(25, 25)
             player_item.Name = enemys(i).charID
             player_item.BorderStyle = BorderStyle.FixedSingle
@@ -109,7 +110,7 @@ Public Class Main
             'Create an Admin Item
             admin_item = New Panel
             admin_item.Size = New Size(15, 15)
-            admin_item.Location = New Point(25, 25)
+            admin_item.Location = New Point(25 + i, 25 + i)
             admin_item.Visible = True
             admin_item.Name = enemys(i).charID
             admin_item.BorderStyle = BorderStyle.FixedSingle
@@ -182,7 +183,7 @@ Public Class Main
         Dim player_item As New Panel
         Dim admin_item As New Panel
 
-        new_player.charID = TimeString
+        new_player.charID = (DateTime.Now - New DateTime(1970, 1, 1)).TotalMilliseconds
 
         players.Add(new_player)
         list_player.Items.Add(new_player.name)
@@ -424,6 +425,9 @@ Public Class Main
         If (list_enemys.SelectedIndex >= 0) Then
             selected_enemy = list_enemys.SelectedIndex
             enemy = enemys(selected_enemy)
+
+            lb_debug.Text = enemy.charID
+
             txt_en_init.Text = enemy.initiative
             txt_en_name.Text = enemy.name
             txt_en_self.Text = enemy.selfcontrol
@@ -440,5 +444,13 @@ Public Class Main
             txt_en_psychic.Text = enemy.psychic
             txt_en_psychic_max.Text = enemy.psychic_max
         End If
+    End Sub
+
+    Private Sub tab_enemy_Click(sender As Object, e As EventArgs) Handles tab_enemy.Click
+
+    End Sub
+
+    Private Sub AsdfToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class

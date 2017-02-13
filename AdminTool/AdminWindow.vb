@@ -3,6 +3,7 @@
 Public Class AdminWindow
 
     'Add a Listener for UI Element List and add missing items to UI
+    'Rotate Player MapImage
 
     Dim mouse_down As Boolean = False
     Dim mouse_button As String = ""
@@ -10,15 +11,21 @@ Public Class AdminWindow
     Dim img_sender As New Object
     Dim scale_factor As Integer = 2
 
+    'Update UI with changes
     Private Sub ui_updater_Tick(sender As Object, e As EventArgs) Handles ui_updater.Tick
+        'Scale Preview
         Me.pic_map.Width = (PlayerMap.ex_width - 16) / scale_factor
         Me.pic_map.Height = (PlayerMap.ex_height - 38) / scale_factor
+
+        'Rescale to fit PlayerWindow Preview
         If (Me.Width < PlayerMap.ex_width / scale_factor) Then
             Me.Width = PlayerMap.ex_width / scale_factor
         End If
         If (Me.Height < (PlayerMap.ex_height / scale_factor) + 200) Then
             Me.Height = (PlayerMap.ex_height / scale_factor) + 200
         End If
+
+        'Update Moved Players
         If mouse_down Then
             Dim cursor_pos As Point = Me.PointToClient(Cursor.Position) + (Me.Location - Me.Bounds.Location)
             Dim tmp_pos As Point = New Point(0, 0)
@@ -30,26 +37,45 @@ Public Class AdminWindow
             PlayerMap.ex_player_pos.X = tmp_pos.X * scale_factor
             PlayerMap.ex_player_pos.Y = tmp_pos.Y * scale_factor
         End If
+
+        'Rescale Maps Selection Box
         If Me.Width > 200 Then
             Panel1.Width = Me.Width - 36
         End If
 
+        'Update Character Elements
+        For Each element In Main.admin_screen_items
+            If Not Me.Controls.Contains(element) Then
+                Me.Controls.Add(element)
+                Me.Controls.Find(element.Name, True)(0).BringToFront()
+            End If
+            If Not Me.Controls.Find(element.Name, True)(0).Visible Then
+                Me.Controls.Find(element.Name, True)(0).Visible = True
+            End If
+        Next
+
+
     End Sub
 
+    'Handler for dragging a Character Object
     Public Sub drag_handler(ByVal sender As Object, ByVal e As MouseEventArgs)
         If e.Button = System.Windows.Forms.MouseButtons.Left Then
             mouse_down = True
         End If
         mouse_down_sender = sender
     End Sub
+
+    'Handler for releasing the Mouse
     Public Sub mouse_up_handler(sender As Object, ByVal e As EventArgs)
         mouse_down = False
     End Sub
 
+    'Get clicked element
     Public Sub mouse_click_handler(sender As Object, ByVal e As EventArgs)
         mouse_down_sender = sender
     End Sub
 
+    'Character Submenu Show
     Private Sub VisibleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisibleToolStripMenuItem.Click
         Try
             PlayerMap.ex_player_command = "visibility"
@@ -60,6 +86,7 @@ Public Class AdminWindow
         End Try
     End Sub
 
+    'Character Submenu Hide
     Private Sub HideToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HideToolStripMenuItem.Click
         Try
             PlayerMap.ex_player_command = "visibility"
@@ -70,6 +97,7 @@ Public Class AdminWindow
         End Try
     End Sub
 
+    'Preload Map Image
     Private Sub LoadImageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadImageToolStripMenuItem.Click
         dial_open_img.ShowDialog()
         If dial_open_img.FileName <> "" Then
@@ -78,10 +106,12 @@ Public Class AdminWindow
         End If
     End Sub
 
+    'Get Map Selector ID
     Private Sub pb_map_xx_down(sender As Object, e As EventArgs) Handles pb_map_01.MouseDown, pb_map_02.MouseDown, pb_map_03.MouseDown, pb_map_04.MouseDown, pb_map_05.MouseDown, pb_map_06.MouseDown, pb_map_07.MouseDown, pb_map_08.MouseDown, pb_map_09.MouseDown
         img_sender = sender
     End Sub
 
+    'Set Maps in Menu
     Private Sub SetMapToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SetMapToolStripMenuItem.Click
         If Not img_sender.Image Is Nothing Then
             Try
@@ -93,6 +123,7 @@ Public Class AdminWindow
         End If
     End Sub
 
+    'Set Maps onClick
     Private Sub pb_map_xx_Click(sender As Object, e As EventArgs) Handles pb_map_01.Click, pb_map_02.Click, pb_map_03.Click, pb_map_04.Click, pb_map_05.Click, pb_map_06.Click, pb_map_07.Click, pb_map_08.Click, pb_map_09.Click
         Dim selection As MsgBoxResult
         selection = MsgBox("Set map?", MsgBoxStyle.YesNo, "Are you sure?")
@@ -109,6 +140,7 @@ Public Class AdminWindow
         End If
     End Sub
 
+    'Rotate Map
     Private Sub Rotate90ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Rotate90ToolStripMenuItem.Click
         Dim tmp_image As Image
         tmp_image = img_sender.Image
@@ -116,6 +148,7 @@ Public Class AdminWindow
         img_sender.Image = tmp_image
     End Sub
 
+    'Character Name ToolTip
     Public Sub tt_open_enemy(sender As Object, e As EventArgs)
         Dim tmp_char As character = New character
         tmp_char = Main.enemys.Find(Function(p) p.charID = sender.name)
@@ -123,7 +156,6 @@ Public Class AdminWindow
         tt_playername.ToolTipTitle = tmp_char.name
         tt_playername.Active = True
     End Sub
-
     Public Sub tt_open_player(sender As Object, e As EventArgs)
         Dim tmp_char As character = New character
         tmp_char = Main.players.Find(Function(p) p.charID = sender.name)
@@ -132,23 +164,22 @@ Public Class AdminWindow
         tt_playername.Active = True
     End Sub
 
+    'Clear Map Content
     Private Sub ClearMapToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearMapToolStripMenuItem.Click
         pic_map.Image = Nothing
         PlayerMap.ex_back_img_filename = "CLEAR"
     End Sub
 
+    'Set Map Scale Factor
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
         scale_factor = 1
     End Sub
-
     Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
         scale_factor = 2
     End Sub
-
     Private Sub ToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem4.Click
         scale_factor = 4
     End Sub
-
     Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem5.Click
         scale_factor = 8
     End Sub

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Main
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,14 @@ Partial Class Main
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.bt_rand = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tab_enemy = New System.Windows.Forms.TabPage()
+        Me.bt_delete = New System.Windows.Forms.Button()
+        Me.list_enemys = New System.Windows.Forms.ListBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txt_en_psychic_max = New System.Windows.Forms.TextBox()
         Me.txt_en_psychic = New System.Windows.Forms.TextBox()
@@ -99,8 +101,7 @@ Partial Class Main
         Me.FensterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SpielerKarteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdminKarteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.list_enemys = New System.Windows.Forms.ListBox()
-        Me.bt_delete = New System.Windows.Forms.Button()
+        Me.lb_debug = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.tab_enemy.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -136,6 +137,7 @@ Partial Class Main
         '
         'tab_enemy
         '
+        Me.tab_enemy.Controls.Add(Me.lb_debug)
         Me.tab_enemy.Controls.Add(Me.bt_delete)
         Me.tab_enemy.Controls.Add(Me.list_enemys)
         Me.tab_enemy.Controls.Add(Me.GroupBox2)
@@ -149,6 +151,23 @@ Partial Class Main
         Me.tab_enemy.TabIndex = 0
         Me.tab_enemy.Text = "Gegner"
         Me.tab_enemy.UseVisualStyleBackColor = True
+        '
+        'bt_delete
+        '
+        Me.bt_delete.Location = New System.Drawing.Point(212, 284)
+        Me.bt_delete.Name = "bt_delete"
+        Me.bt_delete.Size = New System.Drawing.Size(137, 25)
+        Me.bt_delete.TabIndex = 13
+        Me.bt_delete.Text = "Löschen"
+        Me.bt_delete.UseVisualStyleBackColor = True
+        '
+        'list_enemys
+        '
+        Me.list_enemys.FormattingEnabled = True
+        Me.list_enemys.Location = New System.Drawing.Point(6, 6)
+        Me.list_enemys.Name = "list_enemys"
+        Me.list_enemys.Size = New System.Drawing.Size(200, 381)
+        Me.list_enemys.TabIndex = 12
         '
         'GroupBox2
         '
@@ -819,32 +838,24 @@ Partial Class Main
         '
         Me.SpielerKarteToolStripMenuItem.CheckOnClick = True
         Me.SpielerKarteToolStripMenuItem.Name = "SpielerKarteToolStripMenuItem"
-        Me.SpielerKarteToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
+        Me.SpielerKarteToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.SpielerKarteToolStripMenuItem.Text = "Spieler Karte"
         '
         'AdminKarteToolStripMenuItem
         '
         Me.AdminKarteToolStripMenuItem.CheckOnClick = True
         Me.AdminKarteToolStripMenuItem.Name = "AdminKarteToolStripMenuItem"
-        Me.AdminKarteToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
+        Me.AdminKarteToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AdminKarteToolStripMenuItem.Text = "Admin Karte"
         '
-        'list_enemys
+        'lb_debug
         '
-        Me.list_enemys.FormattingEnabled = True
-        Me.list_enemys.Location = New System.Drawing.Point(6, 6)
-        Me.list_enemys.Name = "list_enemys"
-        Me.list_enemys.Size = New System.Drawing.Size(200, 381)
-        Me.list_enemys.TabIndex = 12
-        '
-        'bt_delete
-        '
-        Me.bt_delete.Location = New System.Drawing.Point(212, 284)
-        Me.bt_delete.Name = "bt_delete"
-        Me.bt_delete.Size = New System.Drawing.Size(137, 25)
-        Me.bt_delete.TabIndex = 13
-        Me.bt_delete.Text = "Löschen"
-        Me.bt_delete.UseVisualStyleBackColor = True
+        Me.lb_debug.AutoSize = True
+        Me.lb_debug.Location = New System.Drawing.Point(215, 332)
+        Me.lb_debug.Name = "lb_debug"
+        Me.lb_debug.Size = New System.Drawing.Size(24, 13)
+        Me.lb_debug.TabIndex = 14
+        Me.lb_debug.Text = "test"
         '
         'Main
         '
@@ -859,6 +870,7 @@ Partial Class Main
         Me.Text = "Admin Tool - Main"
         Me.TabControl1.ResumeLayout(False)
         Me.tab_enemy.ResumeLayout(False)
+        Me.tab_enemy.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -956,4 +968,5 @@ Partial Class Main
     Friend WithEvents Label25 As Label
     Friend WithEvents bt_delete As Button
     Friend WithEvents list_enemys As ListBox
+    Friend WithEvents lb_debug As Label
 End Class

@@ -43,6 +43,7 @@ Partial Class AdminWindow
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dial_open_img = New System.Windows.Forms.OpenFileDialog()
         Me.tt_playername = New System.Windows.Forms.ToolTip(Me.components)
+        Me.cb_overlay = New System.Windows.Forms.CheckBox()
         Me.pb_map_09 = New System.Windows.Forms.PictureBox()
         Me.pb_map_08 = New System.Windows.Forms.PictureBox()
         Me.pb_map_07 = New System.Windows.Forms.PictureBox()
@@ -53,7 +54,6 @@ Partial Class AdminWindow
         Me.pb_map_02 = New System.Windows.Forms.PictureBox()
         Me.pb_map_01 = New System.Windows.Forms.PictureBox()
         Me.pic_map = New System.Windows.Forms.PictureBox()
-        Me.cb_overlay = New System.Windows.Forms.CheckBox()
         Me.menu_preview.SuspendLayout()
         Me.menu_players.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -199,6 +199,16 @@ Partial Class AdminWindow
         Me.tt_playername.IsBalloon = True
         Me.tt_playername.ToolTipTitle = "<Playername>"
         '
+        'cb_overlay
+        '
+        Me.cb_overlay.AutoSize = True
+        Me.cb_overlay.Location = New System.Drawing.Point(55, 2)
+        Me.cb_overlay.Name = "cb_overlay"
+        Me.cb_overlay.Size = New System.Drawing.Size(92, 17)
+        Me.cb_overlay.TabIndex = 10
+        Me.cb_overlay.Text = "Show Overlay"
+        Me.cb_overlay.UseVisualStyleBackColor = True
+        '
         'pb_map_09
         '
         Me.pb_map_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
@@ -322,23 +332,13 @@ Partial Class AdminWindow
         Me.pic_map.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.pic_map.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pic_map.ContextMenuStrip = Me.menu_preview
-        Me.pic_map.Image = CType(resources.GetObject("pic_map.Image"), System.Drawing.Image)
+        Me.pic_map.Image = Global.AdminTool.My.Resources.Resources.hex1
         Me.pic_map.Location = New System.Drawing.Point(0, 0)
         Me.pic_map.Name = "pic_map"
         Me.pic_map.Size = New System.Drawing.Size(624, 275)
         Me.pic_map.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.pic_map.TabIndex = 0
         Me.pic_map.TabStop = False
-        '
-        'cb_overlay
-        '
-        Me.cb_overlay.AutoSize = True
-        Me.cb_overlay.Location = New System.Drawing.Point(55, 2)
-        Me.cb_overlay.Name = "cb_overlay"
-        Me.cb_overlay.Size = New System.Drawing.Size(92, 17)
-        Me.cb_overlay.TabIndex = 10
-        Me.cb_overlay.Text = "Show Overlay"
-        Me.cb_overlay.UseVisualStyleBackColor = True
         '
         'AdminWindow
         '
