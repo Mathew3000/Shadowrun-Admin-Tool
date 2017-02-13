@@ -120,8 +120,10 @@ Public Class Main
             AddHandler admin_item.Click, AddressOf AdminWindow.mouse_click_handler
             AddHandler admin_item.MouseHover, AddressOf AdminWindow.tt_open_enemy
             admin_item.ContextMenuStrip = AdminWindow.menu_players
+
             'Add the Adminitem to the Admin Screen List
             admin_screen_items.Add(admin_item)
+
             'Clear Variables
             admin_item = Nothing
             player_item = Nothing
