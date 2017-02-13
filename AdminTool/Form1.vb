@@ -4,25 +4,30 @@ Imports Database.Datasets
 'Search for FixMe!!!
 
 Public Class Main
-
-    Dim enemys(15) As character
-    Dim players As New List(Of character)
-    Dim difficulty As Integer = 0
+    'Selected Chars
     Dim selected_char As Integer = 0
-
     Dim selected_enemy As Integer = 0
+    'Character Items
+    Public Shared enemys As New List(Of character)
+    Public Shared players As New List(Of character)
+    'UI-Elements
+    Public Shared admin_screen_items As New List(Of Panel)
+    Public Shared player_screen_items As New List(Of Panel)
+    'Generation Paramenter
+    Dim difficulty As Integer = 0
 
+    'Generate a random value
     Public Function randomval(lowerbound As Integer, upperbound As Integer)
         Dim value As Integer = CInt(Math.Floor((upperbound - lowerbound + 1) * Rnd())) + lowerbound
         Return value
     End Function
 
+    'Create random enemy(s)
     Private Sub bt_rand_Click(sender As Object, e As EventArgs) Handles bt_rand.Click
         Dim input As Object
         Dim default_input As Integer = 1
         Dim length As Integer
         Dim message, title As String
-        Dim matches() As Control
 
         If selected_nameset = "italy_m" Then
             nameset = italy_m
@@ -38,8 +43,6 @@ Public Class Main
             nameset = english_f
         End If
 
-        enemys = New character(15) {}
-
         length = nameset.Length
 
         message = "Anzahl der Gegner? (1-15)"
@@ -49,16 +52,17 @@ Public Class Main
         If input Is "" Then input = default_input
 
         'Characters
-        For i As Integer = 1 To Int(input)
+        For i As Integer = 0 To Int(input) - 1
             Dim name_int = randomval(0, length - 1)
             Dim rnd = random_modifier_set(difficulty)
-            matches = Me.Controls.Find("rd_en_" & i, True)
+            Dim tmp_enemy As New character
+            Dim player_item As Panel
+            Dim admin_item As Panel
+
             'Preinitialise
-            enemys(i) = New character
+            enemys.Add(New character)
             'Set Enemy Name
             enemys(i).name = nameset(name_int)
-            matches(0).Text = enemys(i).name
-            matches(0).Visible = True
             'Set Skill according to Difficulty
             enemys(i).skill = skill_set(difficulty) + randomval(0, rnd)
             'Set Reaction according to Difficulty
@@ -83,17 +87,48 @@ Public Class Main
             enemys(i).psychic = enemys(i).psychic_max
             'Calculate Initiative
             enemys(i).initiative = enemys(i).intuition + enemys(i).intuition + randomval(0, rnd)
+            'Declare as enemy
+            enemys(i).playername = "NPC"
 
-            matches(0).Text = enemys(i).name & " ( " & enemys(i).hp & " | " & enemys(i).max_hp & " ) "
-        Next
-        For i As Integer = Int(input) To 14
-            If input < 15 Then
-                matches = Me.Controls.Find("rd_en_" & (i + 1), True)
-                matches(0).Visible = False
-            End If
+            'Generate enemy ID
+            enemys(i).charID = TimeString
+            'Add Enemy to List
+            list_enemys.Items.Add(enemys(i).name & " ( " & enemys(i).hp & " | " & enemys(i).max_hp & " ) ")
+
+            'Create a Player Item 
+            player_item = New Panel
+            player_item.BackColor = Color.Fuchsia
+            player_item.Visible = False
+            player_item.Location = New Point(50, 50)
+            player_item.Size = New Size(25, 25)
+            player_item.Name = enemys(i).charID
+            player_item.BorderStyle = BorderStyle.FixedSingle
+            'Add the Playeritem to the Player Screen List
+            player_screen_items.Add(player_item)
+
+            'Create an Admin Item
+            admin_item = New Panel
+            admin_item.Size = New Size(15, 15)
+            admin_item.Location = New Point(25, 25)
+            admin_item.Visible = True
+            admin_item.Name = enemys(i).charID
+            admin_item.BorderStyle = BorderStyle.FixedSingle
+            admin_item.BackColor = Color.Fuchsia
+            admin_item.Cursor = Cursors.Cross
+            AddHandler admin_item.MouseDown, AddressOf AdminWindow.drag_handler
+            AddHandler admin_item.MouseUp, AddressOf AdminWindow.mouse_up_handler
+            AddHandler admin_item.Click, AddressOf AdminWindow.mouse_click_handler
+            AddHandler admin_item.MouseHover, AddressOf AdminWindow.tt_open_enemy
+            admin_item.ContextMenuStrip = AdminWindow.menu_players
+            'Add the Adminitem to the Admin Screen List
+            admin_screen_items.Add(admin_item)
+            'Clear Variables
+            admin_item = Nothing
+            player_item = Nothing
         Next
     End Sub
 
+    'Nameset changed
     Private Sub cb_nameset_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_nameset.SelectedIndexChanged
         If cb_nameset.Text = "Italienisch (m)" Then
             selected_nameset = "italy_m"
@@ -110,59 +145,7 @@ Public Class Main
         End If
     End Sub
 
-    Private Sub selected_changed(sender As Object, e As EventArgs) Handles rd_en_1.CheckedChanged, rd_en_2.CheckedChanged, rd_en_3.CheckedChanged, rd_en_4.CheckedChanged, rd_en_5.CheckedChanged, rd_en_6.CheckedChanged, rd_en_7.CheckedChanged, rd_en_8.CheckedChanged, rd_en_9.CheckedChanged, rd_en_10.CheckedChanged, rd_en_11.CheckedChanged, rd_en_12.CheckedChanged, rd_en_13.CheckedChanged, rd_en_14.CheckedChanged, rd_en_15.CheckedChanged
-        Dim enemy As character = New character
-        If rd_en_1.Checked = True Then
-            selected_enemy = 1
-        ElseIf rd_en_2.Checked = True Then
-            selected_enemy = 2
-        ElseIf rd_en_3.Checked = True Then
-            selected_enemy = 3
-        ElseIf rd_en_4.Checked = True Then
-            selected_enemy = 4
-        ElseIf rd_en_5.Checked = True Then
-            selected_enemy = 5
-        ElseIf rd_en_6.Checked = True Then
-            selected_enemy = 6
-        ElseIf rd_en_7.Checked = True Then
-            selected_enemy = 7
-        ElseIf rd_en_8.Checked = True Then
-            selected_enemy = 8
-        ElseIf rd_en_9.Checked = True Then
-            selected_enemy = 9
-        ElseIf rd_en_10.Checked = True Then
-            selected_enemy = 10
-        ElseIf rd_en_11.Checked = True Then
-            selected_enemy = 11
-        ElseIf rd_en_12.Checked = True Then
-            selected_enemy = 12
-        ElseIf rd_en_13.Checked = True Then
-            selected_enemy = 13
-        ElseIf rd_en_14.Checked = True Then
-            selected_enemy = 14
-        ElseIf rd_en_15.Checked = True Then
-            selected_enemy = 15
-        End If
-        enemy = enemys(selected_enemy)
-
-        txt_en_init.Text = enemy.initiative
-        txt_en_name.Text = enemy.name
-        txt_en_self.Text = enemy.selfcontrol
-        txt_en_skill.Text = enemy.skill
-        txt_en_str.Text = enemy.strength
-        txt_en_will.Text = enemy.willpower
-        cb_en_status.Text = enemy.status
-        txt_en_hp.Text = enemy.hp
-        txt_en_hp_max.Text = enemy.max_hp
-        txt_en_const.Text = enemy.constitution
-        txt_en_rea.Text = enemy.reaction
-        txt_en_intu.Text = enemy.intuition
-        txt_en_char.Text = enemy.charisma
-        txt_en_psychic.Text = enemy.psychic
-        txt_en_psychic_max.Text = enemy.psychic_max
-
-    End Sub
-
+    'Difficulty changed
     Private Sub cb_difficulty_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_difficulty.SelectedIndexChanged
         If (cb_difficulty.SelectedIndex > 3) Then
             difficulty = cb_difficulty.SelectedIndex - 4
@@ -174,6 +157,7 @@ Public Class Main
         End If
     End Sub
 
+    'Change Player colour
     Private Sub pan_colour_Click(sender As Object, e As EventArgs) Handles pan_colour.Click
         col_diag_player.ShowDialog()
         pan_colour.BackColor = col_diag_player.Color
@@ -183,13 +167,14 @@ Public Class Main
             Dim admin_object As Panel = CType(AdminWindow.Controls(currentID), Panel)
             players(selected_char).colour = col_diag_player.Color
             player_object.BackColor = col_diag_player.Color
-            player_object.Visible = True
+            'player_object.Visible = True
             player_object.BringToFront()
             admin_object.BackColor = col_diag_player.Color
             admin_object.BringToFront()
         End If
     End Sub
 
+    'Add Player Character
     Private Sub bt_add_char_Click(sender As Object, e As EventArgs) Handles bt_add_char.Click
         Dim new_player As character = New character
         Dim player_item As New Panel
@@ -230,12 +215,14 @@ Public Class Main
         AddHandler admin_object.MouseDown, AddressOf AdminWindow.drag_handler
         AddHandler admin_object.MouseUp, AddressOf AdminWindow.mouse_up_handler
         AddHandler admin_object.Click, AddressOf AdminWindow.mouse_click_handler
+        AddHandler admin_object.MouseHover, AddressOf AdminWindow.tt_open_player
         admin_object.ContextMenuStrip = AdminWindow.menu_players
         admin_object.BringToFront()
         player_object.BringToFront()
 
     End Sub
 
+    'Player selected
     Private Sub list_player_SelectedIndexChanged(sender As Object, e As EventArgs) Handles list_player.SelectedIndexChanged
         If (list_player.SelectedIndex >= 0)
             selected_char = list_player.SelectedIndex
@@ -245,7 +232,7 @@ Public Class Main
             pan_colour.BackColor = players(selected_char).colour
         End If
     End Sub
-
+    'Player name changed
     Private Sub txt_playername_TextChanged(sender As Object, e As EventArgs) Handles txt_playername.TextChanged
         If ((players.Count) < 1) Then
             Return
@@ -253,7 +240,7 @@ Public Class Main
             players(selected_char).playername = txt_playername.Text
         End If
     End Sub
-
+    'Player Charactername changed
     Private Sub txt_charname_TextChanged(sender As Object, e As EventArgs) Handles txt_charname.TextChanged
         If (players.Count < 1) Then
             Return
@@ -262,7 +249,7 @@ Public Class Main
             list_player.Items(selected_char) = txt_charname.Text
         End If
     End Sub
-
+    'Player initiative changed
     Private Sub txt_initiative_TextChanged(sender As Object, e As EventArgs) Handles txt_initiative.TextChanged
         If (players.Count < 1) Then
             Return
@@ -274,7 +261,7 @@ Public Class Main
             End Try
         End If
     End Sub
-
+    'Delete Player
     Private Sub bt_del_char_Click(sender As Object, e As EventArgs) Handles bt_del_char.Click
         If (selected_char < players.Count) Then
             Dim currentID As String = players(selected_char).charID
@@ -289,6 +276,7 @@ Public Class Main
         End If
     End Sub
 
+    'Roll some D6
     Private Sub bt_w_6_Click(sender As Object, e As EventArgs) Handles bt_w_6.Click
         If (txt_count_w_6.Text <> "") Then
             Dim count As Integer = 0
@@ -311,7 +299,7 @@ Public Class Main
             End Try
         End If
     End Sub
-
+    'Roll some D20
     Private Sub bt_w_20_Click(sender As Object, e As EventArgs) Handles bt_w_20.Click
         If (txt_count_w_20.Text <> "") Then
             Dim count As Integer = 0
@@ -335,6 +323,7 @@ Public Class Main
         End If
     End Sub
 
+    'Player Map Menu
     Private Sub SpielerKarteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SpielerKarteToolStripMenuItem.Click
         If SpielerKarteToolStripMenuItem.Checked Then
             PlayerMap.Show()
@@ -355,7 +344,7 @@ Public Class Main
             PlayerMap.Close()
         End If
     End Sub
-
+    'Admin Map menu
     Private Sub AdminKarteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdminKarteToolStripMenuItem.Click
         If AdminKarteToolStripMenuItem.Checked Then
             AdminWindow.Show()
@@ -368,6 +357,9 @@ Public Class Main
     Private Sub enemy_info_changed(sender As Object, e As EventArgs) Handles txt_en_name.TextChanged, cb_en_status.TextChanged, txt_en_hp.TextChanged, txt_en_hp_max.TextChanged, txt_en_psychic.TextChanged, txt_en_psychic_max.TextChanged, txt_en_init.TextChanged, txt_en_skill.TextChanged, txt_en_str.TextChanged, txt_en_will.TextChanged, txt_en_self.TextChanged, txt_en_const.TextChanged, txt_en_char.TextChanged, txt_en_rea.TextChanged, txt_en_intu.TextChanged
         Dim sender_name As String
         Dim enemy As character = New character
+        If Not enemys.Count > 0 Then
+            Return
+        End If
         Try
             sender_name = sender.Name
             enemy = enemys(selected_enemy)
@@ -422,5 +414,29 @@ Public Class Main
         nmy = enemys(selected_enemy)
         matches = Me.Controls.Find("rd_en_" & selected_enemy, True)
         matches(0).Text = nmy.name & " ( " & nmy.hp & " | " & nmy.max_hp & " ) "
+    End Sub
+
+    'Selected enemy changed
+    Private Sub list_enemys_SelectedIndexChanged(sender As Object, e As EventArgs) Handles list_enemys.SelectedIndexChanged
+        Dim enemy As New character
+        If (list_enemys.SelectedIndex >= 0) Then
+            selected_enemy = list_enemys.SelectedIndex
+            enemy = enemys(selected_enemy)
+            txt_en_init.Text = enemy.initiative
+            txt_en_name.Text = enemy.name
+            txt_en_self.Text = enemy.selfcontrol
+            txt_en_skill.Text = enemy.skill
+            txt_en_str.Text = enemy.strength
+            txt_en_will.Text = enemy.willpower
+            cb_en_status.Text = enemy.status
+            txt_en_hp.Text = enemy.hp
+            txt_en_hp_max.Text = enemy.max_hp
+            txt_en_const.Text = enemy.constitution
+            txt_en_rea.Text = enemy.reaction
+            txt_en_intu.Text = enemy.intuition
+            txt_en_char.Text = enemy.charisma
+            txt_en_psychic.Text = enemy.psychic
+            txt_en_psychic_max.Text = enemy.psychic_max
+        End If
     End Sub
 End Class

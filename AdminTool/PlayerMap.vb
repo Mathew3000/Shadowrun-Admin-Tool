@@ -1,5 +1,7 @@
 ﻿Public Class PlayerMap
 
+    'Add a Listener for UI Element List and add missing items to UI
+
     Public Shared ex_width As Integer = 100
     Public Shared ex_height As Integer = 100
 

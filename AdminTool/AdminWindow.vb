@@ -1,4 +1,8 @@
-﻿Public Class AdminWindow
+﻿Imports Types.Types
+
+Public Class AdminWindow
+
+    'Add a Listener for UI Element List and add missing items to UI
 
     Dim mouse_down As Boolean = False
     Dim mouse_button As String = ""
@@ -81,7 +85,7 @@
     Private Sub SetMapToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SetMapToolStripMenuItem.Click
         If Not img_sender.Image Is Nothing Then
             Try
-                pic_map.Image = img_sender.Image
+                pic_map.BackgroundImage = img_sender.Image
                 PlayerMap.ex_back_img_filename = img_sender.ImageLocation
             Catch
                 MsgBox("Could not set image!", MessageBoxButtons.OK, "Error!")
@@ -95,7 +99,7 @@
         If selection = MsgBoxResult.Yes Then
             If Not img_sender.Image Is Nothing Then
                 Try
-                    pic_map.Image = img_sender.Image
+                    pic_map.BackgroundImage = img_sender.Image
                     PlayerMap.ex_back_img_filename = img_sender.ImageLocation
                     PlayerMap.ex_back_img = img_sender.image
                 Catch
@@ -110,6 +114,22 @@
         tmp_image = img_sender.Image
         tmp_image.RotateFlip(RotateFlipType.Rotate90FlipNone)
         img_sender.Image = tmp_image
+    End Sub
+
+    Public Sub tt_open_enemy(sender As Object, e As EventArgs)
+        Dim tmp_char As character = New character
+        tmp_char = Main.enemys.Find(Function(p) p.charID = sender.name)
+        tt_playername.SetToolTip(sender, tmp_char.playername)
+        tt_playername.ToolTipTitle = tmp_char.name
+        tt_playername.Active = True
+    End Sub
+
+    Public Sub tt_open_player(sender As Object, e As EventArgs)
+        Dim tmp_char As character = New character
+        tmp_char = Main.players.Find(Function(p) p.charID = sender.name)
+        tt_playername.SetToolTip(sender, tmp_char.playername)
+        tt_playername.ToolTipTitle = tmp_char.name
+        tt_playername.Active = True
     End Sub
 
     Private Sub ClearMapToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearMapToolStripMenuItem.Click
@@ -131,5 +151,9 @@
 
     Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem5.Click
         scale_factor = 8
+    End Sub
+
+    Private Sub pb_map_xx_down(sender As Object, e As MouseEventArgs) Handles pb_map_09.MouseDown, pb_map_08.MouseDown, pb_map_07.MouseDown, pb_map_06.MouseDown, pb_map_05.MouseDown, pb_map_04.MouseDown, pb_map_03.MouseDown, pb_map_02.MouseDown, pb_map_01.MouseDown
+
     End Sub
 End Class

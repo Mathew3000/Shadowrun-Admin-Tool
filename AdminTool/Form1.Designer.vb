@@ -23,22 +23,6 @@ Partial Class Main
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
-        Me.rd_en_1 = New System.Windows.Forms.RadioButton()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.rd_en_15 = New System.Windows.Forms.RadioButton()
-        Me.rd_en_14 = New System.Windows.Forms.RadioButton()
-        Me.rd_en_13 = New System.Windows.Forms.RadioButton()
-        Me.rd_en_12 = New System.Windows.Forms.RadioButton()
-        Me.rd_en_11 = New System.Windows.Forms.RadioButton()
-        Me.rd_en_10 = New System.Windows.Forms.RadioButton()
-        Me.rd_en_9 = New System.Windows.Forms.RadioButton()
-        Me.rd_en_8 = New System.Windows.Forms.RadioButton()
-        Me.rd_en_7 = New System.Windows.Forms.RadioButton()
-        Me.rd_en_6 = New System.Windows.Forms.RadioButton()
-        Me.rd_en_5 = New System.Windows.Forms.RadioButton()
-        Me.rd_en_4 = New System.Windows.Forms.RadioButton()
-        Me.rd_en_3 = New System.Windows.Forms.RadioButton()
-        Me.rd_en_2 = New System.Windows.Forms.RadioButton()
         Me.bt_rand = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tab_enemy = New System.Windows.Forms.TabPage()
@@ -115,7 +99,8 @@ Partial Class Main
         Me.FensterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SpielerKarteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdminKarteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel1.SuspendLayout()
+        Me.list_enemys = New System.Windows.Forms.ListBox()
+        Me.bt_delete = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.tab_enemy.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -128,195 +113,6 @@ Partial Class Main
         Me.Panel2.SuspendLayout()
         Me.menu_main.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'rd_en_1
-        '
-        Me.rd_en_1.AutoSize = True
-        Me.rd_en_1.Location = New System.Drawing.Point(3, 3)
-        Me.rd_en_1.Name = "rd_en_1"
-        Me.rd_en_1.Size = New System.Drawing.Size(78, 17)
-        Me.rd_en_1.TabIndex = 0
-        Me.rd_en_1.Text = "<Gegner1>"
-        Me.rd_en_1.UseVisualStyleBackColor = True
-        Me.rd_en_1.Visible = False
-        '
-        'Panel1
-        '
-        Me.Panel1.AutoScroll = True
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.rd_en_15)
-        Me.Panel1.Controls.Add(Me.rd_en_14)
-        Me.Panel1.Controls.Add(Me.rd_en_13)
-        Me.Panel1.Controls.Add(Me.rd_en_12)
-        Me.Panel1.Controls.Add(Me.rd_en_11)
-        Me.Panel1.Controls.Add(Me.rd_en_10)
-        Me.Panel1.Controls.Add(Me.rd_en_9)
-        Me.Panel1.Controls.Add(Me.rd_en_8)
-        Me.Panel1.Controls.Add(Me.rd_en_7)
-        Me.Panel1.Controls.Add(Me.rd_en_6)
-        Me.Panel1.Controls.Add(Me.rd_en_5)
-        Me.Panel1.Controls.Add(Me.rd_en_4)
-        Me.Panel1.Controls.Add(Me.rd_en_3)
-        Me.Panel1.Controls.Add(Me.rd_en_2)
-        Me.Panel1.Controls.Add(Me.rd_en_1)
-        Me.Panel1.Location = New System.Drawing.Point(6, 6)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(200, 384)
-        Me.Panel1.TabIndex = 1
-        '
-        'rd_en_15
-        '
-        Me.rd_en_15.AutoSize = True
-        Me.rd_en_15.Location = New System.Drawing.Point(3, 325)
-        Me.rd_en_15.Name = "rd_en_15"
-        Me.rd_en_15.Size = New System.Drawing.Size(84, 17)
-        Me.rd_en_15.TabIndex = 14
-        Me.rd_en_15.Text = "<Gegner15>"
-        Me.rd_en_15.UseVisualStyleBackColor = True
-        Me.rd_en_15.Visible = False
-        '
-        'rd_en_14
-        '
-        Me.rd_en_14.AutoSize = True
-        Me.rd_en_14.Location = New System.Drawing.Point(3, 302)
-        Me.rd_en_14.Name = "rd_en_14"
-        Me.rd_en_14.Size = New System.Drawing.Size(84, 17)
-        Me.rd_en_14.TabIndex = 13
-        Me.rd_en_14.Text = "<Gegner14>"
-        Me.rd_en_14.UseVisualStyleBackColor = True
-        Me.rd_en_14.Visible = False
-        '
-        'rd_en_13
-        '
-        Me.rd_en_13.AutoSize = True
-        Me.rd_en_13.Location = New System.Drawing.Point(3, 279)
-        Me.rd_en_13.Name = "rd_en_13"
-        Me.rd_en_13.Size = New System.Drawing.Size(84, 17)
-        Me.rd_en_13.TabIndex = 12
-        Me.rd_en_13.Text = "<Gegner13>"
-        Me.rd_en_13.UseVisualStyleBackColor = True
-        Me.rd_en_13.Visible = False
-        '
-        'rd_en_12
-        '
-        Me.rd_en_12.AutoSize = True
-        Me.rd_en_12.Location = New System.Drawing.Point(3, 256)
-        Me.rd_en_12.Name = "rd_en_12"
-        Me.rd_en_12.Size = New System.Drawing.Size(84, 17)
-        Me.rd_en_12.TabIndex = 11
-        Me.rd_en_12.Text = "<Gegner12>"
-        Me.rd_en_12.UseVisualStyleBackColor = True
-        Me.rd_en_12.Visible = False
-        '
-        'rd_en_11
-        '
-        Me.rd_en_11.AutoSize = True
-        Me.rd_en_11.Location = New System.Drawing.Point(3, 233)
-        Me.rd_en_11.Name = "rd_en_11"
-        Me.rd_en_11.Size = New System.Drawing.Size(84, 17)
-        Me.rd_en_11.TabIndex = 10
-        Me.rd_en_11.Text = "<Gegner11>"
-        Me.rd_en_11.UseVisualStyleBackColor = True
-        Me.rd_en_11.Visible = False
-        '
-        'rd_en_10
-        '
-        Me.rd_en_10.AutoSize = True
-        Me.rd_en_10.Location = New System.Drawing.Point(3, 210)
-        Me.rd_en_10.Name = "rd_en_10"
-        Me.rd_en_10.Size = New System.Drawing.Size(84, 17)
-        Me.rd_en_10.TabIndex = 9
-        Me.rd_en_10.Text = "<Gegner10>"
-        Me.rd_en_10.UseVisualStyleBackColor = True
-        Me.rd_en_10.Visible = False
-        '
-        'rd_en_9
-        '
-        Me.rd_en_9.AutoSize = True
-        Me.rd_en_9.Location = New System.Drawing.Point(3, 187)
-        Me.rd_en_9.Name = "rd_en_9"
-        Me.rd_en_9.Size = New System.Drawing.Size(78, 17)
-        Me.rd_en_9.TabIndex = 8
-        Me.rd_en_9.Text = "<Gegner9>"
-        Me.rd_en_9.UseVisualStyleBackColor = True
-        Me.rd_en_9.Visible = False
-        '
-        'rd_en_8
-        '
-        Me.rd_en_8.AutoSize = True
-        Me.rd_en_8.Location = New System.Drawing.Point(3, 164)
-        Me.rd_en_8.Name = "rd_en_8"
-        Me.rd_en_8.Size = New System.Drawing.Size(78, 17)
-        Me.rd_en_8.TabIndex = 7
-        Me.rd_en_8.Text = "<Gegner8>"
-        Me.rd_en_8.UseVisualStyleBackColor = True
-        Me.rd_en_8.Visible = False
-        '
-        'rd_en_7
-        '
-        Me.rd_en_7.AutoSize = True
-        Me.rd_en_7.Location = New System.Drawing.Point(3, 141)
-        Me.rd_en_7.Name = "rd_en_7"
-        Me.rd_en_7.Size = New System.Drawing.Size(78, 17)
-        Me.rd_en_7.TabIndex = 6
-        Me.rd_en_7.Text = "<Gegner7>"
-        Me.rd_en_7.UseVisualStyleBackColor = True
-        Me.rd_en_7.Visible = False
-        '
-        'rd_en_6
-        '
-        Me.rd_en_6.AutoSize = True
-        Me.rd_en_6.Location = New System.Drawing.Point(3, 118)
-        Me.rd_en_6.Name = "rd_en_6"
-        Me.rd_en_6.Size = New System.Drawing.Size(78, 17)
-        Me.rd_en_6.TabIndex = 5
-        Me.rd_en_6.Text = "<Gegner6>"
-        Me.rd_en_6.UseVisualStyleBackColor = True
-        Me.rd_en_6.Visible = False
-        '
-        'rd_en_5
-        '
-        Me.rd_en_5.AutoSize = True
-        Me.rd_en_5.Location = New System.Drawing.Point(3, 95)
-        Me.rd_en_5.Name = "rd_en_5"
-        Me.rd_en_5.Size = New System.Drawing.Size(78, 17)
-        Me.rd_en_5.TabIndex = 4
-        Me.rd_en_5.Text = "<Gegner5>"
-        Me.rd_en_5.UseVisualStyleBackColor = True
-        Me.rd_en_5.Visible = False
-        '
-        'rd_en_4
-        '
-        Me.rd_en_4.AutoSize = True
-        Me.rd_en_4.Location = New System.Drawing.Point(3, 72)
-        Me.rd_en_4.Name = "rd_en_4"
-        Me.rd_en_4.Size = New System.Drawing.Size(78, 17)
-        Me.rd_en_4.TabIndex = 3
-        Me.rd_en_4.Text = "<Gegner4>"
-        Me.rd_en_4.UseVisualStyleBackColor = True
-        Me.rd_en_4.Visible = False
-        '
-        'rd_en_3
-        '
-        Me.rd_en_3.AutoSize = True
-        Me.rd_en_3.Location = New System.Drawing.Point(3, 49)
-        Me.rd_en_3.Name = "rd_en_3"
-        Me.rd_en_3.Size = New System.Drawing.Size(78, 17)
-        Me.rd_en_3.TabIndex = 2
-        Me.rd_en_3.Text = "<Gegner3>"
-        Me.rd_en_3.UseVisualStyleBackColor = True
-        Me.rd_en_3.Visible = False
-        '
-        'rd_en_2
-        '
-        Me.rd_en_2.AutoSize = True
-        Me.rd_en_2.Location = New System.Drawing.Point(3, 26)
-        Me.rd_en_2.Name = "rd_en_2"
-        Me.rd_en_2.Size = New System.Drawing.Size(78, 17)
-        Me.rd_en_2.TabIndex = 1
-        Me.rd_en_2.Text = "<Gegner2>"
-        Me.rd_en_2.UseVisualStyleBackColor = True
-        Me.rd_en_2.Visible = False
         '
         'bt_rand
         '
@@ -340,10 +136,11 @@ Partial Class Main
         '
         'tab_enemy
         '
+        Me.tab_enemy.Controls.Add(Me.bt_delete)
+        Me.tab_enemy.Controls.Add(Me.list_enemys)
         Me.tab_enemy.Controls.Add(Me.GroupBox2)
         Me.tab_enemy.Controls.Add(Me.GroupBox1)
         Me.tab_enemy.Controls.Add(Me.Button1)
-        Me.tab_enemy.Controls.Add(Me.Panel1)
         Me.tab_enemy.Controls.Add(Me.bt_rand)
         Me.tab_enemy.Location = New System.Drawing.Point(4, 22)
         Me.tab_enemy.Name = "tab_enemy"
@@ -1032,6 +829,23 @@ Partial Class Main
         Me.AdminKarteToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
         Me.AdminKarteToolStripMenuItem.Text = "Admin Karte"
         '
+        'list_enemys
+        '
+        Me.list_enemys.FormattingEnabled = True
+        Me.list_enemys.Location = New System.Drawing.Point(6, 6)
+        Me.list_enemys.Name = "list_enemys"
+        Me.list_enemys.Size = New System.Drawing.Size(200, 381)
+        Me.list_enemys.TabIndex = 12
+        '
+        'bt_delete
+        '
+        Me.bt_delete.Location = New System.Drawing.Point(212, 284)
+        Me.bt_delete.Name = "bt_delete"
+        Me.bt_delete.Size = New System.Drawing.Size(137, 25)
+        Me.bt_delete.TabIndex = 13
+        Me.bt_delete.Text = "Löschen"
+        Me.bt_delete.UseVisualStyleBackColor = True
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1043,8 +857,6 @@ Partial Class Main
         Me.MainMenuStrip = Me.menu_main
         Me.Name = "Main"
         Me.Text = "Admin Tool - Main"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
         Me.tab_enemy.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
@@ -1066,22 +878,6 @@ Partial Class Main
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents rd_en_1 As System.Windows.Forms.RadioButton
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents rd_en_15 As System.Windows.Forms.RadioButton
-    Friend WithEvents rd_en_14 As System.Windows.Forms.RadioButton
-    Friend WithEvents rd_en_13 As System.Windows.Forms.RadioButton
-    Friend WithEvents rd_en_12 As System.Windows.Forms.RadioButton
-    Friend WithEvents rd_en_11 As System.Windows.Forms.RadioButton
-    Friend WithEvents rd_en_10 As System.Windows.Forms.RadioButton
-    Friend WithEvents rd_en_9 As System.Windows.Forms.RadioButton
-    Friend WithEvents rd_en_8 As System.Windows.Forms.RadioButton
-    Friend WithEvents rd_en_7 As System.Windows.Forms.RadioButton
-    Friend WithEvents rd_en_6 As System.Windows.Forms.RadioButton
-    Friend WithEvents rd_en_5 As System.Windows.Forms.RadioButton
-    Friend WithEvents rd_en_4 As System.Windows.Forms.RadioButton
-    Friend WithEvents rd_en_3 As System.Windows.Forms.RadioButton
-    Friend WithEvents rd_en_2 As System.Windows.Forms.RadioButton
     Friend WithEvents bt_rand As System.Windows.Forms.Button
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents tab_enemy As System.Windows.Forms.TabPage
@@ -1158,4 +954,6 @@ Partial Class Main
     Friend WithEvents txt_en_psychic_max As TextBox
     Friend WithEvents txt_en_psychic As TextBox
     Friend WithEvents Label25 As Label
+    Friend WithEvents bt_delete As Button
+    Friend WithEvents list_enemys As ListBox
 End Class
