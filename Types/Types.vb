@@ -1,6 +1,13 @@
 ﻿Imports System.Drawing
 
 Public Class Types
+    Public Class info_text
+        Public textID As String = "idMe"
+        Public name As String = "<default>"
+        Public text As String = "<default>"
+        Public rotation As Integer = 0
+    End Class
+
     Public Class character
         Public playername As String = "<default>"
         Public name As String = "<default>"

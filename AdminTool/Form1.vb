@@ -7,12 +7,17 @@ Public Class Main
     'Selected Chars
     Dim selected_char As Integer = 0
     Dim selected_enemy As Integer = 0
+    'Selected TextBox
+    Dim selected_text As Integer = 0
     'Character Items
     Public Shared enemys As New List(Of character)
     Public Shared players As New List(Of character)
+    'TextBox Items
+    Public Shared texts As New List(Of info_text)
     'UI-Elements
     Public Shared admin_screen_items As New List(Of Panel)
     Public Shared player_screen_items As New List(Of Panel)
+    Public Shared info_text_boxes As New List(Of Panel)
     'Generation Paramenter
     Dim difficulty As Integer = 0
 
@@ -188,19 +193,17 @@ Public Class Main
         players.Add(new_player)
         list_player.Items.Add(new_player.name)
 
-
+        'Create Playeritem for Player
         player_item.BackColor = Color.White
         player_item.Visible = False
         player_item.Location = New Point(50, 50)
         player_item.Size = New Size(25, 25)
         player_item.Name = new_player.charID
         player_item.BorderStyle = BorderStyle.FixedSingle
-        Try
-            PlayerMap.Controls.Add(player_item)
-        Catch
-            player_item.Name = "failed"
-        End Try
+        'Add the Playeritem to the Player Screen List
+        player_screen_items.Add(player_item)
 
+        'Create Adminitem for Player
         admin_item.Size = New Size(15, 15)
         admin_item.Location = New Point(25, 25)
         admin_item.Visible = True
@@ -208,20 +211,13 @@ Public Class Main
         admin_item.BorderStyle = BorderStyle.FixedSingle
         admin_item.BackColor = Color.White
         admin_item.Cursor = Cursors.Cross
-        Try
-        AdminWindow.Controls.Add(admin_item)
-        Catch
-            admin_item.Name = "failed"
-        End Try
-        Dim admin_object As Panel = CType(AdminWindow.Controls(new_player.charID), Panel)
-        Dim player_object As Panel = CType(PlayerMap.Controls(new_player.charID), Panel)
-        AddHandler admin_object.MouseDown, AddressOf AdminWindow.drag_handler
-        AddHandler admin_object.MouseUp, AddressOf AdminWindow.mouse_up_handler
-        AddHandler admin_object.Click, AddressOf AdminWindow.mouse_click_handler
-        AddHandler admin_object.MouseHover, AddressOf AdminWindow.tt_open_player
-        admin_object.ContextMenuStrip = AdminWindow.menu_players
-        admin_object.BringToFront()
-        player_object.BringToFront()
+        AddHandler admin_item.MouseDown, AddressOf AdminWindow.drag_handler
+        AddHandler admin_item.MouseUp, AddressOf AdminWindow.mouse_up_handler
+        AddHandler admin_item.Click, AddressOf AdminWindow.mouse_click_handler
+        AddHandler admin_item.MouseHover, AddressOf AdminWindow.tt_open_enemy
+        admin_item.ContextMenuStrip = AdminWindow.menu_players
+        'Add the Adminitem to the Admin Screen List
+        admin_screen_items.Add(admin_item)
 
     End Sub
 
@@ -446,11 +442,97 @@ Public Class Main
         End If
     End Sub
 
-    Private Sub tab_enemy_Click(sender As Object, e As EventArgs) Handles tab_enemy.Click
+    'Add a InfoText box
+    Private Sub bt_add_Click(sender As Object, e As EventArgs) Handles bt_add_text.Click
+        Dim player_item As New Panel
+        Dim admin_item As New Panel
+        Dim text_field As New RichTextBox
+        Dim image_box As New PictureBox
+        Dim tmp_text As New info_text
+
+        If tb_text_name.Text = "" Then
+            Return
+        End If
+
+        'Name the TextField
+        tmp_text.name = tb_text_name.Text
+
+        'Generate ID for items
+        tmp_text.textID = (DateTime.Now - New DateTime(1970, 1, 1)).TotalMilliseconds
+
+        'Add text name to List
+        list_texts.Items.Add(tmp_text.name)
+
+        'Add text to List
+        texts.Add(tmp_text)
+
+        'Create a RichTextField to add to the TextBox
+        text_field.Name = "info"
+        text_field.Location = New Point(0, 0)
+        text_field.Visible = False
+        text_field.BorderStyle = BorderStyle.None
+        text_field.Size = New Size(100, 50)
+
+        'Create a ImageBox to add to the TextBox
+        image_box.Name = "image"
+        image_box.Location = New Point(0, 0)
+        image_box.Visible = True
+        image_box.BorderStyle = BorderStyle.None
+        image_box.Size = New Size(100, 50)
+
+        'Create Playeritem for TextBox
+        player_item.BackColor = Color.White
+        player_item.Visible = False
+        player_item.Location = New Point(50, 50)
+        player_item.Size = New Size(100, 50)
+        player_item.Name = tmp_text.textID
+        player_item.BorderStyle = BorderStyle.FixedSingle
+        'Add RichTextField to TextBox
+        player_item.Controls.Add(text_field)
+        'Add PictureBox to TextBox
+        player_item.Controls.Add(image_box)
+        'Add the TextBox to the Player Screen List
+        player_screen_items.Add(player_item)
+
+        'Create Adminitem for TextBox
+        admin_item.Size = New Size(50, 25)
+        admin_item.Location = New Point(25, 25)
+        admin_item.Visible = True
+        admin_item.Name = tmp_text.textID
+        admin_item.BorderStyle = BorderStyle.FixedSingle
+        admin_item.BackColor = Color.LightGray
+        admin_item.Cursor = Cursors.Cross
+        AddHandler admin_item.MouseDown, AddressOf AdminWindow.drag_handler
+        AddHandler admin_item.MouseUp, AddressOf AdminWindow.mouse_up_handler
+        AddHandler admin_item.Click, AddressOf AdminWindow.mouse_click_handler
+        AddHandler admin_item.MouseHover, AddressOf AdminWindow.tt_open_text
+        admin_item.ContextMenuStrip = AdminWindow.menu_players
+        'Add the TextBox to the Admin Screen List
+        admin_screen_items.Add(admin_item)
+    End Sub
+
+    'Delete a InfoText Box
+    Private Sub bt_del_text_Click(sender As Object, e As EventArgs) Handles bt_del_text.Click
 
     End Sub
 
-    Private Sub AsdfToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    'Change Text of an InfoText Box
+    Private Sub rtb_text_TextChanged(sender As Object, e As EventArgs) Handles rtb_text.TextChanged
+        Dim text_box As New info_text
+        text_box = texts(selected_text)
+        text_box.text = rtb_text.Text
+        PlayerMap.ex_update_text = True
+        PlayerMap.ex_text_to_update = text_box.textID
+    End Sub
 
+    'Selected TextBox Changed
+    Private Sub list_texts_SelectedIndexChanged(sender As Object, e As EventArgs) Handles list_texts.SelectedIndexChanged
+        Dim text_box As New info_text
+        If (list_texts.SelectedIndex >= 0) Then
+            selected_text = list_texts.SelectedIndex
+            text_box = texts(selected_text)
+            'Set Textbox text
+            rtb_text.Text = text_box.text
+        End If
     End Sub
 End Class

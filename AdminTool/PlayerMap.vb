@@ -8,6 +8,9 @@
     Public Shared ex_back_img As Image
     Public Shared ex_show_overlay As Boolean = False
 
+    Public Shared ex_update_text As Boolean = False
+    Public Shared ex_text_to_update As String = ""
+
     Public Shared ex_player_to_update As String = ""
     Public Shared ex_player_command As String = ""
     Public Shared ex_player_status_update As Boolean = False
@@ -36,7 +39,7 @@
                     player_object(0).Visible = ex_player_status_update
                     player_object(0).BringToFront()
                 ElseIf ex_player_command = "move" Then
-                    player_object(0).Location = ex_player_pos
+                    'player_object(0).Location = Main.player_screen_items.Find(Function(x) x.Name = ex_player_to_update).Location
                     player_object(0).BringToFront()
                 End If
                 ex_player_to_update = ""
@@ -67,6 +70,7 @@
             End If
             show_last_state = ex_show_overlay
         End If
+
         'Update Character Elements
         For Each element In Main.player_screen_items
             If Not Me.Controls.Contains(element) Then
@@ -74,5 +78,23 @@
                 Me.Controls.Find(element.Name, True)(0).BringToFront()
             End If
         Next
+
+        'Update InfoTextFields
+        If ex_update_text Then
+            Dim tmp_text As New RichTextBox
+            Dim tmp_bmp As New Bitmap(100, 50)
+            Dim tmp_pic_box As New PictureBox
+            tmp_text = Me.Controls.Find(ex_text_to_update, True)(0).Controls.Find("info", True)(0)
+            tmp_pic_box = Me.Controls.Find(ex_text_to_update, True)(0).Controls.Find("image", True)(0)
+
+            tmp_text.Text = Main.texts.Find(Function(x) x.textID = ex_text_to_update).text
+
+            tmp_text.DrawToBitmap(tmp_bmp, tmp_text.Bounds)
+
+            pic_background.Image = tmp_bmp
+            tmp_pic_box.Visible = False
+            tmp_text.Visible = True
+            tmp_text.BringToFront()
+        End If
     End Sub
 End Class

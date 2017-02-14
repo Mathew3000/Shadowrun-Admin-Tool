@@ -97,11 +97,20 @@ Partial Class Main
         Me.txt_count_w_6 = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.bt_del_text = New System.Windows.Forms.Button()
+        Me.bt_add_text = New System.Windows.Forms.Button()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.rtb_text = New System.Windows.Forms.RichTextBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.list_texts = New System.Windows.Forms.ListBox()
         Me.col_diag_player = New System.Windows.Forms.ColorDialog()
         Me.menu_main = New System.Windows.Forms.MenuStrip()
         Me.FensterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SpielerKarteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdminKarteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tb_text_name = New System.Windows.Forms.TextBox()
+        Me.Label26 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.tab_enemy.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -112,6 +121,9 @@ Partial Class Main
         Me.tab_dice.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.menu_main.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -129,6 +141,7 @@ Partial Class Main
         Me.TabControl1.Controls.Add(Me.tab_enemy)
         Me.TabControl1.Controls.Add(Me.tab_player)
         Me.TabControl1.Controls.Add(Me.tab_dice)
+        Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Location = New System.Drawing.Point(12, 27)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -160,6 +173,7 @@ Partial Class Main
         Me.lb_debug.Size = New System.Drawing.Size(24, 13)
         Me.lb_debug.TabIndex = 14
         Me.lb_debug.Text = "test"
+        Me.lb_debug.Visible = False
         '
         'bt_delete
         '
@@ -827,6 +841,76 @@ Partial Class Main
         Me.Label14.TabIndex = 0
         Me.Label14.Text = "W6"
         '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.bt_del_text)
+        Me.TabPage1.Controls.Add(Me.bt_add_text)
+        Me.TabPage1.Controls.Add(Me.GroupBox6)
+        Me.TabPage1.Controls.Add(Me.GroupBox5)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Size = New System.Drawing.Size(607, 396)
+        Me.TabPage1.TabIndex = 3
+        Me.TabPage1.Text = "Info"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'bt_del_text
+        '
+        Me.bt_del_text.Location = New System.Drawing.Point(103, 325)
+        Me.bt_del_text.Name = "bt_del_text"
+        Me.bt_del_text.Size = New System.Drawing.Size(100, 23)
+        Me.bt_del_text.TabIndex = 3
+        Me.bt_del_text.Text = "Delete Text"
+        Me.bt_del_text.UseVisualStyleBackColor = True
+        '
+        'bt_add_text
+        '
+        Me.bt_add_text.Location = New System.Drawing.Point(3, 325)
+        Me.bt_add_text.Name = "bt_add_text"
+        Me.bt_add_text.Size = New System.Drawing.Size(100, 23)
+        Me.bt_add_text.TabIndex = 2
+        Me.bt_add_text.Text = "Add Text"
+        Me.bt_add_text.UseVisualStyleBackColor = True
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.rtb_text)
+        Me.GroupBox6.Location = New System.Drawing.Point(209, 3)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(395, 390)
+        Me.GroupBox6.TabIndex = 1
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Text"
+        '
+        'rtb_text
+        '
+        Me.rtb_text.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.rtb_text.Location = New System.Drawing.Point(7, 20)
+        Me.rtb_text.Name = "rtb_text"
+        Me.rtb_text.Size = New System.Drawing.Size(382, 364)
+        Me.rtb_text.TabIndex = 0
+        Me.rtb_text.Text = ""
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.Label26)
+        Me.GroupBox5.Controls.Add(Me.tb_text_name)
+        Me.GroupBox5.Controls.Add(Me.list_texts)
+        Me.GroupBox5.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(200, 316)
+        Me.GroupBox5.TabIndex = 0
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Info Texte"
+        '
+        'list_texts
+        '
+        Me.list_texts.FormattingEnabled = True
+        Me.list_texts.Location = New System.Drawing.Point(7, 46)
+        Me.list_texts.Name = "list_texts"
+        Me.list_texts.Size = New System.Drawing.Size(187, 264)
+        Me.list_texts.TabIndex = 0
+        '
         'menu_main
         '
         Me.menu_main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FensterToolStripMenuItem})
@@ -857,6 +941,22 @@ Partial Class Main
         Me.AdminKarteToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
         Me.AdminKarteToolStripMenuItem.Text = "Admin Karte"
         '
+        'tb_text_name
+        '
+        Me.tb_text_name.Location = New System.Drawing.Point(74, 18)
+        Me.tb_text_name.Name = "tb_text_name"
+        Me.tb_text_name.Size = New System.Drawing.Size(120, 20)
+        Me.tb_text_name.TabIndex = 1
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(6, 21)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(62, 13)
+        Me.Label26.TabIndex = 2
+        Me.Label26.Text = "Text Name:"
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -884,6 +984,10 @@ Partial Class Main
         Me.Panel3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.TabPage1.ResumeLayout(False)
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.menu_main.ResumeLayout(False)
         Me.menu_main.PerformLayout()
         Me.ResumeLayout(False)
@@ -969,4 +1073,13 @@ Partial Class Main
     Friend WithEvents bt_delete As Button
     Friend WithEvents list_enemys As ListBox
     Friend WithEvents lb_debug As Label
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents list_texts As ListBox
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents rtb_text As RichTextBox
+    Friend WithEvents bt_del_text As Button
+    Friend WithEvents bt_add_text As Button
+    Friend WithEvents Label26 As Label
+    Friend WithEvents tb_text_name As TextBox
 End Class

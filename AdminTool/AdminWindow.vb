@@ -2,9 +2,6 @@
 
 Public Class AdminWindow
 
-    'Add a Listener for UI Element List and add missing items to UI
-    'Rotate Player MapImage
-
     Dim mouse_down As Boolean = False
     Dim mouse_button As String = ""
     Dim mouse_down_sender As New Object
@@ -31,8 +28,8 @@ Public Class AdminWindow
         Me.pic_map.Height = (PlayerMap.ex_height - 38) / scale_factor
 
         'Rescale to fit PlayerWindow Preview
-        If (Me.Width < PlayerMap.ex_width / scale_factor) Then
-            Me.Width = PlayerMap.ex_width / scale_factor
+        If (Me.Width < (PlayerMap.ex_width / scale_factor) + 175) Then
+            Me.Width = (PlayerMap.ex_width / scale_factor) + 175
         End If
         If (Me.Height < (PlayerMap.ex_height / scale_factor) + 200) Then
             Me.Height = (PlayerMap.ex_height / scale_factor) + 200
@@ -40,20 +37,27 @@ Public Class AdminWindow
 
         'Update Moved Players
         If mouse_down Then
-            Dim cursor_pos As Point = Me.PointToClient(Cursor.Position) + (Me.Location - Me.Bounds.Location)
             Dim tmp_pos As Point = New Point(0, 0)
+            Dim cursor_pos As Point = Me.PointToClient(Cursor.Position) + (Me.Location - Me.Bounds.Location)
+            'Move Player on admin Screen
             mouse_down_sender.Location = cursor_pos - New Point(7, 7)
-            PlayerMap.ex_player_command = "move"
-            PlayerMap.ex_player_to_update = mouse_down_sender.name
-            'Scale Movement
-            tmp_pos = cursor_pos - New Point(7, 7)
-            PlayerMap.ex_player_pos.X = tmp_pos.X * scale_factor
-            PlayerMap.ex_player_pos.Y = tmp_pos.Y * scale_factor
+            'Save Player Position in element (admin and player)
+            Main.admin_screen_items.Find(Function(x) x.Name = mouse_down_sender.name).Location = mouse_down_sender.Location
+            If cb_player_live_update.Checked Then
+                tmp_pos = cursor_pos - New Point(7, 7)
+                Main.player_screen_items.Find(Function(x) x.Name = mouse_down_sender.name).Location =
+                    New Point(tmp_pos.X * scale_factor, tmp_pos.Y * scale_factor)
+            End If
         End If
 
         'Rescale Maps Selection Box
         If Me.Width > 200 Then
             Panel1.Width = Me.Width - 36
+        End If
+
+        'Rescale Options Box
+        If Me.Height > 160 Then
+            GroupBox1.Height = Me.Height - 220
         End If
 
         'Update Character Elements
@@ -136,9 +140,9 @@ Public Class AdminWindow
     'Set Maps onClick
     Private Sub pb_map_xx_Click(sender As Object, e As EventArgs) Handles pb_map_01.Click, pb_map_02.Click, pb_map_03.Click, pb_map_04.Click, pb_map_05.Click, pb_map_06.Click, pb_map_07.Click, pb_map_08.Click, pb_map_09.Click
         Dim selection As MsgBoxResult
-        selection = MsgBox("Set map?", MsgBoxStyle.YesNo, "Are you sure?")
-        If selection = MsgBoxResult.Yes Then
-            If Not img_sender.Image Is Nothing Then
+        If Not img_sender.Image Is Nothing Then
+            selection = MsgBox("Set map?", MsgBoxStyle.YesNo, "Are you sure?")
+            If selection = MsgBoxResult.Yes Then
                 Try
                     pic_map.BackgroundImage = img_sender.Image
                     PlayerMap.ex_back_img_filename = img_sender.ImageLocation
@@ -146,6 +150,13 @@ Public Class AdminWindow
                 Catch
                     MsgBox("Could not set image!", MessageBoxButtons.OK, "Error!")
                 End Try
+
+            End If
+        Else
+            dial_open_img.ShowDialog()
+            If dial_open_img.FileName <> "" Then
+                img_sender.Image = Image.FromFile(dial_open_img.FileName)
+                img_sender.ImageLocation = dial_open_img.FileName
             End If
         End If
     End Sub
@@ -162,15 +173,25 @@ Public Class AdminWindow
     Public Sub tt_open_enemy(sender As Object, e As EventArgs)
         Dim tmp_char As character = New character
         tmp_char = Main.enemys.Find(Function(p) p.charID = sender.name)
-        tt_playername.SetToolTip(sender, tmp_char.playername)
-        tt_playername.ToolTipTitle = tmp_char.name
-        tt_playername.Active = True
+        Try
+            tt_playername.SetToolTip(sender, tmp_char.playername)
+            tt_playername.ToolTipTitle = tmp_char.name
+            tt_playername.Active = True
+        Catch
+        End Try
     End Sub
     Public Sub tt_open_player(sender As Object, e As EventArgs)
         Dim tmp_char As character = New character
         tmp_char = Main.players.Find(Function(p) p.charID = sender.name)
         tt_playername.SetToolTip(sender, tmp_char.playername)
         tt_playername.ToolTipTitle = tmp_char.name
+        tt_playername.Active = True
+    End Sub
+    Public Sub tt_open_text(sender As Object, e As EventArgs)
+        Dim tmp_txt As info_text = New info_text
+        tmp_txt = Main.texts.Find(Function(p) p.textID = sender.name)
+        tt_playername.SetToolTip(sender, " ")
+        tt_playername.ToolTipTitle = tmp_txt.name
         tt_playername.Active = True
     End Sub
 
@@ -196,5 +217,15 @@ Public Class AdminWindow
 
     Private Sub pb_map_xx_down(sender As Object, e As MouseEventArgs) Handles pb_map_09.MouseDown, pb_map_08.MouseDown, pb_map_07.MouseDown, pb_map_06.MouseDown, pb_map_05.MouseDown, pb_map_04.MouseDown, pb_map_03.MouseDown, pb_map_02.MouseDown, pb_map_01.MouseDown
 
+    End Sub
+
+    'Update Player Movement
+    Private Sub MoveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MoveToolStripMenuItem.Click
+        Dim tmp_pos As Point = New Point(0, 0)
+        PlayerMap.ex_player_command = "move"
+        PlayerMap.ex_player_to_update = mouse_down_sender.name
+        tmp_pos = Main.admin_screen_items.Find(Function(x) x.Name = mouse_down_sender.name).Location
+        Main.player_screen_items.Find(Function(x) x.Name = mouse_down_sender.name).Location =
+            New Point(tmp_pos.X * scale_factor, tmp_pos.Y * scale_factor)
     End Sub
 End Class
