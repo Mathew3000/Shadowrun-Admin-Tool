@@ -22,12 +22,12 @@ AdminTool
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="P:AdminTool.My.Resources.Resources.hex">
+<member name="P:AdminTool.My.Resources.Resources.hex1">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:AdminTool.My.Resources.Resources.hex1">
+<member name="P:AdminTool.My.Resources.Resources.hex2">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

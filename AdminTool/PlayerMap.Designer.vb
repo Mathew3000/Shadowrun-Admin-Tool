@@ -24,25 +24,26 @@ Partial Class PlayerMap
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PlayerMap))
-        Me.pic_background = New System.Windows.Forms.PictureBox()
         Me.ui_update = New System.Windows.Forms.Timer(Me.components)
+        Me.pic_background = New System.Windows.Forms.PictureBox()
         CType(Me.pic_background, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'pic_background
-        '
-        Me.pic_background.BackColor = System.Drawing.Color.White
-        Me.pic_background.Location = New System.Drawing.Point(0, 0)
-        Me.pic_background.Name = "pic_background"
-        Me.pic_background.Size = New System.Drawing.Size(715, 331)
-        Me.pic_background.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pic_background.TabIndex = 0
-        Me.pic_background.TabStop = False
         '
         'ui_update
         '
         Me.ui_update.Enabled = True
         Me.ui_update.Interval = 10
+        '
+        'pic_background
+        '
+        Me.pic_background.BackColor = System.Drawing.Color.White
+        Me.pic_background.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.pic_background.Location = New System.Drawing.Point(0, 0)
+        Me.pic_background.Name = "pic_background"
+        Me.pic_background.Size = New System.Drawing.Size(715, 331)
+        Me.pic_background.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.pic_background.TabIndex = 0
+        Me.pic_background.TabStop = False
         '
         'PlayerMap
         '

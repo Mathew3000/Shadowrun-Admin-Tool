@@ -26,6 +26,7 @@ Partial Class Main
         Me.bt_rand = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tab_enemy = New System.Windows.Forms.TabPage()
+        Me.lb_debug = New System.Windows.Forms.Label()
         Me.bt_delete = New System.Windows.Forms.Button()
         Me.list_enemys = New System.Windows.Forms.ListBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -101,7 +102,6 @@ Partial Class Main
         Me.FensterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SpielerKarteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdminKarteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.lb_debug = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.tab_enemy.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -151,6 +151,15 @@ Partial Class Main
         Me.tab_enemy.TabIndex = 0
         Me.tab_enemy.Text = "Gegner"
         Me.tab_enemy.UseVisualStyleBackColor = True
+        '
+        'lb_debug
+        '
+        Me.lb_debug.AutoSize = True
+        Me.lb_debug.Location = New System.Drawing.Point(215, 332)
+        Me.lb_debug.Name = "lb_debug"
+        Me.lb_debug.Size = New System.Drawing.Size(24, 13)
+        Me.lb_debug.TabIndex = 14
+        Me.lb_debug.Text = "test"
         '
         'bt_delete
         '
@@ -838,24 +847,15 @@ Partial Class Main
         '
         Me.SpielerKarteToolStripMenuItem.CheckOnClick = True
         Me.SpielerKarteToolStripMenuItem.Name = "SpielerKarteToolStripMenuItem"
-        Me.SpielerKarteToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SpielerKarteToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
         Me.SpielerKarteToolStripMenuItem.Text = "Spieler Karte"
         '
         'AdminKarteToolStripMenuItem
         '
         Me.AdminKarteToolStripMenuItem.CheckOnClick = True
         Me.AdminKarteToolStripMenuItem.Name = "AdminKarteToolStripMenuItem"
-        Me.AdminKarteToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AdminKarteToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
         Me.AdminKarteToolStripMenuItem.Text = "Admin Karte"
-        '
-        'lb_debug
-        '
-        Me.lb_debug.AutoSize = True
-        Me.lb_debug.Location = New System.Drawing.Point(215, 332)
-        Me.lb_debug.Name = "lb_debug"
-        Me.lb_debug.Size = New System.Drawing.Size(24, 13)
-        Me.lb_debug.TabIndex = 14
-        Me.lb_debug.Text = "test"
         '
         'Main
         '

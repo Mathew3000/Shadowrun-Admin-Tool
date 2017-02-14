@@ -332,7 +332,6 @@ Partial Class AdminWindow
         Me.pic_map.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.pic_map.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pic_map.ContextMenuStrip = Me.menu_preview
-        Me.pic_map.Image = Global.AdminTool.My.Resources.Resources.hex1
         Me.pic_map.Location = New System.Drawing.Point(0, 0)
         Me.pic_map.Name = "pic_map"
         Me.pic_map.Size = New System.Drawing.Size(624, 275)

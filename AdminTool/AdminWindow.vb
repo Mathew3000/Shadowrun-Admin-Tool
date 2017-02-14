@@ -10,9 +10,22 @@ Public Class AdminWindow
     Dim mouse_down_sender As New Object
     Dim img_sender As New Object
     Dim scale_factor As Integer = 2
+    Dim last_show_state As Boolean = False
 
     'Update UI with changes
     Private Sub ui_updater_Tick(sender As Object, e As EventArgs) Handles ui_updater.Tick
+        'Show Overlay?
+        If Not cb_overlay.Checked = last_show_state Then
+            If cb_overlay.Checked Then
+                pic_map.Image = AdminTool.My.Resources.Resources.hex2
+                PlayerMap.ex_show_overlay = True
+            Else
+                pic_map.Image = Nothing
+                PlayerMap.ex_show_overlay = False
+            End If
+            last_show_state = cb_overlay.Checked
+        End If
+
         'Scale Preview
         Me.pic_map.Width = (PlayerMap.ex_width - 16) / scale_factor
         Me.pic_map.Height = (PlayerMap.ex_height - 38) / scale_factor
@@ -48,9 +61,6 @@ Public Class AdminWindow
             If Not Me.Controls.Contains(element) Then
                 Me.Controls.Add(element)
                 Me.Controls.Find(element.Name, True)(0).BringToFront()
-            End If
-            If Not Me.Controls.Find(element.Name, True)(0).Visible Then
-                Me.Controls.Find(element.Name, True)(0).Visible = True
             End If
         Next
 
