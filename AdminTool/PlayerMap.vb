@@ -20,6 +20,8 @@
     Private Sub PlayerMap_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         pic_background.Width = Me.Width - 16
         pic_background.Height = Me.Height - 38
+        pan_hide_map.Width = Me.Width - 16
+        pan_hide_map.Height = Me.Height - 38
         ex_width = Me.Width
         ex_height = Me.Height
     End Sub
@@ -69,6 +71,12 @@
                 pic_background.Image = Nothing
             End If
             show_last_state = ex_show_overlay
+        End If
+
+        'Hide Map?
+        pan_hide_map.Visible = AdminWindow.chk_hide_map.Checked
+        If AdminWindow.chk_hide_map.Checked Then
+            pan_hide_map.BringToFront()
         End If
 
         'Update Character Elements

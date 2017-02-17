@@ -9,6 +9,11 @@ Public Class AdminWindow
     Dim scale_factor As Integer = 2
     Dim last_show_state As Boolean = False
 
+    Dim mode_draw_mask As Boolean = True
+    Dim mode_drawing As Boolean = False
+    Dim point_one As Point = New Point(0, 0)
+    Dim point_two As Point = New Point(0, 0)
+
     'Update UI with changes
     Private Sub ui_updater_Tick(sender As Object, e As EventArgs) Handles ui_updater.Tick
         'Show Overlay?
@@ -140,6 +145,9 @@ Public Class AdminWindow
     'Set Maps onClick
     Private Sub pb_map_xx_Click(sender As Object, e As EventArgs) Handles pb_map_01.Click, pb_map_02.Click, pb_map_03.Click, pb_map_04.Click, pb_map_05.Click, pb_map_06.Click, pb_map_07.Click, pb_map_08.Click, pb_map_09.Click
         Dim selection As MsgBoxResult
+        If mode_draw_mask Then
+            Return
+        End If
         If Not img_sender.Image Is Nothing Then
             selection = MsgBox("Set map?", MsgBoxStyle.YesNo, "Are you sure?")
             If selection = MsgBoxResult.Yes Then
@@ -227,5 +235,27 @@ Public Class AdminWindow
         tmp_pos = Main.admin_screen_items.Find(Function(x) x.Name = mouse_down_sender.name).Location
         Main.player_screen_items.Find(Function(x) x.Name = mouse_down_sender.name).Location =
             New Point(tmp_pos.X * scale_factor, tmp_pos.Y * scale_factor)
+    End Sub
+
+    'Add Masks Button / Handler
+    Private Sub bt_add_mask_Click(sender As Object, e As EventArgs) Handles bt_add_mask.Click
+        mode_draw_mask = True
+        Me.Cursor = Cursors.Cross
+    End Sub
+    Private Sub handle_click(sender As Object, e As MouseEventArgs) Handles Me.MouseClick
+        If mode_draw_mask Then
+            If mode_drawing = False Then
+                'Get First Point
+                mode_drawing = True
+                'Add Panel
+                Dim mask As New Panel
+                mask.Location = MousePosition
+            Else
+                'Get Second Point
+                mode_drawing = False
+                point_two = MousePosition
+
+            End If
+        End If
     End Sub
 End Class

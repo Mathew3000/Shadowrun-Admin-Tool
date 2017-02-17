@@ -57,6 +57,8 @@ Partial Class AdminWindow
         Me.cb_player_live_update = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.bt_add_mask = New System.Windows.Forms.Button()
+        Me.chk_hide_map = New System.Windows.Forms.CheckBox()
         Me.menu_preview.SuspendLayout()
         Me.menu_players.SuspendLayout()
         Me.menu_map.SuspendLayout()
@@ -322,6 +324,8 @@ Partial Class AdminWindow
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.chk_hide_map)
+        Me.GroupBox1.Controls.Add(Me.bt_add_mask)
         Me.GroupBox1.Controls.Add(Me.cb_player_live_update)
         Me.GroupBox1.Controls.Add(Me.cb_overlay)
         Me.GroupBox1.Location = New System.Drawing.Point(631, 12)
@@ -369,6 +373,27 @@ Partial Class AdminWindow
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(691, 143)
         Me.Panel1.TabIndex = 2
+        '
+        'bt_add_mask
+        '
+        Me.bt_add_mask.Location = New System.Drawing.Point(6, 92)
+        Me.bt_add_mask.Name = "bt_add_mask"
+        Me.bt_add_mask.Size = New System.Drawing.Size(134, 23)
+        Me.bt_add_mask.TabIndex = 12
+        Me.bt_add_mask.Text = "Add Mask"
+        Me.bt_add_mask.UseVisualStyleBackColor = True
+        '
+        'chk_hide_map
+        '
+        Me.chk_hide_map.AutoSize = True
+        Me.chk_hide_map.Checked = True
+        Me.chk_hide_map.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chk_hide_map.Location = New System.Drawing.Point(7, 66)
+        Me.chk_hide_map.Name = "chk_hide_map"
+        Me.chk_hide_map.Size = New System.Drawing.Size(84, 17)
+        Me.chk_hide_map.TabIndex = 13
+        Me.chk_hide_map.Text = "Map Hidden"
+        Me.chk_hide_map.UseVisualStyleBackColor = True
         '
         'AdminWindow
         '
@@ -435,4 +460,6 @@ Partial Class AdminWindow
     Friend WithEvents cb_player_live_update As CheckBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents chk_hide_map As CheckBox
+    Friend WithEvents bt_add_mask As Button
 End Class

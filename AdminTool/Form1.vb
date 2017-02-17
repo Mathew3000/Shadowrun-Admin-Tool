@@ -471,20 +471,20 @@ Public Class Main
         text_field.Location = New Point(0, 0)
         text_field.Visible = False
         text_field.BorderStyle = BorderStyle.None
-        text_field.Size = New Size(100, 50)
+        text_field.Size = New Size(200, 100)
 
         'Create a ImageBox to add to the TextBox
         image_box.Name = "image"
         image_box.Location = New Point(0, 0)
         image_box.Visible = True
         image_box.BorderStyle = BorderStyle.None
-        image_box.Size = New Size(100, 50)
+        image_box.Size = New Size(200, 100)
 
         'Create Playeritem for TextBox
         player_item.BackColor = Color.White
         player_item.Visible = False
         player_item.Location = New Point(50, 50)
-        player_item.Size = New Size(100, 50)
+        player_item.Size = New Size(200, 100)
         player_item.Name = tmp_text.textID
         player_item.BorderStyle = BorderStyle.FixedSingle
         'Add RichTextField to TextBox
@@ -495,7 +495,7 @@ Public Class Main
         player_screen_items.Add(player_item)
 
         'Create Adminitem for TextBox
-        admin_item.Size = New Size(50, 25)
+        admin_item.Size = New Size(100, 50)
         admin_item.Location = New Point(25, 25)
         admin_item.Visible = True
         admin_item.Name = tmp_text.textID
@@ -513,7 +513,13 @@ Public Class Main
 
     'Delete a InfoText Box
     Private Sub bt_del_text_Click(sender As Object, e As EventArgs) Handles bt_del_text.Click
-
+        Dim item As Panel
+        'Search for item to delete
+        item = admin_screen_items.Find(Function(x) x.Name = texts(selected_text).textID)
+        admin_screen_items.Remove(item)
+        player_screen_items.Remove(item)
+        'Delete text from Text List
+        texts.RemoveAt(selected_text)
     End Sub
 
     'Change Text of an InfoText Box

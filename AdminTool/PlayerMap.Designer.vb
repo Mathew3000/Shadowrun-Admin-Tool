@@ -26,6 +26,7 @@ Partial Class PlayerMap
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PlayerMap))
         Me.ui_update = New System.Windows.Forms.Timer(Me.components)
         Me.pic_background = New System.Windows.Forms.PictureBox()
+        Me.pan_hide_map = New System.Windows.Forms.Panel()
         CType(Me.pic_background, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -45,11 +46,20 @@ Partial Class PlayerMap
         Me.pic_background.TabIndex = 0
         Me.pic_background.TabStop = False
         '
+        'pan_hide_map
+        '
+        Me.pan_hide_map.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.pan_hide_map.Location = New System.Drawing.Point(0, 0)
+        Me.pan_hide_map.Name = "pan_hide_map"
+        Me.pan_hide_map.Size = New System.Drawing.Size(715, 331)
+        Me.pan_hide_map.TabIndex = 1
+        '
         'PlayerMap
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(715, 331)
+        Me.Controls.Add(Me.pan_hide_map)
         Me.Controls.Add(Me.pic_background)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "PlayerMap"
@@ -61,4 +71,5 @@ Partial Class PlayerMap
 
     Friend WithEvents pic_background As PictureBox
     Friend WithEvents ui_update As Timer
+    Friend WithEvents pan_hide_map As Panel
 End Class
