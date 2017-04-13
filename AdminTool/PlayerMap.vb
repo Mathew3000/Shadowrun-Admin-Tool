@@ -5,7 +5,7 @@
     Public Shared ex_height As Integer = 100
 
     Public Shared ex_back_img_filename As String = ""
-    Public Shared ex_back_img As Image
+    Public Shared ex_back_img As Image = Nothing
     Public Shared ex_show_overlay As Boolean = False
 
     Public Shared ex_update_text As Boolean = False
@@ -56,7 +56,7 @@
             If ex_back_img_filename = "CLEAR" Then
                 pic_background.BackgroundImage = Nothing
             Else
-                If Not ex_back_img.Equals(Nothing) Then
+                If Not IsNothing(ex_back_img) Then
                     pic_background.BackgroundImage = ex_back_img
                 End If
             End If

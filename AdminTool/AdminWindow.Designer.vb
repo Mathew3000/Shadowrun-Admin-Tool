@@ -35,6 +35,7 @@ Partial Class AdminWindow
         Me.menu_players = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.VisibleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MoveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.cb_overlay = New System.Windows.Forms.CheckBox()
         Me.menu_map = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.LoadImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -52,13 +53,11 @@ Partial Class AdminWindow
         Me.pb_map_02 = New System.Windows.Forms.PictureBox()
         Me.pb_map_01 = New System.Windows.Forms.PictureBox()
         Me.pic_map = New System.Windows.Forms.PictureBox()
-        Me.MoveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.cb_player_live_update = New System.Windows.Forms.CheckBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.bt_add_mask = New System.Windows.Forms.Button()
         Me.chk_hide_map = New System.Windows.Forms.CheckBox()
+        Me.bt_add_mask = New System.Windows.Forms.Button()
+        Me.cb_player_live_update = New System.Windows.Forms.CheckBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.menu_preview.SuspendLayout()
         Me.menu_players.SuspendLayout()
         Me.menu_map.SuspendLayout()
@@ -73,7 +72,7 @@ Partial Class AdminWindow
         CType(Me.pb_map_01, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pic_map, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'menu_preview
@@ -142,6 +141,12 @@ Partial Class AdminWindow
         Me.HideToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
         Me.HideToolStripMenuItem.Text = "Hide"
         '
+        'MoveToolStripMenuItem
+        '
+        Me.MoveToolStripMenuItem.Name = "MoveToolStripMenuItem"
+        Me.MoveToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
+        Me.MoveToolStripMenuItem.Text = "Move"
+        '
         'cb_overlay
         '
         Me.cb_overlay.AutoSize = True
@@ -191,7 +196,7 @@ Partial Class AdminWindow
         Me.pb_map_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pb_map_09.ContextMenuStrip = Me.menu_map
         Me.pb_map_09.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_09.Location = New System.Drawing.Point(613, 22)
+        Me.pb_map_09.Location = New System.Drawing.Point(614, 19)
         Me.pb_map_09.Name = "pb_map_09"
         Me.pb_map_09.Size = New System.Drawing.Size(70, 100)
         Me.pb_map_09.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -204,7 +209,7 @@ Partial Class AdminWindow
         Me.pb_map_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pb_map_08.ContextMenuStrip = Me.menu_map
         Me.pb_map_08.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_08.Location = New System.Drawing.Point(537, 22)
+        Me.pb_map_08.Location = New System.Drawing.Point(538, 19)
         Me.pb_map_08.Name = "pb_map_08"
         Me.pb_map_08.Size = New System.Drawing.Size(70, 100)
         Me.pb_map_08.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -217,7 +222,7 @@ Partial Class AdminWindow
         Me.pb_map_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pb_map_07.ContextMenuStrip = Me.menu_map
         Me.pb_map_07.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_07.Location = New System.Drawing.Point(461, 22)
+        Me.pb_map_07.Location = New System.Drawing.Point(462, 19)
         Me.pb_map_07.Name = "pb_map_07"
         Me.pb_map_07.Size = New System.Drawing.Size(70, 100)
         Me.pb_map_07.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -230,7 +235,7 @@ Partial Class AdminWindow
         Me.pb_map_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pb_map_06.ContextMenuStrip = Me.menu_map
         Me.pb_map_06.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_06.Location = New System.Drawing.Point(385, 22)
+        Me.pb_map_06.Location = New System.Drawing.Point(386, 19)
         Me.pb_map_06.Name = "pb_map_06"
         Me.pb_map_06.Size = New System.Drawing.Size(70, 100)
         Me.pb_map_06.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -243,7 +248,7 @@ Partial Class AdminWindow
         Me.pb_map_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pb_map_05.ContextMenuStrip = Me.menu_map
         Me.pb_map_05.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_05.Location = New System.Drawing.Point(309, 22)
+        Me.pb_map_05.Location = New System.Drawing.Point(310, 19)
         Me.pb_map_05.Name = "pb_map_05"
         Me.pb_map_05.Size = New System.Drawing.Size(70, 100)
         Me.pb_map_05.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -256,7 +261,7 @@ Partial Class AdminWindow
         Me.pb_map_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pb_map_04.ContextMenuStrip = Me.menu_map
         Me.pb_map_04.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_04.Location = New System.Drawing.Point(233, 22)
+        Me.pb_map_04.Location = New System.Drawing.Point(234, 19)
         Me.pb_map_04.Name = "pb_map_04"
         Me.pb_map_04.Size = New System.Drawing.Size(70, 100)
         Me.pb_map_04.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -269,7 +274,7 @@ Partial Class AdminWindow
         Me.pb_map_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pb_map_03.ContextMenuStrip = Me.menu_map
         Me.pb_map_03.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_03.Location = New System.Drawing.Point(157, 22)
+        Me.pb_map_03.Location = New System.Drawing.Point(158, 19)
         Me.pb_map_03.Name = "pb_map_03"
         Me.pb_map_03.Size = New System.Drawing.Size(70, 100)
         Me.pb_map_03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -282,7 +287,7 @@ Partial Class AdminWindow
         Me.pb_map_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pb_map_02.ContextMenuStrip = Me.menu_map
         Me.pb_map_02.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_02.Location = New System.Drawing.Point(81, 22)
+        Me.pb_map_02.Location = New System.Drawing.Point(82, 19)
         Me.pb_map_02.Name = "pb_map_02"
         Me.pb_map_02.Size = New System.Drawing.Size(70, 100)
         Me.pb_map_02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -295,7 +300,7 @@ Partial Class AdminWindow
         Me.pb_map_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pb_map_01.ContextMenuStrip = Me.menu_map
         Me.pb_map_01.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_01.Location = New System.Drawing.Point(5, 22)
+        Me.pb_map_01.Location = New System.Drawing.Point(6, 19)
         Me.pb_map_01.Name = "pb_map_01"
         Me.pb_map_01.Size = New System.Drawing.Size(70, 100)
         Me.pb_map_01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -315,12 +320,6 @@ Partial Class AdminWindow
         Me.pic_map.TabIndex = 0
         Me.pic_map.TabStop = False
         '
-        'MoveToolStripMenuItem
-        '
-        Me.MoveToolStripMenuItem.Name = "MoveToolStripMenuItem"
-        Me.MoveToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
-        Me.MoveToolStripMenuItem.Text = "Move"
-        '
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -335,54 +334,6 @@ Partial Class AdminWindow
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Options"
         '
-        'cb_player_live_update
-        '
-        Me.cb_player_live_update.AutoSize = True
-        Me.cb_player_live_update.Location = New System.Drawing.Point(6, 42)
-        Me.cb_player_live_update.Name = "cb_player_live_update"
-        Me.cb_player_live_update.Size = New System.Drawing.Size(121, 17)
-        Me.cb_player_live_update.TabIndex = 11
-        Me.cb_player_live_update.Text = "Live Update Players"
-        Me.cb_player_live_update.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(2, 2)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(33, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Maps"
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.AutoScroll = True
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.pb_map_09)
-        Me.Panel1.Controls.Add(Me.pb_map_08)
-        Me.Panel1.Controls.Add(Me.pb_map_07)
-        Me.Panel1.Controls.Add(Me.pb_map_06)
-        Me.Panel1.Controls.Add(Me.pb_map_05)
-        Me.Panel1.Controls.Add(Me.pb_map_04)
-        Me.Panel1.Controls.Add(Me.pb_map_03)
-        Me.Panel1.Controls.Add(Me.pb_map_02)
-        Me.Panel1.Controls.Add(Me.pb_map_01)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(12, 287)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(691, 143)
-        Me.Panel1.TabIndex = 2
-        '
-        'bt_add_mask
-        '
-        Me.bt_add_mask.Location = New System.Drawing.Point(6, 92)
-        Me.bt_add_mask.Name = "bt_add_mask"
-        Me.bt_add_mask.Size = New System.Drawing.Size(134, 23)
-        Me.bt_add_mask.TabIndex = 12
-        Me.bt_add_mask.Text = "Add Mask"
-        Me.bt_add_mask.UseVisualStyleBackColor = True
-        '
         'chk_hide_map
         '
         Me.chk_hide_map.AutoSize = True
@@ -395,13 +346,50 @@ Partial Class AdminWindow
         Me.chk_hide_map.Text = "Map Hidden"
         Me.chk_hide_map.UseVisualStyleBackColor = True
         '
+        'bt_add_mask
+        '
+        Me.bt_add_mask.Location = New System.Drawing.Point(6, 92)
+        Me.bt_add_mask.Name = "bt_add_mask"
+        Me.bt_add_mask.Size = New System.Drawing.Size(134, 23)
+        Me.bt_add_mask.TabIndex = 12
+        Me.bt_add_mask.Text = "Add Mask"
+        Me.bt_add_mask.UseVisualStyleBackColor = True
+        '
+        'cb_player_live_update
+        '
+        Me.cb_player_live_update.AutoSize = True
+        Me.cb_player_live_update.Location = New System.Drawing.Point(6, 42)
+        Me.cb_player_live_update.Name = "cb_player_live_update"
+        Me.cb_player_live_update.Size = New System.Drawing.Size(121, 17)
+        Me.cb_player_live_update.TabIndex = 11
+        Me.cb_player_live_update.Text = "Live Update Players"
+        Me.cb_player_live_update.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.pb_map_09)
+        Me.GroupBox2.Controls.Add(Me.pb_map_01)
+        Me.GroupBox2.Controls.Add(Me.pb_map_08)
+        Me.GroupBox2.Controls.Add(Me.pb_map_02)
+        Me.GroupBox2.Controls.Add(Me.pb_map_07)
+        Me.GroupBox2.Controls.Add(Me.pb_map_03)
+        Me.GroupBox2.Controls.Add(Me.pb_map_06)
+        Me.GroupBox2.Controls.Add(Me.pb_map_04)
+        Me.GroupBox2.Controls.Add(Me.pb_map_05)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 281)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(695, 127)
+        Me.GroupBox2.TabIndex = 4
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Maps"
+        '
         'AdminWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(789, 442)
+        Me.ClientSize = New System.Drawing.Size(789, 411)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pic_map)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AdminWindow"
@@ -421,8 +409,7 @@ Partial Class AdminWindow
         CType(Me.pic_map, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -458,8 +445,7 @@ Partial Class AdminWindow
     Friend WithEvents MoveToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents cb_player_live_update As CheckBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents chk_hide_map As CheckBox
     Friend WithEvents bt_add_mask As Button
+    Friend WithEvents GroupBox2 As GroupBox
 End Class

@@ -9,10 +9,10 @@ Public Class AdminWindow
     Dim scale_factor As Integer = 2
     Dim last_show_state As Boolean = False
 
-    Dim mode_draw_mask As Boolean = True
+    Dim mode_draw_mask As Boolean = False
     Dim mode_drawing As Boolean = False
     Dim point_one As Point = New Point(0, 0)
-    Dim point_two As Point = New Point(0, 0)
+    Dim mask_sender As String = ""
 
     'Update UI with changes
     Private Sub ui_updater_Tick(sender As Object, e As EventArgs) Handles ui_updater.Tick
@@ -27,6 +27,10 @@ Public Class AdminWindow
             End If
             last_show_state = cb_overlay.Checked
         End If
+
+        'Debugging options
+        'Fixme mask not working
+        bt_add_mask.Enabled = Main.debugging
 
         'Scale Preview
         Me.pic_map.Width = (PlayerMap.ex_width - 16) / scale_factor
@@ -57,7 +61,7 @@ Public Class AdminWindow
 
         'Rescale Maps Selection Box
         If Me.Width > 200 Then
-            Panel1.Width = Me.Width - 36
+            GroupBox2.Width = Me.Width - 36
         End If
 
         'Rescale Options Box
@@ -72,6 +76,20 @@ Public Class AdminWindow
                 Me.Controls.Find(element.Name, True)(0).BringToFront()
             End If
         Next
+
+        'Delete old Elements
+        For Each element In Me.Controls.OfType(Of Panel)
+            If Not Main.admin_screen_items.Contains(element) Then
+                Me.Controls.Remove(element)
+            End If
+        Next
+
+        'Draw Mask
+        If mode_drawing Then
+            Dim cursor_pos As Point = Me.PointToClient(Cursor.Position) + (Me.Location - Me.Bounds.Location)
+            Dim mask As Panel = Me.Controls.Find(mask_sender, True)(0)
+            mask.Bounds = New Rectangle(mask.Location, cursor_pos)
+        End If
 
 
     End Sub
@@ -136,6 +154,7 @@ Public Class AdminWindow
             Try
                 pic_map.BackgroundImage = img_sender.Image
                 PlayerMap.ex_back_img_filename = img_sender.ImageLocation
+                PlayerMap.ex_back_img = img_sender.image
             Catch
                 MsgBox("Could not set image!", MessageBoxButtons.OK, "Error!")
             End Try
@@ -239,22 +258,32 @@ Public Class AdminWindow
 
     'Add Masks Button / Handler
     Private Sub bt_add_mask_Click(sender As Object, e As EventArgs) Handles bt_add_mask.Click
-        mode_draw_mask = True
-        Me.Cursor = Cursors.Cross
+        If mode_draw_mask Then
+            mode_draw_mask = False
+            bt_add_mask.Text = "Add Mask"
+        Else
+            mode_draw_mask = True
+            bt_add_mask.Text = "Stop Mask"
+            Me.Cursor = Cursors.Cross
+        End If
     End Sub
-    Private Sub handle_click(sender As Object, e As MouseEventArgs) Handles Me.MouseClick
+    Private Sub handle_click(sender As Object, e As MouseEventArgs) Handles Me.MouseClick, pic_map.MouseClick
         If mode_draw_mask Then
             If mode_drawing = False Then
                 'Get First Point
                 mode_drawing = True
                 'Add Panel
                 Dim mask As New Panel
-                mask.Location = MousePosition
+                mask.Name = (DateTime.Now - New DateTime(1970, 1, 1)).TotalMilliseconds
+                mask_sender = mask.Name
+                mask.Location = Me.PointToClient(Cursor.Position) + (Me.Location - Me.Bounds.Location)
+                mask.BorderStyle = BorderStyle.FixedSingle
+                mask.Width = 1
+                mask.Height = 1
+                Me.Controls.Add(mask)
             Else
-                'Get Second Point
+                'Stop Drawing
                 mode_drawing = False
-                point_two = MousePosition
-
             End If
         End If
     End Sub

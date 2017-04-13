@@ -4,6 +4,13 @@ Imports Database.Datasets
 'Search for FixMe!!!
 
 Public Class Main
+#If DEBUG Then
+    Public Shared debugging As Boolean = True
+#End If
+#If Release Then
+    Public Shared debugging as Boolean = False
+#End If
+
     'Selected Chars
     Dim selected_char As Integer = 0
     Dim selected_enemy As Integer = 0
@@ -223,7 +230,7 @@ Public Class Main
 
     'Player selected
     Private Sub list_player_SelectedIndexChanged(sender As Object, e As EventArgs) Handles list_player.SelectedIndexChanged
-        If (list_player.SelectedIndex >= 0)
+        If (list_player.SelectedIndex >= 0) Then
             selected_char = list_player.SelectedIndex
             txt_playername.Text = players(selected_char).playername
             txt_charname.Text = players(selected_char).name
@@ -336,7 +343,7 @@ Public Class Main
                     player_item.Name = player.charID
                     player_item.BorderStyle = BorderStyle.FixedSingle
                     PlayerMap.Controls.Add(player_item)
-                    player_item.Dispose
+                    player_item.Dispose()
                 Next
             End If
         Else
