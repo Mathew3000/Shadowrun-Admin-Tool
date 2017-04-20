@@ -74,6 +74,9 @@
         End If
 
         'Hide Map?
+        If Not Main.player_screen_items.Contains(pan_hide_map) Then
+            Main.player_screen_items.Add(pan_hide_map)
+        End If
         pan_hide_map.Visible = AdminWindow.chk_hide_map.Checked
         If AdminWindow.chk_hide_map.Checked Then
             pan_hide_map.BringToFront()
@@ -104,5 +107,12 @@
             tmp_text.Visible = True
             tmp_text.BringToFront()
         End If
+
+        'Remove old elements
+        For Each element In Me.Controls.OfType(Of Panel)
+            If Not Main.player_screen_items.Contains(element) Then
+                Me.Controls.Remove(element)
+            End If
+        Next
     End Sub
 End Class

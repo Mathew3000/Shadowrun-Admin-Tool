@@ -58,6 +58,9 @@ Partial Class AdminWindow
         Me.bt_add_mask = New System.Windows.Forms.Button()
         Me.cb_player_live_update = New System.Windows.Forms.CheckBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.menu_mask = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ShowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HideToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_preview.SuspendLayout()
         Me.menu_players.SuspendLayout()
         Me.menu_map.SuspendLayout()
@@ -73,6 +76,7 @@ Partial Class AdminWindow
         CType(Me.pic_map, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.menu_mask.SuspendLayout()
         Me.SuspendLayout()
         '
         'menu_preview
@@ -383,6 +387,24 @@ Partial Class AdminWindow
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Maps"
         '
+        'menu_mask
+        '
+        Me.menu_mask.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.HideToolStripMenuItem1})
+        Me.menu_mask.Name = "menu_mask"
+        Me.menu_mask.Size = New System.Drawing.Size(153, 70)
+        '
+        'ShowToolStripMenuItem
+        '
+        Me.ShowToolStripMenuItem.Name = "ShowToolStripMenuItem"
+        Me.ShowToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ShowToolStripMenuItem.Text = "Show"
+        '
+        'HideToolStripMenuItem1
+        '
+        Me.HideToolStripMenuItem1.Name = "HideToolStripMenuItem1"
+        Me.HideToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.HideToolStripMenuItem1.Text = "Hide"
+        '
         'AdminWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -410,6 +432,7 @@ Partial Class AdminWindow
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
+        Me.menu_mask.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -448,4 +471,7 @@ Partial Class AdminWindow
     Friend WithEvents chk_hide_map As CheckBox
     Friend WithEvents bt_add_mask As Button
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents menu_mask As ContextMenuStrip
+    Friend WithEvents ShowToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HideToolStripMenuItem1 As ToolStripMenuItem
 End Class

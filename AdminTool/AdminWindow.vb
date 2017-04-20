@@ -88,7 +88,8 @@ Public Class AdminWindow
         If mode_drawing Then
             Dim cursor_pos As Point = Me.PointToClient(Cursor.Position) + (Me.Location - Me.Bounds.Location)
             Dim mask As Panel = Me.Controls.Find(mask_sender, True)(0)
-            mask.Bounds = New Rectangle(mask.Location, cursor_pos)
+            mask.Bounds = New Rectangle(mask.Location, cursor_pos - mask.Location)
+            mask.BringToFront()
         End If
 
 
@@ -261,6 +262,7 @@ Public Class AdminWindow
         If mode_draw_mask Then
             mode_draw_mask = False
             bt_add_mask.Text = "Add Mask"
+            Me.Cursor = Cursors.Default
         Else
             mode_draw_mask = True
             bt_add_mask.Text = "Stop Mask"
@@ -272,7 +274,7 @@ Public Class AdminWindow
             If mode_drawing = False Then
                 'Get First Point
                 mode_drawing = True
-                'Add Panel
+                'Add Panel to Admin Window
                 Dim mask As New Panel
                 mask.Name = (DateTime.Now - New DateTime(1970, 1, 1)).TotalMilliseconds
                 mask_sender = mask.Name
@@ -280,11 +282,45 @@ Public Class AdminWindow
                 mask.BorderStyle = BorderStyle.FixedSingle
                 mask.Width = 1
                 mask.Height = 1
+                mask.ContextMenuStrip = menu_mask
+                Main.admin_screen_items.Add(mask)
                 Me.Controls.Add(mask)
             Else
                 'Stop Drawing
                 mode_drawing = False
+                'Add Panel to Player Window
+                Dim mask As Panel = Me.Controls.Find(mask_sender, True)(0)
+                Dim fog_mask As New Panel
+                Dim start As Point = New Point(mask.Location.X * scale_factor, mask.Location.Y * scale_factor)
+                fog_mask.Name = mask.Name
+                fog_mask.Location = start
+                fog_mask.Width = mask.Width * scale_factor
+                fog_mask.Height = mask.Height * scale_factor
+                Main.player_screen_items.Add(fog_mask)
             End If
         End If
     End Sub
+
+    'Mask Submenu Show
+    Private Sub ShowToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowToolStripMenuItem.Click
+        Try
+            PlayerMap.ex_player_command = "visibility"
+            PlayerMap.ex_player_status_update = True
+            PlayerMap.ex_player_to_update = mouse_down_sender.name
+        Catch
+            MsgBox("Could not show Mask!", MessageBoxButtons.OK, "Error!")
+        End Try
+    End Sub
+
+    'Mask Submenu Hide
+    Private Sub HideToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles HideToolStripMenuItem1.Click
+        Try
+            PlayerMap.ex_player_command = "visibility"
+            PlayerMap.ex_player_status_update = False
+            PlayerMap.ex_player_to_update = mouse_down_sender.name
+        Catch
+            MsgBox("Could not hide Mask!", MessageBoxButtons.OK, "Error!")
+        End Try
+    End Sub
+
 End Class
