@@ -16,3 +16,5 @@ Adaptable for every Pen &amp; Paper game.
 <p>-Map Grid working</p>
 <p>-Player Manager bugfix</p>
 <p>-Added Masks basic code (not working)</p>
+<p>Side Update (01/05/17)</p>
+<p>-Masks working (partly...)</p>

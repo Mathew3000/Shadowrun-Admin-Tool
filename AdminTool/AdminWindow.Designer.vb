@@ -59,7 +59,6 @@ Partial Class AdminWindow
         Me.cb_player_live_update = New System.Windows.Forms.CheckBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.menu_mask = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ShowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HideToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_preview.SuspendLayout()
         Me.menu_players.SuspendLayout()
@@ -371,6 +370,7 @@ Partial Class AdminWindow
         '
         'GroupBox2
         '
+        Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.pb_map_09)
         Me.GroupBox2.Controls.Add(Me.pb_map_01)
         Me.GroupBox2.Controls.Add(Me.pb_map_08)
@@ -389,20 +389,14 @@ Partial Class AdminWindow
         '
         'menu_mask
         '
-        Me.menu_mask.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.HideToolStripMenuItem1})
+        Me.menu_mask.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HideToolStripMenuItem1})
         Me.menu_mask.Name = "menu_mask"
-        Me.menu_mask.Size = New System.Drawing.Size(153, 70)
-        '
-        'ShowToolStripMenuItem
-        '
-        Me.ShowToolStripMenuItem.Name = "ShowToolStripMenuItem"
-        Me.ShowToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ShowToolStripMenuItem.Text = "Show"
+        Me.menu_mask.Size = New System.Drawing.Size(100, 26)
         '
         'HideToolStripMenuItem1
         '
         Me.HideToolStripMenuItem1.Name = "HideToolStripMenuItem1"
-        Me.HideToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.HideToolStripMenuItem1.Size = New System.Drawing.Size(99, 22)
         Me.HideToolStripMenuItem1.Text = "Hide"
         '
         'AdminWindow
@@ -472,6 +466,5 @@ Partial Class AdminWindow
     Friend WithEvents bt_add_mask As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents menu_mask As ContextMenuStrip
-    Friend WithEvents ShowToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HideToolStripMenuItem1 As ToolStripMenuItem
 End Class

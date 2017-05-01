@@ -29,8 +29,6 @@ Public Class AdminWindow
         End If
 
         'Debugging options
-        'Fixme mask not working
-        bt_add_mask.Enabled = Main.debugging
 
         'Scale Preview
         Me.pic_map.Width = (PlayerMap.ex_width - 16) / scale_factor
@@ -283,6 +281,7 @@ Public Class AdminWindow
                 mask.Width = 1
                 mask.Height = 1
                 mask.ContextMenuStrip = menu_mask
+                AddHandler mask.MouseDown, AddressOf mouse_click_handler
                 Main.admin_screen_items.Add(mask)
                 Me.Controls.Add(mask)
             Else
@@ -301,25 +300,26 @@ Public Class AdminWindow
         End If
     End Sub
 
-    'Mask Submenu Show
-    Private Sub ShowToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowToolStripMenuItem.Click
-        Try
-            PlayerMap.ex_player_command = "visibility"
-            PlayerMap.ex_player_status_update = True
-            PlayerMap.ex_player_to_update = mouse_down_sender.name
-        Catch
-            MsgBox("Could not show Mask!", MessageBoxButtons.OK, "Error!")
-        End Try
-    End Sub
-
     'Mask Submenu Hide
     Private Sub HideToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles HideToolStripMenuItem1.Click
         Try
-            PlayerMap.ex_player_command = "visibility"
-            PlayerMap.ex_player_status_update = False
-            PlayerMap.ex_player_to_update = mouse_down_sender.name
+            rem_item(mouse_down_sender.name)
         Catch
             MsgBox("Could not hide Mask!", MessageBoxButtons.OK, "Error!")
+        End Try
+    End Sub
+
+    'Remove Panel
+    Private Sub rem_item(item_name As String)
+        Dim admin_item As New Panel
+        Dim player_item As New Panel
+        Try
+            admin_item = Main.admin_screen_items.Find(Function(x) x.Name = item_name)
+            player_item = Main.player_screen_items.Find(Function(x) x.Name = item_name)
+            Main.admin_screen_items.Remove(admin_item)
+            Main.player_screen_items.Remove(player_item)
+        Catch ex As Exception
+            MsgBox("Error while deleting Element! (Not found)", MessageBoxButtons.OK, "Error!")
         End Try
     End Sub
 
