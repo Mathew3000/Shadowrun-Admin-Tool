@@ -47,6 +47,15 @@ Public Class Main
         'Create PlayerMap
         PlayerMap.Show()
         PlayerMap.Hide()
+        pb_map_01.ContextMenuStrip = menu_map
+        pb_map_02.ContextMenuStrip = menu_map
+        pb_map_03.ContextMenuStrip = menu_map
+        pb_map_04.ContextMenuStrip = menu_map
+        pb_map_05.ContextMenuStrip = menu_map
+        pb_map_06.ContextMenuStrip = menu_map
+        pb_map_07.ContextMenuStrip = menu_map
+        pb_map_08.ContextMenuStrip = menu_map
+        pb_map_09.ContextMenuStrip = menu_map
     End Sub
 
     'Generate a random value
@@ -704,28 +713,33 @@ Public Class Main
     End Sub
 
     'Set Maps onClick
-    Private Sub pb_map_xx_Click(sender As Object, e As EventArgs) Handles pb_map_01.Click, pb_map_02.Click, pb_map_03.Click, pb_map_04.Click, pb_map_05.Click, pb_map_06.Click, pb_map_07.Click, pb_map_08.Click, pb_map_09.Click
+    Private Sub pb_map_xx_Click(sender As Object, e As MouseEventArgs) Handles pb_map_01.Click, pb_map_02.Click, pb_map_03.Click, pb_map_04.Click, pb_map_05.Click, pb_map_06.Click, pb_map_07.Click, pb_map_08.Click, pb_map_09.Click
         Dim selection As MsgBoxResult
         If mode_draw_mask Then
             Return
         End If
-        If Not img_sender.Image Is Nothing Then
-            selection = MsgBox("Set map?", MsgBoxStyle.YesNo, "Are you sure?")
-            If selection = MsgBoxResult.Yes Then
-                Try
-                    pic_map.BackgroundImage = img_sender.Image
-                    PlayerMap.ex_back_img_filename = img_sender.ImageLocation
-                    PlayerMap.ex_back_img = img_sender.image
-                Catch
-                    MsgBox("Could not set image!", MessageBoxButtons.OK, "Error!")
-                End Try
+        If e.Button = System.Windows.Forms.MouseButtons.Right Then
 
-            End If
         Else
-            dial_open_img.ShowDialog()
-            If dial_open_img.FileName <> "" Then
-                img_sender.Image = Image.FromFile(dial_open_img.FileName)
-                img_sender.ImageLocation = dial_open_img.FileName
+
+            If Not img_sender.Image Is Nothing Then
+                selection = MsgBox("Set map?", MsgBoxStyle.YesNo, "Are you sure?")
+                If selection = MsgBoxResult.Yes Then
+                    Try
+                        pic_map.BackgroundImage = img_sender.Image
+                        PlayerMap.ex_back_img_filename = img_sender.ImageLocation
+                        PlayerMap.ex_back_img = img_sender.image
+                    Catch
+                        MsgBox("Could not set image!", MessageBoxButtons.OK, "Error!")
+                    End Try
+
+                End If
+            Else
+                dial_open_img.ShowDialog()
+                If dial_open_img.FileName <> "" Then
+                    img_sender.Image = Image.FromFile(dial_open_img.FileName)
+                    img_sender.ImageLocation = dial_open_img.FileName
+                End If
             End If
         End If
     End Sub
@@ -771,21 +785,17 @@ Public Class Main
     End Sub
 
     'Set Map Scale Factor
-    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+    Private Sub OneToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OneToolStripMenuItem.Click
         scale_factor = 1
     End Sub
-    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
+    Private Sub TwoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TwoToolStripMenuItem.Click
         scale_factor = 2
     End Sub
-    Private Sub ToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem4.Click
+    Private Sub FourToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FourToolStripMenuItem.Click
         scale_factor = 4
     End Sub
-    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem5.Click
+    Private Sub EightToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EightToolStripMenuItem.Click
         scale_factor = 8
-    End Sub
-
-    Private Sub pb_map_xx_down(sender As Object, e As MouseEventArgs) Handles pb_map_09.MouseDown, pb_map_08.MouseDown, pb_map_07.MouseDown, pb_map_06.MouseDown, pb_map_05.MouseDown, pb_map_04.MouseDown, pb_map_03.MouseDown, pb_map_02.MouseDown, pb_map_01.MouseDown
-
     End Sub
 
     'Update Player Movement

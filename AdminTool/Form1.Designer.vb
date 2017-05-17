@@ -122,10 +122,12 @@ Partial Class Main
         Me.pb_map_06 = New System.Windows.Forms.PictureBox()
         Me.pb_map_05 = New System.Windows.Forms.PictureBox()
         Me.gb_options = New System.Windows.Forms.GroupBox()
+        Me.cb_show_player_map = New System.Windows.Forms.CheckBox()
         Me.chk_hide_map = New System.Windows.Forms.CheckBox()
         Me.bt_add_mask = New System.Windows.Forms.Button()
         Me.cb_player_live_update = New System.Windows.Forms.CheckBox()
         Me.cb_overlay = New System.Windows.Forms.CheckBox()
+        Me.img_list_icons = New System.Windows.Forms.ImageList(Me.components)
         Me.col_diag_player = New System.Windows.Forms.ColorDialog()
         Me.menu_main = New System.Windows.Forms.MenuStrip()
         Me.FensterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -134,10 +136,10 @@ Partial Class Main
         Me.menu_preview = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ClearMapToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ScaleModeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OneToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TwoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FourToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EightToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_players = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.VisibleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -150,7 +152,6 @@ Partial Class Main
         Me.tt_playername = New System.Windows.Forms.ToolTip(Me.components)
         Me.menu_mask = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.HideToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.img_list_icons = New System.Windows.Forms.ImageList(Me.components)
         Me.tc_main.SuspendLayout()
         Me.tab_enemy.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -218,7 +219,7 @@ Partial Class Main
         Me.tab_enemy.Controls.Add(Me.GroupBox1)
         Me.tab_enemy.Controls.Add(Me.Button1)
         Me.tab_enemy.Controls.Add(Me.bt_rand)
-        Me.tab_enemy.ImageIndex = 2
+        Me.tab_enemy.ImageIndex = 3
         Me.tab_enemy.Location = New System.Drawing.Point(4, 23)
         Me.tab_enemy.Name = "tab_enemy"
         Me.tab_enemy.Padding = New System.Windows.Forms.Padding(3)
@@ -911,7 +912,7 @@ Partial Class Main
         Me.tab_info.Controls.Add(Me.bt_add_text)
         Me.tab_info.Controls.Add(Me.GroupBox6)
         Me.tab_info.Controls.Add(Me.GroupBox5)
-        Me.tab_info.ImageIndex = 3
+        Me.tab_info.ImageIndex = 2
         Me.tab_info.Location = New System.Drawing.Point(4, 23)
         Me.tab_info.Name = "tab_info"
         Me.tab_info.Size = New System.Drawing.Size(884, 419)
@@ -1011,7 +1012,7 @@ Partial Class Main
         Me.pan_img.Controls.Add(Me.pic_map)
         Me.pan_img.Location = New System.Drawing.Point(156, 4)
         Me.pan_img.Name = "pan_img"
-        Me.pan_img.Size = New System.Drawing.Size(725, 389)
+        Me.pan_img.Size = New System.Drawing.Size(725, 412)
         Me.pan_img.TabIndex = 7
         '
         'pic_map
@@ -1021,7 +1022,7 @@ Partial Class Main
         Me.pic_map.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pic_map.Location = New System.Drawing.Point(3, 3)
         Me.pic_map.Name = "pic_map"
-        Me.pic_map.Size = New System.Drawing.Size(698, 383)
+        Me.pic_map.Size = New System.Drawing.Size(719, 406)
         Me.pic_map.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.pic_map.TabIndex = 6
         Me.pic_map.TabStop = False
@@ -1030,7 +1031,7 @@ Partial Class Main
         '
         Me.GroupBox7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.GroupBox7.Controls.Add(Me.Panel1)
-        Me.GroupBox7.Location = New System.Drawing.Point(3, 26)
+        Me.GroupBox7.Location = New System.Drawing.Point(3, 2)
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.Size = New System.Drawing.Size(146, 256)
         Me.GroupBox7.TabIndex = 5
@@ -1165,16 +1166,29 @@ Partial Class Main
         'gb_options
         '
         Me.gb_options.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gb_options.Controls.Add(Me.cb_show_player_map)
         Me.gb_options.Controls.Add(Me.chk_hide_map)
         Me.gb_options.Controls.Add(Me.bt_add_mask)
         Me.gb_options.Controls.Add(Me.cb_player_live_update)
         Me.gb_options.Controls.Add(Me.cb_overlay)
-        Me.gb_options.Location = New System.Drawing.Point(3, 265)
+        Me.gb_options.Location = New System.Drawing.Point(3, 258)
         Me.gb_options.Name = "gb_options"
-        Me.gb_options.Size = New System.Drawing.Size(146, 128)
+        Me.gb_options.Size = New System.Drawing.Size(146, 158)
         Me.gb_options.TabIndex = 4
         Me.gb_options.TabStop = False
         Me.gb_options.Text = "Options"
+        '
+        'cb_show_player_map
+        '
+        Me.cb_show_player_map.AutoSize = True
+        Me.cb_show_player_map.Checked = True
+        Me.cb_show_player_map.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cb_show_player_map.Location = New System.Drawing.Point(7, 89)
+        Me.cb_show_player_map.Name = "cb_show_player_map"
+        Me.cb_show_player_map.Size = New System.Drawing.Size(109, 17)
+        Me.cb_show_player_map.TabIndex = 14
+        Me.cb_show_player_map.Text = "Show Player Map"
+        Me.cb_show_player_map.UseVisualStyleBackColor = True
         '
         'chk_hide_map
         '
@@ -1190,7 +1204,7 @@ Partial Class Main
         '
         'bt_add_mask
         '
-        Me.bt_add_mask.Location = New System.Drawing.Point(6, 92)
+        Me.bt_add_mask.Location = New System.Drawing.Point(6, 129)
         Me.bt_add_mask.Name = "bt_add_mask"
         Me.bt_add_mask.Size = New System.Drawing.Size(134, 23)
         Me.bt_add_mask.TabIndex = 12
@@ -1216,6 +1230,16 @@ Partial Class Main
         Me.cb_overlay.TabIndex = 10
         Me.cb_overlay.Text = "Show Overlay"
         Me.cb_overlay.UseVisualStyleBackColor = True
+        '
+        'img_list_icons
+        '
+        Me.img_list_icons.ImageStream = CType(resources.GetObject("img_list_icons.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.img_list_icons.TransparentColor = System.Drawing.Color.Transparent
+        Me.img_list_icons.Images.SetKeyName(0, "icon_map.png")
+        Me.img_list_icons.Images.SetKeyName(1, "icon_dice.png")
+        Me.img_list_icons.Images.SetKeyName(2, "icon_info.png")
+        Me.img_list_icons.Images.SetKeyName(3, "icon_enemy.png")
+        Me.img_list_icons.Images.SetKeyName(4, "icon_player.png")
         '
         'menu_main
         '
@@ -1259,34 +1283,34 @@ Partial Class Main
         '
         'ScaleModeToolStripMenuItem
         '
-        Me.ScaleModeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.ToolStripMenuItem4, Me.ToolStripMenuItem5})
+        Me.ScaleModeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OneToolStripMenuItem, Me.TwoToolStripMenuItem, Me.FourToolStripMenuItem, Me.EightToolStripMenuItem})
         Me.ScaleModeToolStripMenuItem.Name = "ScaleModeToolStripMenuItem"
         Me.ScaleModeToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.ScaleModeToolStripMenuItem.Text = "Scale Mode"
         '
-        'ToolStripMenuItem2
+        'OneToolStripMenuItem
         '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(95, 22)
-        Me.ToolStripMenuItem2.Text = "1 : 1"
+        Me.OneToolStripMenuItem.Name = "OneToolStripMenuItem"
+        Me.OneToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.OneToolStripMenuItem.Text = "1 : 1"
         '
-        'ToolStripMenuItem3
+        'TwoToolStripMenuItem
         '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(95, 22)
-        Me.ToolStripMenuItem3.Text = "1 : 2"
+        Me.TwoToolStripMenuItem.Name = "TwoToolStripMenuItem"
+        Me.TwoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.TwoToolStripMenuItem.Text = "1 : 2"
         '
-        'ToolStripMenuItem4
+        'FourToolStripMenuItem
         '
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(95, 22)
-        Me.ToolStripMenuItem4.Text = "1 : 4"
+        Me.FourToolStripMenuItem.Name = "FourToolStripMenuItem"
+        Me.FourToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.FourToolStripMenuItem.Text = "1 : 4"
         '
-        'ToolStripMenuItem5
+        'EightToolStripMenuItem
         '
-        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(95, 22)
-        Me.ToolStripMenuItem5.Text = "1 : 8"
+        Me.EightToolStripMenuItem.Name = "EightToolStripMenuItem"
+        Me.EightToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EightToolStripMenuItem.Text = "1 : 8"
         '
         'menu_players
         '
@@ -1356,16 +1380,6 @@ Partial Class Main
         Me.HideToolStripMenuItem1.Name = "HideToolStripMenuItem1"
         Me.HideToolStripMenuItem1.Size = New System.Drawing.Size(99, 22)
         Me.HideToolStripMenuItem1.Text = "Hide"
-        '
-        'img_list_icons
-        '
-        Me.img_list_icons.ImageStream = CType(resources.GetObject("img_list_icons.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.img_list_icons.TransparentColor = System.Drawing.Color.Transparent
-        Me.img_list_icons.Images.SetKeyName(0, "icon_map.png")
-        Me.img_list_icons.Images.SetKeyName(1, "icon_dice.png")
-        Me.img_list_icons.Images.SetKeyName(2, "icon_enemy.png")
-        Me.img_list_icons.Images.SetKeyName(3, "icon_indo.png")
-        Me.img_list_icons.Images.SetKeyName(4, "icon_player.png")
         '
         'Main
         '
@@ -1534,10 +1548,10 @@ Partial Class Main
     Friend WithEvents menu_preview As ContextMenuStrip
     Friend WithEvents ClearMapToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ScaleModeToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
+    Friend WithEvents OneToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TwoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FourToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EightToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents menu_players As ContextMenuStrip
     Friend WithEvents VisibleToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HideToolStripMenuItem As ToolStripMenuItem
@@ -1551,4 +1565,5 @@ Partial Class Main
     Friend WithEvents menu_mask As ContextMenuStrip
     Friend WithEvents HideToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents img_list_icons As ImageList
+    Friend WithEvents cb_show_player_map As CheckBox
 End Class
