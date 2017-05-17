@@ -114,6 +114,7 @@
             tmp_pic_box.Visible = False
             tmp_text.Visible = True
             tmp_text.BringToFront()
+            ex_update_text = False
         End If
 
         'Remove old elements

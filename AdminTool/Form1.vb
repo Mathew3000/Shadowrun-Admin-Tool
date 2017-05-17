@@ -6,8 +6,7 @@ Imports Database.Datasets
 Public Class Main
 #If DEBUG Then
     Public Shared debugging As Boolean = True
-#End If
-#If Release Then
+#Else
     Public Shared debugging as Boolean = False
 #End If
 
@@ -44,6 +43,10 @@ Public Class Main
 
     'Form load event
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Debugging Options
+        If Not debugging Then
+            tc_main.TabPages.Remove(tab_info)
+        End If
         'Create PlayerMap
         PlayerMap.Show()
         PlayerMap.Hide()
