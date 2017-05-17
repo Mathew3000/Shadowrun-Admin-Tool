@@ -218,10 +218,11 @@ Partial Class Main
         Me.tab_enemy.Controls.Add(Me.GroupBox1)
         Me.tab_enemy.Controls.Add(Me.Button1)
         Me.tab_enemy.Controls.Add(Me.bt_rand)
-        Me.tab_enemy.Location = New System.Drawing.Point(4, 22)
+        Me.tab_enemy.ImageIndex = 2
+        Me.tab_enemy.Location = New System.Drawing.Point(4, 23)
         Me.tab_enemy.Name = "tab_enemy"
         Me.tab_enemy.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_enemy.Size = New System.Drawing.Size(884, 396)
+        Me.tab_enemy.Size = New System.Drawing.Size(884, 419)
         Me.tab_enemy.TabIndex = 0
         Me.tab_enemy.Text = "Gegner"
         Me.tab_enemy.UseVisualStyleBackColor = True
@@ -635,10 +636,11 @@ Partial Class Main
         '
         Me.tab_player.Controls.Add(Me.GroupBox4)
         Me.tab_player.Controls.Add(Me.GroupBox3)
-        Me.tab_player.Location = New System.Drawing.Point(4, 22)
+        Me.tab_player.ImageIndex = 4
+        Me.tab_player.Location = New System.Drawing.Point(4, 23)
         Me.tab_player.Name = "tab_player"
         Me.tab_player.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_player.Size = New System.Drawing.Size(884, 396)
+        Me.tab_player.Size = New System.Drawing.Size(884, 419)
         Me.tab_player.TabIndex = 1
         Me.tab_player.Text = "Spieler"
         Me.tab_player.UseVisualStyleBackColor = True
@@ -767,9 +769,10 @@ Partial Class Main
         '
         Me.tab_dice.Controls.Add(Me.Panel3)
         Me.tab_dice.Controls.Add(Me.Panel2)
-        Me.tab_dice.Location = New System.Drawing.Point(4, 22)
+        Me.tab_dice.ImageIndex = 1
+        Me.tab_dice.Location = New System.Drawing.Point(4, 23)
         Me.tab_dice.Name = "tab_dice"
-        Me.tab_dice.Size = New System.Drawing.Size(884, 396)
+        Me.tab_dice.Size = New System.Drawing.Size(884, 419)
         Me.tab_dice.TabIndex = 2
         Me.tab_dice.Text = "Würfel"
         Me.tab_dice.UseVisualStyleBackColor = True
@@ -908,9 +911,10 @@ Partial Class Main
         Me.tab_info.Controls.Add(Me.bt_add_text)
         Me.tab_info.Controls.Add(Me.GroupBox6)
         Me.tab_info.Controls.Add(Me.GroupBox5)
-        Me.tab_info.Location = New System.Drawing.Point(4, 22)
+        Me.tab_info.ImageIndex = 3
+        Me.tab_info.Location = New System.Drawing.Point(4, 23)
         Me.tab_info.Name = "tab_info"
-        Me.tab_info.Size = New System.Drawing.Size(884, 396)
+        Me.tab_info.Size = New System.Drawing.Size(884, 419)
         Me.tab_info.TabIndex = 3
         Me.tab_info.Text = "Info"
         Me.tab_info.UseVisualStyleBackColor = True
@@ -1358,6 +1362,10 @@ Partial Class Main
         Me.img_list_icons.ImageStream = CType(resources.GetObject("img_list_icons.ImageStream"), System.Windows.Forms.ImageListStreamer)
         Me.img_list_icons.TransparentColor = System.Drawing.Color.Transparent
         Me.img_list_icons.Images.SetKeyName(0, "icon_map.png")
+        Me.img_list_icons.Images.SetKeyName(1, "icon_dice.png")
+        Me.img_list_icons.Images.SetKeyName(2, "icon_enemy.png")
+        Me.img_list_icons.Images.SetKeyName(3, "icon_indo.png")
+        Me.img_list_icons.Images.SetKeyName(4, "icon_player.png")
         '
         'Main
         '
