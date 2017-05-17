@@ -589,16 +589,6 @@ Public Class Main
             End If
         End If
 
-        'Rescale Maps Selection Box
-        If Me.Width > 200 Then
-            GroupBox2.Width = Me.Width - 36
-        End If
-
-        'Rescale Options Box
-        If Me.Height > 160 Then
-            GroupBox1.Height = Me.Height - 220
-        End If
-
         'Update Character Elements
         For Each element In Main.admin_screen_items
             If Not pic_map.Controls.Contains(element) Then
