@@ -129,9 +129,6 @@ Partial Class Main
         Me.cb_overlay = New System.Windows.Forms.CheckBox()
         Me.img_list_icons = New System.Windows.Forms.ImageList(Me.components)
         Me.col_diag_player = New System.Windows.Forms.ColorDialog()
-        Me.menu_main = New System.Windows.Forms.MenuStrip()
-        Me.FensterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SpielerKarteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ui_updater = New System.Windows.Forms.Timer(Me.components)
         Me.menu_preview = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ClearMapToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -180,7 +177,6 @@ Partial Class Main
         CType(Me.pb_map_06, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_map_05, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_options.SuspendLayout()
-        Me.menu_main.SuspendLayout()
         Me.menu_preview.SuspendLayout()
         Me.menu_players.SuspendLayout()
         Me.menu_map.SuspendLayout()
@@ -204,7 +200,7 @@ Partial Class Main
         Me.tc_main.Controls.Add(Me.tab_info)
         Me.tc_main.Controls.Add(Me.tab_map)
         Me.tc_main.ImageList = Me.img_list_icons
-        Me.tc_main.Location = New System.Drawing.Point(12, 27)
+        Me.tc_main.Location = New System.Drawing.Point(11, 5)
         Me.tc_main.Name = "tc_main"
         Me.tc_main.SelectedIndex = 0
         Me.tc_main.Size = New System.Drawing.Size(892, 446)
@@ -1181,8 +1177,6 @@ Partial Class Main
         'cb_show_player_map
         '
         Me.cb_show_player_map.AutoSize = True
-        Me.cb_show_player_map.Checked = True
-        Me.cb_show_player_map.CheckState = System.Windows.Forms.CheckState.Checked
         Me.cb_show_player_map.Location = New System.Drawing.Point(7, 89)
         Me.cb_show_player_map.Name = "cb_show_player_map"
         Me.cb_show_player_map.Size = New System.Drawing.Size(109, 17)
@@ -1241,29 +1235,6 @@ Partial Class Main
         Me.img_list_icons.Images.SetKeyName(3, "icon_enemy.png")
         Me.img_list_icons.Images.SetKeyName(4, "icon_player.png")
         '
-        'menu_main
-        '
-        Me.menu_main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FensterToolStripMenuItem})
-        Me.menu_main.Location = New System.Drawing.Point(0, 0)
-        Me.menu_main.Name = "menu_main"
-        Me.menu_main.Size = New System.Drawing.Size(916, 24)
-        Me.menu_main.TabIndex = 5
-        Me.menu_main.Text = "MenuStrip1"
-        '
-        'FensterToolStripMenuItem
-        '
-        Me.FensterToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SpielerKarteToolStripMenuItem})
-        Me.FensterToolStripMenuItem.Name = "FensterToolStripMenuItem"
-        Me.FensterToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
-        Me.FensterToolStripMenuItem.Text = "Fenster"
-        '
-        'SpielerKarteToolStripMenuItem
-        '
-        Me.SpielerKarteToolStripMenuItem.CheckOnClick = True
-        Me.SpielerKarteToolStripMenuItem.Name = "SpielerKarteToolStripMenuItem"
-        Me.SpielerKarteToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
-        Me.SpielerKarteToolStripMenuItem.Text = "Spieler Karte"
-        '
         'ui_updater
         '
         Me.ui_updater.Enabled = True
@@ -1291,25 +1262,25 @@ Partial Class Main
         'OneToolStripMenuItem
         '
         Me.OneToolStripMenuItem.Name = "OneToolStripMenuItem"
-        Me.OneToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.OneToolStripMenuItem.Size = New System.Drawing.Size(95, 22)
         Me.OneToolStripMenuItem.Text = "1 : 1"
         '
         'TwoToolStripMenuItem
         '
         Me.TwoToolStripMenuItem.Name = "TwoToolStripMenuItem"
-        Me.TwoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.TwoToolStripMenuItem.Size = New System.Drawing.Size(95, 22)
         Me.TwoToolStripMenuItem.Text = "1 : 2"
         '
         'FourToolStripMenuItem
         '
         Me.FourToolStripMenuItem.Name = "FourToolStripMenuItem"
-        Me.FourToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.FourToolStripMenuItem.Size = New System.Drawing.Size(95, 22)
         Me.FourToolStripMenuItem.Text = "1 : 4"
         '
         'EightToolStripMenuItem
         '
         Me.EightToolStripMenuItem.Name = "EightToolStripMenuItem"
-        Me.EightToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EightToolStripMenuItem.Size = New System.Drawing.Size(95, 22)
         Me.EightToolStripMenuItem.Text = "1 : 8"
         '
         'menu_players
@@ -1385,11 +1356,9 @@ Partial Class Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(916, 478)
+        Me.ClientSize = New System.Drawing.Size(909, 456)
         Me.Controls.Add(Me.tc_main)
-        Me.Controls.Add(Me.menu_main)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MainMenuStrip = Me.menu_main
         Me.Name = "Main"
         Me.Text = "Admin Tool - Main"
         Me.tc_main.ResumeLayout(False)
@@ -1428,14 +1397,11 @@ Partial Class Main
         CType(Me.pb_map_05, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gb_options.ResumeLayout(False)
         Me.gb_options.PerformLayout()
-        Me.menu_main.ResumeLayout(False)
-        Me.menu_main.PerformLayout()
         Me.menu_preview.ResumeLayout(False)
         Me.menu_players.ResumeLayout(False)
         Me.menu_map.ResumeLayout(False)
         Me.menu_mask.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents bt_rand As System.Windows.Forms.Button
@@ -1471,10 +1437,7 @@ Partial Class Main
     Friend WithEvents txt_initiative As TextBox
     Friend WithEvents txt_charname As TextBox
     Friend WithEvents txt_playername As TextBox
-    Friend WithEvents menu_main As MenuStrip
-    Friend WithEvents FensterToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents tab_dice As TabPage
-    Friend WithEvents SpielerKarteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel3 As Panel
     Friend WithEvents bt_w_20 As Button
     Friend WithEvents txt_count_w_20 As TextBox

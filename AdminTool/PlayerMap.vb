@@ -30,7 +30,7 @@
     Private Sub PlayerMap_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Dim MainWindow As New Main
         show_last_state = Not (show_last_state)
-        Main.SpielerKarteToolStripMenuItem.Checked = False
+        Main.cb_show_player_map.Checked = False
         Me.Hide()
         e.Cancel = True
     End Sub

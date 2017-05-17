@@ -359,28 +359,6 @@ Public Class Main
         End If
     End Sub
 
-    'Player Map Menu
-    Private Sub SpielerKarteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SpielerKarteToolStripMenuItem.Click
-        If SpielerKarteToolStripMenuItem.Checked Then
-            PlayerMap.Show()
-            If players.Count > 0 Then
-                For Each player In players
-                    Dim player_item As New Panel
-                    player_item.BackColor = player.colour
-                    player_item.Visible = False
-                    player_item.Location = New Point(50, 50)
-                    player_item.Size = New Size(25, 25)
-                    player_item.Name = player.charID
-                    player_item.BorderStyle = BorderStyle.FixedSingle
-                    PlayerMap.Controls.Add(player_item)
-                    player_item.Dispose()
-                Next
-            End If
-        Else
-            PlayerMap.Hide()
-        End If
-    End Sub
-
     'Changed the enemys name
     Private Sub enemy_info_changed(sender As Object, e As EventArgs) Handles txt_en_name.TextChanged, cb_en_status.TextChanged, txt_en_hp.TextChanged, txt_en_hp_max.TextChanged, txt_en_psychic.TextChanged, txt_en_psychic_max.TextChanged, txt_en_init.TextChanged, txt_en_skill.TextChanged, txt_en_str.TextChanged, txt_en_will.TextChanged, txt_en_self.TextChanged, txt_en_const.TextChanged, txt_en_char.TextChanged, txt_en_rea.TextChanged, txt_en_intu.TextChanged
         Dim sender_name As String
@@ -874,5 +852,28 @@ Public Class Main
         Catch ex As Exception
             MsgBox("Error while deleting Element! (Not found)", MessageBoxButtons.OK, "Error!")
         End Try
+    End Sub
+
+    'Player Map Menu
+    Private Sub cb_show_player_map_CheckedChanged(sender As Object, e As EventArgs) Handles cb_show_player_map.CheckedChanged
+        If cb_show_player_map.Checked Then
+            PlayerMap.Show()
+            If players.Count > 0 Then
+                For Each player In players
+                    Dim player_item As New Panel
+                    player_item.BackColor = player.colour
+                    player_item.Visible = False
+                    player_item.Location = New Point(50, 50)
+                    player_item.Size = New Size(25, 25)
+                    player_item.Name = player.charID
+                    player_item.BorderStyle = BorderStyle.FixedSingle
+                    PlayerMap.Controls.Add(player_item)
+                    player_item.Dispose()
+                Next
+            End If
+        Else
+            PlayerMap.Hide()
+        End If
+
     End Sub
 End Class
