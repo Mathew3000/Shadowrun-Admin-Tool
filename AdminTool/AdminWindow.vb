@@ -30,6 +30,7 @@ Public Class AdminWindow
 
         'Debugging options
 
+
         'Scale Preview
         Me.pic_map.Width = (PlayerMap.ex_width - 16) / scale_factor
         Me.pic_map.Height = (PlayerMap.ex_height - 38) / scale_factor
@@ -70,7 +71,7 @@ Public Class AdminWindow
         'Update Character Elements
         For Each element In Main.admin_screen_items
             If Not Me.Controls.Contains(element) Then
-                Me.Controls.Add(element)
+                Me.Controls.Add(element) 'WTF ARE YOU DOING!!!!!
                 Me.Controls.Find(element.Name, True)(0).BringToFront()
             End If
         Next

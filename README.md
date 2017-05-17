@@ -18,3 +18,9 @@ Adaptable for every Pen &amp; Paper game.
 <p>-Added Masks basic code (not working)</p>
 <p>Side Update (01/05/17)</p>
 <p>-Masks working (partly...)</p>
+<p>Major Update (17/05/17/)</p>
+<p>-Integrated former AdminWindow into Main Form</p>
+<p>--Note: File still included but unused</p>
+<p>-Minor Bugfixes</p>
+<p>-PlayerMap now "remembers" state when it's closed</p>
+<p>-Added Icons</p>

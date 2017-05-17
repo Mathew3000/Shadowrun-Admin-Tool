@@ -123,7 +123,6 @@ Partial Class AdminWindow
         '
         'ui_updater
         '
-        Me.ui_updater.Enabled = True
         Me.ui_updater.Interval = 10
         '
         'menu_players

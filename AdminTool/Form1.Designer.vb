@@ -22,9 +22,10 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.bt_rand = New System.Windows.Forms.Button()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.tc_main = New System.Windows.Forms.TabControl()
         Me.tab_enemy = New System.Windows.Forms.TabPage()
         Me.lb_debug = New System.Windows.Forms.Label()
         Me.bt_delete = New System.Windows.Forms.Button()
@@ -97,21 +98,60 @@ Partial Class Main
         Me.txt_count_w_6 = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.tab_info = New System.Windows.Forms.TabPage()
         Me.bt_del_text = New System.Windows.Forms.Button()
         Me.bt_add_text = New System.Windows.Forms.Button()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.rtb_text = New System.Windows.Forms.RichTextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.tb_text_name = New System.Windows.Forms.TextBox()
         Me.list_texts = New System.Windows.Forms.ListBox()
+        Me.tab_map = New System.Windows.Forms.TabPage()
+        Me.pan_img = New System.Windows.Forms.Panel()
+        Me.pic_map = New System.Windows.Forms.PictureBox()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pb_map_01 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_09 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_02 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_08 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_03 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_07 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_04 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_06 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_05 = New System.Windows.Forms.PictureBox()
+        Me.gb_options = New System.Windows.Forms.GroupBox()
+        Me.chk_hide_map = New System.Windows.Forms.CheckBox()
+        Me.bt_add_mask = New System.Windows.Forms.Button()
+        Me.cb_player_live_update = New System.Windows.Forms.CheckBox()
+        Me.cb_overlay = New System.Windows.Forms.CheckBox()
         Me.col_diag_player = New System.Windows.Forms.ColorDialog()
         Me.menu_main = New System.Windows.Forms.MenuStrip()
         Me.FensterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SpielerKarteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AdminKarteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tb_text_name = New System.Windows.Forms.TextBox()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.TabControl1.SuspendLayout()
+        Me.ui_updater = New System.Windows.Forms.Timer(Me.components)
+        Me.menu_preview = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ClearMapToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ScaleModeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menu_players = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.VisibleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MoveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menu_map = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.LoadImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SetMapToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Rotate90ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.dial_open_img = New System.Windows.Forms.OpenFileDialog()
+        Me.tt_playername = New System.Windows.Forms.ToolTip(Me.components)
+        Me.menu_mask = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.HideToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.img_list_icons = New System.Windows.Forms.ImageList(Me.components)
+        Me.tc_main.SuspendLayout()
         Me.tab_enemy.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -121,10 +161,29 @@ Partial Class Main
         Me.tab_dice.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
+        Me.tab_info.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        Me.tab_map.SuspendLayout()
+        Me.pan_img.SuspendLayout()
+        CType(Me.pic_map, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox7.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.pb_map_01, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_map_09, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_map_02, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_map_08, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_map_03, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_map_07, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_map_04, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_map_06, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_map_05, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gb_options.SuspendLayout()
         Me.menu_main.SuspendLayout()
+        Me.menu_preview.SuspendLayout()
+        Me.menu_players.SuspendLayout()
+        Me.menu_map.SuspendLayout()
+        Me.menu_mask.SuspendLayout()
         Me.SuspendLayout()
         '
         'bt_rand
@@ -136,17 +195,19 @@ Partial Class Main
         Me.bt_rand.Text = "Zufällig generieren"
         Me.bt_rand.UseVisualStyleBackColor = True
         '
-        'TabControl1
+        'tc_main
         '
-        Me.TabControl1.Controls.Add(Me.tab_enemy)
-        Me.TabControl1.Controls.Add(Me.tab_player)
-        Me.TabControl1.Controls.Add(Me.tab_dice)
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 27)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(615, 422)
-        Me.TabControl1.TabIndex = 4
+        Me.tc_main.Controls.Add(Me.tab_enemy)
+        Me.tc_main.Controls.Add(Me.tab_player)
+        Me.tc_main.Controls.Add(Me.tab_dice)
+        Me.tc_main.Controls.Add(Me.tab_info)
+        Me.tc_main.Controls.Add(Me.tab_map)
+        Me.tc_main.ImageList = Me.img_list_icons
+        Me.tc_main.Location = New System.Drawing.Point(12, 27)
+        Me.tc_main.Name = "tc_main"
+        Me.tc_main.SelectedIndex = 0
+        Me.tc_main.Size = New System.Drawing.Size(892, 446)
+        Me.tc_main.TabIndex = 4
         '
         'tab_enemy
         '
@@ -160,7 +221,7 @@ Partial Class Main
         Me.tab_enemy.Location = New System.Drawing.Point(4, 22)
         Me.tab_enemy.Name = "tab_enemy"
         Me.tab_enemy.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_enemy.Size = New System.Drawing.Size(607, 396)
+        Me.tab_enemy.Size = New System.Drawing.Size(884, 396)
         Me.tab_enemy.TabIndex = 0
         Me.tab_enemy.Text = "Gegner"
         Me.tab_enemy.UseVisualStyleBackColor = True
@@ -577,7 +638,7 @@ Partial Class Main
         Me.tab_player.Location = New System.Drawing.Point(4, 22)
         Me.tab_player.Name = "tab_player"
         Me.tab_player.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_player.Size = New System.Drawing.Size(607, 396)
+        Me.tab_player.Size = New System.Drawing.Size(884, 396)
         Me.tab_player.TabIndex = 1
         Me.tab_player.Text = "Spieler"
         Me.tab_player.UseVisualStyleBackColor = True
@@ -708,7 +769,7 @@ Partial Class Main
         Me.tab_dice.Controls.Add(Me.Panel2)
         Me.tab_dice.Location = New System.Drawing.Point(4, 22)
         Me.tab_dice.Name = "tab_dice"
-        Me.tab_dice.Size = New System.Drawing.Size(607, 396)
+        Me.tab_dice.Size = New System.Drawing.Size(884, 396)
         Me.tab_dice.TabIndex = 2
         Me.tab_dice.Text = "Würfel"
         Me.tab_dice.UseVisualStyleBackColor = True
@@ -841,18 +902,18 @@ Partial Class Main
         Me.Label14.TabIndex = 0
         Me.Label14.Text = "W6"
         '
-        'TabPage1
+        'tab_info
         '
-        Me.TabPage1.Controls.Add(Me.bt_del_text)
-        Me.TabPage1.Controls.Add(Me.bt_add_text)
-        Me.TabPage1.Controls.Add(Me.GroupBox6)
-        Me.TabPage1.Controls.Add(Me.GroupBox5)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(607, 396)
-        Me.TabPage1.TabIndex = 3
-        Me.TabPage1.Text = "Info"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.tab_info.Controls.Add(Me.bt_del_text)
+        Me.tab_info.Controls.Add(Me.bt_add_text)
+        Me.tab_info.Controls.Add(Me.GroupBox6)
+        Me.tab_info.Controls.Add(Me.GroupBox5)
+        Me.tab_info.Location = New System.Drawing.Point(4, 22)
+        Me.tab_info.Name = "tab_info"
+        Me.tab_info.Size = New System.Drawing.Size(884, 396)
+        Me.tab_info.TabIndex = 3
+        Me.tab_info.Text = "Info"
+        Me.tab_info.UseVisualStyleBackColor = True
         '
         'bt_del_text
         '
@@ -903,51 +964,6 @@ Partial Class Main
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Info Texte"
         '
-        'list_texts
-        '
-        Me.list_texts.FormattingEnabled = True
-        Me.list_texts.Location = New System.Drawing.Point(7, 46)
-        Me.list_texts.Name = "list_texts"
-        Me.list_texts.Size = New System.Drawing.Size(187, 264)
-        Me.list_texts.TabIndex = 0
-        '
-        'menu_main
-        '
-        Me.menu_main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FensterToolStripMenuItem})
-        Me.menu_main.Location = New System.Drawing.Point(0, 0)
-        Me.menu_main.Name = "menu_main"
-        Me.menu_main.Size = New System.Drawing.Size(639, 24)
-        Me.menu_main.TabIndex = 5
-        Me.menu_main.Text = "MenuStrip1"
-        '
-        'FensterToolStripMenuItem
-        '
-        Me.FensterToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SpielerKarteToolStripMenuItem, Me.AdminKarteToolStripMenuItem})
-        Me.FensterToolStripMenuItem.Name = "FensterToolStripMenuItem"
-        Me.FensterToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
-        Me.FensterToolStripMenuItem.Text = "Fenster"
-        '
-        'SpielerKarteToolStripMenuItem
-        '
-        Me.SpielerKarteToolStripMenuItem.CheckOnClick = True
-        Me.SpielerKarteToolStripMenuItem.Name = "SpielerKarteToolStripMenuItem"
-        Me.SpielerKarteToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
-        Me.SpielerKarteToolStripMenuItem.Text = "Spieler Karte"
-        '
-        'AdminKarteToolStripMenuItem
-        '
-        Me.AdminKarteToolStripMenuItem.CheckOnClick = True
-        Me.AdminKarteToolStripMenuItem.Name = "AdminKarteToolStripMenuItem"
-        Me.AdminKarteToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
-        Me.AdminKarteToolStripMenuItem.Text = "Admin Karte"
-        '
-        'tb_text_name
-        '
-        Me.tb_text_name.Location = New System.Drawing.Point(74, 18)
-        Me.tb_text_name.Name = "tb_text_name"
-        Me.tb_text_name.Size = New System.Drawing.Size(120, 20)
-        Me.tb_text_name.TabIndex = 1
-        '
         'Label26
         '
         Me.Label26.AutoSize = True
@@ -957,18 +973,404 @@ Partial Class Main
         Me.Label26.TabIndex = 2
         Me.Label26.Text = "Text Name:"
         '
+        'tb_text_name
+        '
+        Me.tb_text_name.Location = New System.Drawing.Point(74, 18)
+        Me.tb_text_name.Name = "tb_text_name"
+        Me.tb_text_name.Size = New System.Drawing.Size(120, 20)
+        Me.tb_text_name.TabIndex = 1
+        '
+        'list_texts
+        '
+        Me.list_texts.FormattingEnabled = True
+        Me.list_texts.Location = New System.Drawing.Point(7, 46)
+        Me.list_texts.Name = "list_texts"
+        Me.list_texts.Size = New System.Drawing.Size(187, 264)
+        Me.list_texts.TabIndex = 0
+        '
+        'tab_map
+        '
+        Me.tab_map.Controls.Add(Me.pan_img)
+        Me.tab_map.Controls.Add(Me.GroupBox7)
+        Me.tab_map.Controls.Add(Me.gb_options)
+        Me.tab_map.ImageIndex = 0
+        Me.tab_map.Location = New System.Drawing.Point(4, 23)
+        Me.tab_map.Name = "tab_map"
+        Me.tab_map.Size = New System.Drawing.Size(884, 419)
+        Me.tab_map.TabIndex = 4
+        Me.tab_map.Text = "Karte"
+        Me.tab_map.UseVisualStyleBackColor = True
+        '
+        'pan_img
+        '
+        Me.pan_img.AutoScroll = True
+        Me.pan_img.Controls.Add(Me.pic_map)
+        Me.pan_img.Location = New System.Drawing.Point(156, 4)
+        Me.pan_img.Name = "pan_img"
+        Me.pan_img.Size = New System.Drawing.Size(725, 389)
+        Me.pan_img.TabIndex = 7
+        '
+        'pic_map
+        '
+        Me.pic_map.BackColor = System.Drawing.Color.White
+        Me.pic_map.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.pic_map.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pic_map.Location = New System.Drawing.Point(3, 3)
+        Me.pic_map.Name = "pic_map"
+        Me.pic_map.Size = New System.Drawing.Size(698, 383)
+        Me.pic_map.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.pic_map.TabIndex = 6
+        Me.pic_map.TabStop = False
+        '
+        'GroupBox7
+        '
+        Me.GroupBox7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox7.Controls.Add(Me.Panel1)
+        Me.GroupBox7.Location = New System.Drawing.Point(3, 26)
+        Me.GroupBox7.Name = "GroupBox7"
+        Me.GroupBox7.Size = New System.Drawing.Size(146, 256)
+        Me.GroupBox7.TabIndex = 5
+        Me.GroupBox7.TabStop = False
+        Me.GroupBox7.Text = "Maps"
+        '
+        'Panel1
+        '
+        Me.Panel1.AutoScroll = True
+        Me.Panel1.Controls.Add(Me.pb_map_01)
+        Me.Panel1.Controls.Add(Me.pb_map_09)
+        Me.Panel1.Controls.Add(Me.pb_map_02)
+        Me.Panel1.Controls.Add(Me.pb_map_08)
+        Me.Panel1.Controls.Add(Me.pb_map_03)
+        Me.Panel1.Controls.Add(Me.pb_map_07)
+        Me.Panel1.Controls.Add(Me.pb_map_04)
+        Me.Panel1.Controls.Add(Me.pb_map_06)
+        Me.Panel1.Controls.Add(Me.pb_map_05)
+        Me.Panel1.Location = New System.Drawing.Point(3, 13)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(140, 240)
+        Me.Panel1.TabIndex = 10
+        '
+        'pb_map_01
+        '
+        Me.pb_map_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_01.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_01.Location = New System.Drawing.Point(4, 10)
+        Me.pb_map_01.Name = "pb_map_01"
+        Me.pb_map_01.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_01.TabIndex = 1
+        Me.pb_map_01.TabStop = False
+        '
+        'pb_map_09
+        '
+        Me.pb_map_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_09.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_09.Location = New System.Drawing.Point(4, 858)
+        Me.pb_map_09.Name = "pb_map_09"
+        Me.pb_map_09.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_09.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_09.TabIndex = 9
+        Me.pb_map_09.TabStop = False
+        '
+        'pb_map_02
+        '
+        Me.pb_map_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_02.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_02.Location = New System.Drawing.Point(4, 116)
+        Me.pb_map_02.Name = "pb_map_02"
+        Me.pb_map_02.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_02.TabIndex = 2
+        Me.pb_map_02.TabStop = False
+        '
+        'pb_map_08
+        '
+        Me.pb_map_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_08.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_08.Location = New System.Drawing.Point(4, 752)
+        Me.pb_map_08.Name = "pb_map_08"
+        Me.pb_map_08.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_08.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_08.TabIndex = 8
+        Me.pb_map_08.TabStop = False
+        '
+        'pb_map_03
+        '
+        Me.pb_map_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_03.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_03.Location = New System.Drawing.Point(4, 222)
+        Me.pb_map_03.Name = "pb_map_03"
+        Me.pb_map_03.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_03.TabIndex = 3
+        Me.pb_map_03.TabStop = False
+        '
+        'pb_map_07
+        '
+        Me.pb_map_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_07.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_07.Location = New System.Drawing.Point(4, 646)
+        Me.pb_map_07.Name = "pb_map_07"
+        Me.pb_map_07.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_07.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_07.TabIndex = 7
+        Me.pb_map_07.TabStop = False
+        '
+        'pb_map_04
+        '
+        Me.pb_map_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_04.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_04.Location = New System.Drawing.Point(4, 328)
+        Me.pb_map_04.Name = "pb_map_04"
+        Me.pb_map_04.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_04.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_04.TabIndex = 4
+        Me.pb_map_04.TabStop = False
+        '
+        'pb_map_06
+        '
+        Me.pb_map_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_06.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_06.Location = New System.Drawing.Point(4, 540)
+        Me.pb_map_06.Name = "pb_map_06"
+        Me.pb_map_06.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_06.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_06.TabIndex = 6
+        Me.pb_map_06.TabStop = False
+        '
+        'pb_map_05
+        '
+        Me.pb_map_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_05.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_05.Location = New System.Drawing.Point(4, 434)
+        Me.pb_map_05.Name = "pb_map_05"
+        Me.pb_map_05.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_05.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_05.TabIndex = 5
+        Me.pb_map_05.TabStop = False
+        '
+        'gb_options
+        '
+        Me.gb_options.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gb_options.Controls.Add(Me.chk_hide_map)
+        Me.gb_options.Controls.Add(Me.bt_add_mask)
+        Me.gb_options.Controls.Add(Me.cb_player_live_update)
+        Me.gb_options.Controls.Add(Me.cb_overlay)
+        Me.gb_options.Location = New System.Drawing.Point(3, 265)
+        Me.gb_options.Name = "gb_options"
+        Me.gb_options.Size = New System.Drawing.Size(146, 128)
+        Me.gb_options.TabIndex = 4
+        Me.gb_options.TabStop = False
+        Me.gb_options.Text = "Options"
+        '
+        'chk_hide_map
+        '
+        Me.chk_hide_map.AutoSize = True
+        Me.chk_hide_map.Checked = True
+        Me.chk_hide_map.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chk_hide_map.Location = New System.Drawing.Point(7, 66)
+        Me.chk_hide_map.Name = "chk_hide_map"
+        Me.chk_hide_map.Size = New System.Drawing.Size(84, 17)
+        Me.chk_hide_map.TabIndex = 13
+        Me.chk_hide_map.Text = "Map Hidden"
+        Me.chk_hide_map.UseVisualStyleBackColor = True
+        '
+        'bt_add_mask
+        '
+        Me.bt_add_mask.Location = New System.Drawing.Point(6, 92)
+        Me.bt_add_mask.Name = "bt_add_mask"
+        Me.bt_add_mask.Size = New System.Drawing.Size(134, 23)
+        Me.bt_add_mask.TabIndex = 12
+        Me.bt_add_mask.Text = "Add Mask"
+        Me.bt_add_mask.UseVisualStyleBackColor = True
+        '
+        'cb_player_live_update
+        '
+        Me.cb_player_live_update.AutoSize = True
+        Me.cb_player_live_update.Location = New System.Drawing.Point(6, 42)
+        Me.cb_player_live_update.Name = "cb_player_live_update"
+        Me.cb_player_live_update.Size = New System.Drawing.Size(121, 17)
+        Me.cb_player_live_update.TabIndex = 11
+        Me.cb_player_live_update.Text = "Live Update Players"
+        Me.cb_player_live_update.UseVisualStyleBackColor = True
+        '
+        'cb_overlay
+        '
+        Me.cb_overlay.AutoSize = True
+        Me.cb_overlay.Location = New System.Drawing.Point(6, 19)
+        Me.cb_overlay.Name = "cb_overlay"
+        Me.cb_overlay.Size = New System.Drawing.Size(92, 17)
+        Me.cb_overlay.TabIndex = 10
+        Me.cb_overlay.Text = "Show Overlay"
+        Me.cb_overlay.UseVisualStyleBackColor = True
+        '
+        'menu_main
+        '
+        Me.menu_main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FensterToolStripMenuItem})
+        Me.menu_main.Location = New System.Drawing.Point(0, 0)
+        Me.menu_main.Name = "menu_main"
+        Me.menu_main.Size = New System.Drawing.Size(916, 24)
+        Me.menu_main.TabIndex = 5
+        Me.menu_main.Text = "MenuStrip1"
+        '
+        'FensterToolStripMenuItem
+        '
+        Me.FensterToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SpielerKarteToolStripMenuItem})
+        Me.FensterToolStripMenuItem.Name = "FensterToolStripMenuItem"
+        Me.FensterToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
+        Me.FensterToolStripMenuItem.Text = "Fenster"
+        '
+        'SpielerKarteToolStripMenuItem
+        '
+        Me.SpielerKarteToolStripMenuItem.CheckOnClick = True
+        Me.SpielerKarteToolStripMenuItem.Name = "SpielerKarteToolStripMenuItem"
+        Me.SpielerKarteToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.SpielerKarteToolStripMenuItem.Text = "Spieler Karte"
+        '
+        'ui_updater
+        '
+        Me.ui_updater.Enabled = True
+        Me.ui_updater.Interval = 10
+        '
+        'menu_preview
+        '
+        Me.menu_preview.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClearMapToolStripMenuItem, Me.ScaleModeToolStripMenuItem})
+        Me.menu_preview.Name = "menu_preview"
+        Me.menu_preview.Size = New System.Drawing.Size(136, 48)
+        '
+        'ClearMapToolStripMenuItem
+        '
+        Me.ClearMapToolStripMenuItem.Name = "ClearMapToolStripMenuItem"
+        Me.ClearMapToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.ClearMapToolStripMenuItem.Text = "Clear Map"
+        '
+        'ScaleModeToolStripMenuItem
+        '
+        Me.ScaleModeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.ToolStripMenuItem4, Me.ToolStripMenuItem5})
+        Me.ScaleModeToolStripMenuItem.Name = "ScaleModeToolStripMenuItem"
+        Me.ScaleModeToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.ScaleModeToolStripMenuItem.Text = "Scale Mode"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(95, 22)
+        Me.ToolStripMenuItem2.Text = "1 : 1"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(95, 22)
+        Me.ToolStripMenuItem3.Text = "1 : 2"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(95, 22)
+        Me.ToolStripMenuItem4.Text = "1 : 4"
+        '
+        'ToolStripMenuItem5
+        '
+        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(95, 22)
+        Me.ToolStripMenuItem5.Text = "1 : 8"
+        '
+        'menu_players
+        '
+        Me.menu_players.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VisibleToolStripMenuItem, Me.HideToolStripMenuItem, Me.MoveToolStripMenuItem})
+        Me.menu_players.Name = "menu_players"
+        Me.menu_players.Size = New System.Drawing.Size(105, 70)
+        '
+        'VisibleToolStripMenuItem
+        '
+        Me.VisibleToolStripMenuItem.Name = "VisibleToolStripMenuItem"
+        Me.VisibleToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
+        Me.VisibleToolStripMenuItem.Text = "Show"
+        '
+        'HideToolStripMenuItem
+        '
+        Me.HideToolStripMenuItem.Name = "HideToolStripMenuItem"
+        Me.HideToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
+        Me.HideToolStripMenuItem.Text = "Hide"
+        '
+        'MoveToolStripMenuItem
+        '
+        Me.MoveToolStripMenuItem.Name = "MoveToolStripMenuItem"
+        Me.MoveToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
+        Me.MoveToolStripMenuItem.Text = "Move"
+        '
+        'menu_map
+        '
+        Me.menu_map.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadImageToolStripMenuItem, Me.SetMapToolStripMenuItem, Me.Rotate90ToolStripMenuItem})
+        Me.menu_map.Name = "menu_map"
+        Me.menu_map.Size = New System.Drawing.Size(137, 70)
+        '
+        'LoadImageToolStripMenuItem
+        '
+        Me.LoadImageToolStripMenuItem.Name = "LoadImageToolStripMenuItem"
+        Me.LoadImageToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
+        Me.LoadImageToolStripMenuItem.Text = "Load Image"
+        '
+        'SetMapToolStripMenuItem
+        '
+        Me.SetMapToolStripMenuItem.Name = "SetMapToolStripMenuItem"
+        Me.SetMapToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
+        Me.SetMapToolStripMenuItem.Text = "Set Map"
+        '
+        'Rotate90ToolStripMenuItem
+        '
+        Me.Rotate90ToolStripMenuItem.Name = "Rotate90ToolStripMenuItem"
+        Me.Rotate90ToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
+        Me.Rotate90ToolStripMenuItem.Text = "Rotate 90°"
+        '
+        'dial_open_img
+        '
+        Me.dial_open_img.Filter = "Bilder |*.png; *.bmp; *.jpg; *.jpeg; *.gif"
+        '
+        'tt_playername
+        '
+        Me.tt_playername.IsBalloon = True
+        Me.tt_playername.ToolTipTitle = "<Playername>"
+        '
+        'menu_mask
+        '
+        Me.menu_mask.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HideToolStripMenuItem1})
+        Me.menu_mask.Name = "menu_mask"
+        Me.menu_mask.Size = New System.Drawing.Size(100, 26)
+        '
+        'HideToolStripMenuItem1
+        '
+        Me.HideToolStripMenuItem1.Name = "HideToolStripMenuItem1"
+        Me.HideToolStripMenuItem1.Size = New System.Drawing.Size(99, 22)
+        Me.HideToolStripMenuItem1.Text = "Hide"
+        '
+        'img_list_icons
+        '
+        Me.img_list_icons.ImageStream = CType(resources.GetObject("img_list_icons.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.img_list_icons.TransparentColor = System.Drawing.Color.Transparent
+        Me.img_list_icons.Images.SetKeyName(0, "icon_map.png")
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(639, 461)
-        Me.Controls.Add(Me.TabControl1)
+        Me.ClientSize = New System.Drawing.Size(916, 478)
+        Me.Controls.Add(Me.tc_main)
         Me.Controls.Add(Me.menu_main)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.menu_main
         Me.Name = "Main"
         Me.Text = "Admin Tool - Main"
-        Me.TabControl1.ResumeLayout(False)
+        Me.tc_main.ResumeLayout(False)
         Me.tab_enemy.ResumeLayout(False)
         Me.tab_enemy.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -984,18 +1386,38 @@ Partial Class Main
         Me.Panel3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.TabPage1.ResumeLayout(False)
+        Me.tab_info.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
+        Me.tab_map.ResumeLayout(False)
+        Me.pan_img.ResumeLayout(False)
+        CType(Me.pic_map, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox7.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.pb_map_01, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_map_09, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_map_02, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_map_08, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_map_03, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_map_07, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_map_04, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_map_06, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_map_05, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gb_options.ResumeLayout(False)
+        Me.gb_options.PerformLayout()
         Me.menu_main.ResumeLayout(False)
         Me.menu_main.PerformLayout()
+        Me.menu_preview.ResumeLayout(False)
+        Me.menu_players.ResumeLayout(False)
+        Me.menu_map.ResumeLayout(False)
+        Me.menu_mask.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents bt_rand As System.Windows.Forms.Button
-    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents tc_main As System.Windows.Forms.TabControl
     Friend WithEvents tab_enemy As System.Windows.Forms.TabPage
     Friend WithEvents tab_player As System.Windows.Forms.TabPage
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
@@ -1031,7 +1453,6 @@ Partial Class Main
     Friend WithEvents FensterToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents tab_dice As TabPage
     Friend WithEvents SpielerKarteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AdminKarteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel3 As Panel
     Friend WithEvents bt_w_20 As Button
     Friend WithEvents txt_count_w_20 As TextBox
@@ -1073,7 +1494,7 @@ Partial Class Main
     Friend WithEvents bt_delete As Button
     Friend WithEvents list_enemys As ListBox
     Friend WithEvents lb_debug As Label
-    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents tab_info As TabPage
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents list_texts As ListBox
     Friend WithEvents GroupBox6 As GroupBox
@@ -1082,4 +1503,44 @@ Partial Class Main
     Friend WithEvents bt_add_text As Button
     Friend WithEvents Label26 As Label
     Friend WithEvents tb_text_name As TextBox
+    Friend WithEvents tab_map As TabPage
+    Friend WithEvents gb_options As GroupBox
+    Friend WithEvents chk_hide_map As CheckBox
+    Friend WithEvents bt_add_mask As Button
+    Friend WithEvents cb_player_live_update As CheckBox
+    Friend WithEvents cb_overlay As CheckBox
+    Friend WithEvents GroupBox7 As GroupBox
+    Friend WithEvents pb_map_09 As PictureBox
+    Friend WithEvents pb_map_01 As PictureBox
+    Friend WithEvents pb_map_08 As PictureBox
+    Friend WithEvents pb_map_02 As PictureBox
+    Friend WithEvents pb_map_07 As PictureBox
+    Friend WithEvents pb_map_03 As PictureBox
+    Friend WithEvents pb_map_06 As PictureBox
+    Friend WithEvents pb_map_04 As PictureBox
+    Friend WithEvents pb_map_05 As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents ui_updater As Timer
+    Friend WithEvents pan_img As Panel
+    Friend WithEvents pic_map As PictureBox
+    Friend WithEvents menu_preview As ContextMenuStrip
+    Friend WithEvents ClearMapToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ScaleModeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
+    Friend WithEvents menu_players As ContextMenuStrip
+    Friend WithEvents VisibleToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HideToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MoveToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents menu_map As ContextMenuStrip
+    Friend WithEvents LoadImageToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SetMapToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Rotate90ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents dial_open_img As OpenFileDialog
+    Friend WithEvents tt_playername As ToolTip
+    Friend WithEvents menu_mask As ContextMenuStrip
+    Friend WithEvents HideToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents img_list_icons As ImageList
 End Class

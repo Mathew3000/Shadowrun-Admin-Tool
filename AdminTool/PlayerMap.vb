@@ -29,6 +29,10 @@
     'Close Window
     Private Sub PlayerMap_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Dim MainWindow As New Main
+        show_last_state = Not (show_last_state)
+        Main.SpielerKarteToolStripMenuItem.Checked = False
+        Me.Hide()
+        e.Cancel = True
     End Sub
 
     'Update UI-Elements
@@ -77,18 +81,22 @@
         If Not Main.player_screen_items.Contains(pan_hide_map) Then
             Main.player_screen_items.Add(pan_hide_map)
         End If
-        pan_hide_map.Visible = AdminWindow.chk_hide_map.Checked
-        If AdminWindow.chk_hide_map.Checked Then
+        pan_hide_map.Visible = Main.chk_hide_map.Checked
+        If Main.chk_hide_map.Checked Then
             pan_hide_map.BringToFront()
         End If
 
         'Update Character Elements
-        For Each element In Main.player_screen_items
-            If Not Me.Controls.Contains(element) Then
-                Me.Controls.Add(element)
-                Me.Controls.Find(element.Name, True)(0).BringToFront()
-            End If
-        Next
+        Try
+            For Each element In Main.player_screen_items
+                If Not Me.Controls.Contains(element) Then
+                    Me.Controls.Add(element)
+                    Me.Controls.Find(element.Name, True)(0).BringToFront()
+                End If
+            Next
+        Catch
+        Finally
+        End Try
 
         'Update InfoTextFields
         If ex_update_text Then
