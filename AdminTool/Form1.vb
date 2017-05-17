@@ -47,6 +47,8 @@ Public Class Main
         If Not debugging Then
             tc_main.TabPages.Remove(tab_info)
         End If
+        bt_enemy_regenerate.Visible = debugging
+
         'Create PlayerMap
         PlayerMap.Show()
         PlayerMap.Hide()

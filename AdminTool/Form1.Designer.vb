@@ -68,7 +68,7 @@ Partial Class Main
         Me.cb_nameset = New System.Windows.Forms.ComboBox()
         Me.cb_difficulty = New System.Windows.Forms.ComboBox()
         Me.cb_weapon_type = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.bt_enemy_regenerate = New System.Windows.Forms.Button()
         Me.tab_player = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.pan_colour = New System.Windows.Forms.Panel()
@@ -213,7 +213,7 @@ Partial Class Main
         Me.tab_enemy.Controls.Add(Me.list_enemys)
         Me.tab_enemy.Controls.Add(Me.GroupBox2)
         Me.tab_enemy.Controls.Add(Me.GroupBox1)
-        Me.tab_enemy.Controls.Add(Me.Button1)
+        Me.tab_enemy.Controls.Add(Me.bt_enemy_regenerate)
         Me.tab_enemy.Controls.Add(Me.bt_rand)
         Me.tab_enemy.ImageIndex = 3
         Me.tab_enemy.Location = New System.Drawing.Point(4, 23)
@@ -620,14 +620,14 @@ Partial Class Main
         Me.cb_weapon_type.TabIndex = 8
         Me.cb_weapon_type.Text = "Nahkampf (stumpf)"
         '
-        'Button1
+        'bt_enemy_regenerate
         '
-        Me.Button1.Location = New System.Drawing.Point(213, 238)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(137, 40)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Gewählten neu generieren"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.bt_enemy_regenerate.Location = New System.Drawing.Point(213, 238)
+        Me.bt_enemy_regenerate.Name = "bt_enemy_regenerate"
+        Me.bt_enemy_regenerate.Size = New System.Drawing.Size(137, 40)
+        Me.bt_enemy_regenerate.TabIndex = 5
+        Me.bt_enemy_regenerate.Text = "Gewählten neu generieren"
+        Me.bt_enemy_regenerate.UseVisualStyleBackColor = True
         '
         'tab_player
         '
@@ -1415,7 +1415,7 @@ Partial Class Main
     Friend WithEvents cb_nameset As System.Windows.Forms.ComboBox
     Friend WithEvents cb_difficulty As System.Windows.Forms.ComboBox
     Friend WithEvents cb_weapon_type As System.Windows.Forms.ComboBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents bt_enemy_regenerate As System.Windows.Forms.Button
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents cb_armor As System.Windows.Forms.ComboBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
