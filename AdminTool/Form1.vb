@@ -61,6 +61,7 @@ Public Class Main
         pb_map_07.ContextMenuStrip = menu_map
         pb_map_08.ContextMenuStrip = menu_map
         pb_map_09.ContextMenuStrip = menu_map
+        pic_map.ContextMenuStrip = menu_preview
     End Sub
 
     'Generate a random value
@@ -558,7 +559,15 @@ Public Class Main
         'Show Overlay?
         If Not cb_overlay.Checked = last_show_state Then
             If cb_overlay.Checked Then
-                pic_map.Image = AdminTool.My.Resources.Resources.hex2
+                If scale_factor = 1 Then
+                    pic_map.Image = AdminTool.My.Resources.Resources.hex1   'Original Scale
+                ElseIf scale_factor = 2 Then
+                    pic_map.Image = AdminTool.My.Resources.Resources.hex3   'Half Scale
+                ElseIf scale_factor = 8 Then
+                    pic_map.Image = AdminTool.My.Resources.Resources.hex4   'Eigth Scale
+                Else
+                    pic_map.Image = AdminTool.My.Resources.Resources.hex2   'Quarter Scale (default)
+                End If
                 PlayerMap.ex_show_overlay = True
             Else
                 pic_map.Image = Nothing
@@ -570,14 +579,6 @@ Public Class Main
         'Scale Preview
         Me.pic_map.Width = (PlayerMap.ex_width - 16) / scale_factor
         Me.pic_map.Height = (PlayerMap.ex_height - 38) / scale_factor
-
-        'Rescale to fit PlayerWindow Preview
-        If (Me.Width < (PlayerMap.ex_width / scale_factor) + 175) Then
-            Me.Width = (PlayerMap.ex_width / scale_factor) + 175
-        End If
-        If (Me.Height < (PlayerMap.ex_height / scale_factor) + 200) Then
-            Me.Height = (PlayerMap.ex_height / scale_factor) + 200
-        End If
 
         'Update Moved Players
         If mouse_down Then
@@ -870,5 +871,15 @@ Public Class Main
             PlayerMap.Hide()
         End If
 
+    End Sub
+
+    Private Sub bt_delete_Click(sender As Object, e As EventArgs) Handles bt_delete.Click
+        Dim enemy As New character
+        If (list_enemys.SelectedIndex >= 0) Then
+            selected_enemy = list_enemys.SelectedIndex
+            enemy = enemys(selected_enemy)
+            rem_item(enemy.charID)
+            list_enemys.Items.RemoveAt(list_enemys.SelectedIndex)
+        End If
     End Sub
 End Class
