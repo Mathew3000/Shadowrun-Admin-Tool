@@ -10,6 +10,7 @@
 
     Public Shared ex_update_text As Boolean = False
     Public Shared ex_text_to_update As String = ""
+    Public Shared ex_text_field_size As Size = New Size(20, 20)
 
     Public Shared ex_player_to_update As String = ""
     Public Shared ex_player_command As String = ""
@@ -103,15 +104,21 @@
             Dim tmp_text As New RichTextBox
             Dim tmp_bmp As New Bitmap(100, 50)
             Dim tmp_pic_box As New PictureBox
-            tmp_text = Me.Controls.Find(ex_text_to_update, True)(0).Controls.Find("info", True)(0)
-            tmp_pic_box = Me.Controls.Find(ex_text_to_update, True)(0).Controls.Find("image", True)(0)
+            Dim tmp_panel As New Panel
+            tmp_panel = Me.Controls.Find(ex_text_to_update, True)(0)
+            tmp_text = tmp_panel.Controls.Find("info", True)(0)
+            tmp_pic_box = tmp_panel.Controls.Find("image", True)(0)
 
             tmp_text.Text = Main.texts.Find(Function(x) x.textID = ex_text_to_update).text
 
-            tmp_text.DrawToBitmap(tmp_bmp, tmp_text.Bounds)
+            tmp_text.Size = ex_text_field_size
+            tmp_pic_box.Size = ex_text_field_size
+            tmp_panel.Size = ex_text_field_size
 
-            pic_background.Image = tmp_bmp
-            tmp_pic_box.Visible = False
+            'tmp_text.DrawToBitmap(tmp_bmp, tmp_text.Bounds)
+
+            'pic_background.Image = tmp_bmp
+            'tmp_pic_box.Visible = False
             tmp_text.Visible = True
             tmp_text.BringToFront()
             ex_update_text = False

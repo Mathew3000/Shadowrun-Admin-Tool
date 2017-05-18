@@ -99,6 +99,10 @@ Partial Class Main
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.tab_info = New System.Windows.Forms.TabPage()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.tb_info_width = New System.Windows.Forms.TextBox()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.tb_info_height = New System.Windows.Forms.TextBox()
         Me.bt_del_text = New System.Windows.Forms.Button()
         Me.bt_add_text = New System.Windows.Forms.Button()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
@@ -109,8 +113,18 @@ Partial Class Main
         Me.list_texts = New System.Windows.Forms.ListBox()
         Me.tab_map = New System.Windows.Forms.TabPage()
         Me.pan_img = New System.Windows.Forms.Panel()
+        Me.pic_map = New System.Windows.Forms.PictureBox()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pb_map_01 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_09 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_02 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_08 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_03 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_07 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_04 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_06 = New System.Windows.Forms.PictureBox()
+        Me.pb_map_05 = New System.Windows.Forms.PictureBox()
         Me.gb_options = New System.Windows.Forms.GroupBox()
         Me.cb_show_player_map = New System.Windows.Forms.CheckBox()
         Me.chk_hide_map = New System.Windows.Forms.CheckBox()
@@ -139,16 +153,6 @@ Partial Class Main
         Me.tt_playername = New System.Windows.Forms.ToolTip(Me.components)
         Me.menu_mask = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.HideToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.pic_map = New System.Windows.Forms.PictureBox()
-        Me.pb_map_01 = New System.Windows.Forms.PictureBox()
-        Me.pb_map_09 = New System.Windows.Forms.PictureBox()
-        Me.pb_map_02 = New System.Windows.Forms.PictureBox()
-        Me.pb_map_08 = New System.Windows.Forms.PictureBox()
-        Me.pb_map_03 = New System.Windows.Forms.PictureBox()
-        Me.pb_map_07 = New System.Windows.Forms.PictureBox()
-        Me.pb_map_04 = New System.Windows.Forms.PictureBox()
-        Me.pb_map_06 = New System.Windows.Forms.PictureBox()
-        Me.pb_map_05 = New System.Windows.Forms.PictureBox()
         Me.tc_main.SuspendLayout()
         Me.tab_enemy.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -164,14 +168,9 @@ Partial Class Main
         Me.GroupBox5.SuspendLayout()
         Me.tab_map.SuspendLayout()
         Me.pan_img.SuspendLayout()
+        CType(Me.pic_map, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox7.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.gb_options.SuspendLayout()
-        Me.menu_preview.SuspendLayout()
-        Me.menu_players.SuspendLayout()
-        Me.menu_map.SuspendLayout()
-        Me.menu_mask.SuspendLayout()
-        CType(Me.pic_map, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_map_01, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_map_09, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_map_02, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -181,6 +180,11 @@ Partial Class Main
         CType(Me.pb_map_04, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_map_06, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_map_05, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gb_options.SuspendLayout()
+        Me.menu_preview.SuspendLayout()
+        Me.menu_players.SuspendLayout()
+        Me.menu_map.SuspendLayout()
+        Me.menu_mask.SuspendLayout()
         Me.SuspendLayout()
         '
         'bt_rand
@@ -904,6 +908,10 @@ Partial Class Main
         '
         'tab_info
         '
+        Me.tab_info.Controls.Add(Me.Label28)
+        Me.tab_info.Controls.Add(Me.tb_info_width)
+        Me.tab_info.Controls.Add(Me.Label27)
+        Me.tab_info.Controls.Add(Me.tb_info_height)
         Me.tab_info.Controls.Add(Me.bt_del_text)
         Me.tab_info.Controls.Add(Me.bt_add_text)
         Me.tab_info.Controls.Add(Me.GroupBox6)
@@ -916,9 +924,45 @@ Partial Class Main
         Me.tab_info.Text = "Info"
         Me.tab_info.UseVisualStyleBackColor = True
         '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(50, 310)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(37, 13)
+        Me.Label28.TabIndex = 7
+        Me.Label28.Text = "Breite:"
+        '
+        'tb_info_width
+        '
+        Me.tb_info_width.Location = New System.Drawing.Point(44, 326)
+        Me.tb_info_width.MaxLength = 4
+        Me.tb_info_width.Name = "tb_info_width"
+        Me.tb_info_width.Size = New System.Drawing.Size(53, 20)
+        Me.tb_info_width.TabIndex = 6
+        Me.tb_info_width.Text = "75"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(110, 310)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(36, 13)
+        Me.Label27.TabIndex = 5
+        Me.Label27.Text = "Höhe:"
+        '
+        'tb_info_height
+        '
+        Me.tb_info_height.Location = New System.Drawing.Point(103, 326)
+        Me.tb_info_height.MaxLength = 4
+        Me.tb_info_height.Name = "tb_info_height"
+        Me.tb_info_height.Size = New System.Drawing.Size(53, 20)
+        Me.tb_info_height.TabIndex = 4
+        Me.tb_info_height.Text = "15"
+        '
         'bt_del_text
         '
-        Me.bt_del_text.Location = New System.Drawing.Point(103, 325)
+        Me.bt_del_text.Location = New System.Drawing.Point(103, 364)
         Me.bt_del_text.Name = "bt_del_text"
         Me.bt_del_text.Size = New System.Drawing.Size(100, 23)
         Me.bt_del_text.TabIndex = 3
@@ -927,7 +971,7 @@ Partial Class Main
         '
         'bt_add_text
         '
-        Me.bt_add_text.Location = New System.Drawing.Point(3, 325)
+        Me.bt_add_text.Location = New System.Drawing.Point(3, 364)
         Me.bt_add_text.Name = "bt_add_text"
         Me.bt_add_text.Size = New System.Drawing.Size(100, 23)
         Me.bt_add_text.TabIndex = 2
@@ -960,7 +1004,7 @@ Partial Class Main
         Me.GroupBox5.Controls.Add(Me.list_texts)
         Me.GroupBox5.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(200, 316)
+        Me.GroupBox5.Size = New System.Drawing.Size(200, 292)
         Me.GroupBox5.TabIndex = 0
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Info Texte"
@@ -986,7 +1030,7 @@ Partial Class Main
         Me.list_texts.FormattingEnabled = True
         Me.list_texts.Location = New System.Drawing.Point(7, 46)
         Me.list_texts.Name = "list_texts"
-        Me.list_texts.Size = New System.Drawing.Size(187, 264)
+        Me.list_texts.Size = New System.Drawing.Size(187, 238)
         Me.list_texts.TabIndex = 0
         '
         'tab_map
@@ -1010,6 +1054,18 @@ Partial Class Main
         Me.pan_img.Name = "pan_img"
         Me.pan_img.Size = New System.Drawing.Size(725, 412)
         Me.pan_img.TabIndex = 7
+        '
+        'pic_map
+        '
+        Me.pic_map.BackColor = System.Drawing.Color.White
+        Me.pic_map.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.pic_map.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pic_map.Location = New System.Drawing.Point(3, 3)
+        Me.pic_map.Name = "pic_map"
+        Me.pic_map.Size = New System.Drawing.Size(719, 406)
+        Me.pic_map.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.pic_map.TabIndex = 6
+        Me.pic_map.TabStop = False
         '
         'GroupBox7
         '
@@ -1038,6 +1094,114 @@ Partial Class Main
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(140, 240)
         Me.Panel1.TabIndex = 10
+        '
+        'pb_map_01
+        '
+        Me.pb_map_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_01.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_01.Location = New System.Drawing.Point(4, 10)
+        Me.pb_map_01.Name = "pb_map_01"
+        Me.pb_map_01.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_01.TabIndex = 1
+        Me.pb_map_01.TabStop = False
+        '
+        'pb_map_09
+        '
+        Me.pb_map_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_09.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_09.Location = New System.Drawing.Point(4, 858)
+        Me.pb_map_09.Name = "pb_map_09"
+        Me.pb_map_09.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_09.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_09.TabIndex = 9
+        Me.pb_map_09.TabStop = False
+        '
+        'pb_map_02
+        '
+        Me.pb_map_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_02.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_02.Location = New System.Drawing.Point(4, 116)
+        Me.pb_map_02.Name = "pb_map_02"
+        Me.pb_map_02.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_02.TabIndex = 2
+        Me.pb_map_02.TabStop = False
+        '
+        'pb_map_08
+        '
+        Me.pb_map_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_08.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_08.Location = New System.Drawing.Point(4, 752)
+        Me.pb_map_08.Name = "pb_map_08"
+        Me.pb_map_08.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_08.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_08.TabIndex = 8
+        Me.pb_map_08.TabStop = False
+        '
+        'pb_map_03
+        '
+        Me.pb_map_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_03.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_03.Location = New System.Drawing.Point(4, 222)
+        Me.pb_map_03.Name = "pb_map_03"
+        Me.pb_map_03.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_03.TabIndex = 3
+        Me.pb_map_03.TabStop = False
+        '
+        'pb_map_07
+        '
+        Me.pb_map_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_07.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_07.Location = New System.Drawing.Point(4, 646)
+        Me.pb_map_07.Name = "pb_map_07"
+        Me.pb_map_07.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_07.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_07.TabIndex = 7
+        Me.pb_map_07.TabStop = False
+        '
+        'pb_map_04
+        '
+        Me.pb_map_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_04.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_04.Location = New System.Drawing.Point(4, 328)
+        Me.pb_map_04.Name = "pb_map_04"
+        Me.pb_map_04.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_04.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_04.TabIndex = 4
+        Me.pb_map_04.TabStop = False
+        '
+        'pb_map_06
+        '
+        Me.pb_map_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_06.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_06.Location = New System.Drawing.Point(4, 540)
+        Me.pb_map_06.Name = "pb_map_06"
+        Me.pb_map_06.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_06.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_06.TabIndex = 6
+        Me.pb_map_06.TabStop = False
+        '
+        'pb_map_05
+        '
+        Me.pb_map_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pb_map_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pb_map_05.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_map_05.Location = New System.Drawing.Point(4, 434)
+        Me.pb_map_05.Name = "pb_map_05"
+        Me.pb_map_05.Size = New System.Drawing.Size(110, 100)
+        Me.pb_map_05.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_map_05.TabIndex = 5
+        Me.pb_map_05.TabStop = False
         '
         'gb_options
         '
@@ -1232,126 +1396,6 @@ Partial Class Main
         Me.HideToolStripMenuItem1.Size = New System.Drawing.Size(99, 22)
         Me.HideToolStripMenuItem1.Text = "Hide"
         '
-        'pic_map
-        '
-        Me.pic_map.BackColor = System.Drawing.Color.White
-        Me.pic_map.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pic_map.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pic_map.Location = New System.Drawing.Point(3, 3)
-        Me.pic_map.Name = "pic_map"
-        Me.pic_map.Size = New System.Drawing.Size(719, 406)
-        Me.pic_map.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.pic_map.TabIndex = 6
-        Me.pic_map.TabStop = False
-        '
-        'pb_map_01
-        '
-        Me.pb_map_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.pb_map_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pb_map_01.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_01.Location = New System.Drawing.Point(4, 10)
-        Me.pb_map_01.Name = "pb_map_01"
-        Me.pb_map_01.Size = New System.Drawing.Size(110, 100)
-        Me.pb_map_01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pb_map_01.TabIndex = 1
-        Me.pb_map_01.TabStop = False
-        '
-        'pb_map_09
-        '
-        Me.pb_map_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.pb_map_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pb_map_09.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_09.Location = New System.Drawing.Point(4, 858)
-        Me.pb_map_09.Name = "pb_map_09"
-        Me.pb_map_09.Size = New System.Drawing.Size(110, 100)
-        Me.pb_map_09.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pb_map_09.TabIndex = 9
-        Me.pb_map_09.TabStop = False
-        '
-        'pb_map_02
-        '
-        Me.pb_map_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.pb_map_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pb_map_02.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_02.Location = New System.Drawing.Point(4, 116)
-        Me.pb_map_02.Name = "pb_map_02"
-        Me.pb_map_02.Size = New System.Drawing.Size(110, 100)
-        Me.pb_map_02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pb_map_02.TabIndex = 2
-        Me.pb_map_02.TabStop = False
-        '
-        'pb_map_08
-        '
-        Me.pb_map_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.pb_map_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pb_map_08.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_08.Location = New System.Drawing.Point(4, 752)
-        Me.pb_map_08.Name = "pb_map_08"
-        Me.pb_map_08.Size = New System.Drawing.Size(110, 100)
-        Me.pb_map_08.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pb_map_08.TabIndex = 8
-        Me.pb_map_08.TabStop = False
-        '
-        'pb_map_03
-        '
-        Me.pb_map_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.pb_map_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pb_map_03.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_03.Location = New System.Drawing.Point(4, 222)
-        Me.pb_map_03.Name = "pb_map_03"
-        Me.pb_map_03.Size = New System.Drawing.Size(110, 100)
-        Me.pb_map_03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pb_map_03.TabIndex = 3
-        Me.pb_map_03.TabStop = False
-        '
-        'pb_map_07
-        '
-        Me.pb_map_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.pb_map_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pb_map_07.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_07.Location = New System.Drawing.Point(4, 646)
-        Me.pb_map_07.Name = "pb_map_07"
-        Me.pb_map_07.Size = New System.Drawing.Size(110, 100)
-        Me.pb_map_07.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pb_map_07.TabIndex = 7
-        Me.pb_map_07.TabStop = False
-        '
-        'pb_map_04
-        '
-        Me.pb_map_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.pb_map_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pb_map_04.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_04.Location = New System.Drawing.Point(4, 328)
-        Me.pb_map_04.Name = "pb_map_04"
-        Me.pb_map_04.Size = New System.Drawing.Size(110, 100)
-        Me.pb_map_04.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pb_map_04.TabIndex = 4
-        Me.pb_map_04.TabStop = False
-        '
-        'pb_map_06
-        '
-        Me.pb_map_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.pb_map_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pb_map_06.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_06.Location = New System.Drawing.Point(4, 540)
-        Me.pb_map_06.Name = "pb_map_06"
-        Me.pb_map_06.Size = New System.Drawing.Size(110, 100)
-        Me.pb_map_06.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pb_map_06.TabIndex = 6
-        Me.pb_map_06.TabStop = False
-        '
-        'pb_map_05
-        '
-        Me.pb_map_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.pb_map_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pb_map_05.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_map_05.Location = New System.Drawing.Point(4, 434)
-        Me.pb_map_05.Name = "pb_map_05"
-        Me.pb_map_05.Size = New System.Drawing.Size(110, 100)
-        Me.pb_map_05.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pb_map_05.TabIndex = 5
-        Me.pb_map_05.TabStop = False
-        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1378,20 +1422,15 @@ Partial Class Main
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.tab_info.ResumeLayout(False)
+        Me.tab_info.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         Me.tab_map.ResumeLayout(False)
         Me.pan_img.ResumeLayout(False)
+        CType(Me.pic_map, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox7.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
-        Me.gb_options.ResumeLayout(False)
-        Me.gb_options.PerformLayout()
-        Me.menu_preview.ResumeLayout(False)
-        Me.menu_players.ResumeLayout(False)
-        Me.menu_map.ResumeLayout(False)
-        Me.menu_mask.ResumeLayout(False)
-        CType(Me.pic_map, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_map_01, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_map_09, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_map_02, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1401,6 +1440,12 @@ Partial Class Main
         CType(Me.pb_map_04, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_map_06, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_map_05, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gb_options.ResumeLayout(False)
+        Me.gb_options.PerformLayout()
+        Me.menu_preview.ResumeLayout(False)
+        Me.menu_players.ResumeLayout(False)
+        Me.menu_map.ResumeLayout(False)
+        Me.menu_mask.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1529,4 +1574,8 @@ Partial Class Main
     Friend WithEvents HideToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents img_list_icons As ImageList
     Friend WithEvents cb_show_player_map As CheckBox
+    Friend WithEvents Label28 As Label
+    Friend WithEvents tb_info_width As TextBox
+    Friend WithEvents Label27 As Label
+    Friend WithEvents tb_info_height As TextBox
 End Class

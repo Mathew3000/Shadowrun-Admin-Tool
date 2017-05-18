@@ -14,7 +14,7 @@ Public Class Main
     Dim selected_char As Integer = 0
     Dim selected_enemy As Integer = 0
     'Selected TextBox
-    Dim selected_text As Integer = 0
+    Dim selected_text As Integer = 100000
     'Character Items
     Public Shared enemys As New List(Of character)
     Public Shared players As New List(Of character)
@@ -484,14 +484,14 @@ Public Class Main
         text_field.Location = New Point(0, 0)
         text_field.Visible = False
         text_field.BorderStyle = BorderStyle.None
-        text_field.Size = New Size(200, 100)
+        text_field.Size = New Size(75, 15)
 
         'Create a ImageBox to add to the TextBox
         image_box.Name = "image"
         image_box.Location = New Point(0, 0)
         image_box.Visible = True
         image_box.BorderStyle = BorderStyle.None
-        image_box.Size = New Size(200, 100)
+        image_box.Size = New Size(75, 15)
 
         'Create Playeritem for TextBox
         player_item.BackColor = Color.White
@@ -536,10 +536,35 @@ Public Class Main
     End Sub
 
     'Change Text of an InfoText Box
-    Private Sub rtb_text_TextChanged(sender As Object, e As EventArgs) Handles rtb_text.TextChanged
+    Private Sub rtb_text_TextChanged(sender As Object, e As EventArgs) Handles rtb_text.TextChanged, tb_info_width.TextChanged, tb_info_height.TextChanged
         Dim text_box As New info_text
-        text_box = texts(selected_text)
-        text_box.text = rtb_text.Text
+        Dim tmp_size As New Size
+
+        If selected_text < 100000 Then
+            Try
+                text_box = texts(selected_text)
+                text_box.text = rtb_text.Text
+            Catch
+                MsgBox("Could not change Size!", MessageBoxButtons.OK, "Error!")
+            End Try
+        Else
+            Return
+        End If
+
+        Try
+            tmp_size.Width = tb_info_width.Text
+        Catch
+            MsgBox("Not a valid input!", MessageBoxButtons.OK, "Error!")
+            tmp_size.Width = 50
+        End Try
+        Try
+            tmp_size.Height = tb_info_height.Text
+        Catch
+            MsgBox("Not a valid input!", MessageBoxButtons.OK, "Error!")
+            tmp_size.Height = 15
+        End Try
+
+        PlayerMap.ex_text_field_size = tmp_size
         PlayerMap.ex_update_text = True
         PlayerMap.ex_text_to_update = text_box.textID
     End Sub
