@@ -188,6 +188,7 @@
     <Content Include="AdminTool.ico" />
     <None Include="Resources\hex4.png" />
     <None Include="Resources\hex3.png" />
+    <None Include="Resources\hex3.bmp" />
     <None Include="Resources\hex2.png" />
     <None Include="Resources\hex1.png" />
     <None Include="Resources\hex.png" />

@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdminTool.exe" size="5818304">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdminTool.exe" size="2657216">
       <assemblyIdentity name="AdminTool" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>IOBvnx2jMc6vURxp/rAjrT4tPQOA2Jn9MHxo7A6xCz8=</dsig:DigestValue>
+        <dsig:DigestValue>ZceNT2yKI/i9bICG3OhgTjl54H/ZgKHe8KfmNHTCC5Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

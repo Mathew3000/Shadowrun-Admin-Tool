@@ -311,7 +311,7 @@ Public Class Main
             players.RemoveAt(selected_char)
             list_player.Items.RemoveAt(selected_char)
             Try
-                player_object.Visible = False
+                rem_item(currentID)
             Catch
                 MsgBox("Could not delete Char from Map", MessageBoxButtons.OK, "Error!")
             End Try
@@ -561,12 +561,12 @@ Public Class Main
             If cb_overlay.Checked Then
                 If scale_factor = 1 Then
                     pic_map.Image = AdminTool.My.Resources.Resources.hex1   'Original Scale
-                ElseIf scale_factor = 2 Then
-                    pic_map.Image = AdminTool.My.Resources.Resources.hex3   'Half Scale
+                ElseIf scale_factor = 4 Then
+                    pic_map.Image = AdminTool.My.Resources.Resources.hex3   'Quarter Scale
                 ElseIf scale_factor = 8 Then
                     pic_map.Image = AdminTool.My.Resources.Resources.hex4   'Eigth Scale
                 Else
-                    pic_map.Image = AdminTool.My.Resources.Resources.hex2   'Quarter Scale (default)
+                    pic_map.Image = AdminTool.My.Resources.Resources.hex2   'Half Scale (Default)
                 End If
                 PlayerMap.ex_show_overlay = True
             Else
@@ -591,7 +591,7 @@ Public Class Main
             If cb_player_live_update.Checked Then
                 tmp_pos = cursor_pos - New Point(7, 7)
                 Main.player_screen_items.Find(Function(x) x.Name = mouse_down_sender.name).Location =
-                    New Point(tmp_pos.X * scale_factor, tmp_pos.Y * scale_factor)
+                    New Point(tmp_pos.X * scale_factor + 6, tmp_pos.Y * scale_factor + 6)
             End If
         End If
 
