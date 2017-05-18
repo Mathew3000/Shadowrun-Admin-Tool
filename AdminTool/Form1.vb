@@ -497,7 +497,7 @@ Public Class Main
         player_item.BackColor = Color.White
         player_item.Visible = False
         player_item.Location = New Point(50, 50)
-        player_item.Size = New Size(200, 100)
+        player_item.Size = New Size(75, 15)
         player_item.Name = tmp_text.textID
         player_item.BorderStyle = BorderStyle.FixedSingle
         'Add RichTextField to TextBox
@@ -508,7 +508,7 @@ Public Class Main
         player_screen_items.Add(player_item)
 
         'Create Adminitem for TextBox
-        admin_item.Size = New Size(100, 50)
+        admin_item.Size = New Size(38, 8)
         admin_item.Location = New Point(25, 25)
         admin_item.Visible = True
         admin_item.Name = tmp_text.textID
@@ -567,6 +567,8 @@ Public Class Main
         PlayerMap.ex_text_field_size = tmp_size
         PlayerMap.ex_update_text = True
         PlayerMap.ex_text_to_update = text_box.textID
+        Main.admin_screen_items.Find(Function(x) x.Name = text_box.textID).Size = New Size(tmp_size.Width / scale_factor, tmp_size.Height / scale_factor)
+
     End Sub
 
     'Selected TextBox Changed
